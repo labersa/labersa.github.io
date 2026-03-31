@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riau Fantasi - Taman Rekreasi Keluarga Terbesar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(2, 132, 199, 0.4), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1572013343866-2f5b6ee7889e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-sky-50 selection:bg-sky-200 selection:text-sky-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-sky-100 transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="text-3xl font-black text-sky-600 drop-shadow-sm flex items-center gap-2">
+                        <i class="fas fa-water text-sky-500"></i>
+                        Riau Fantasi
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beranda" class="text-slate-600 hover:text-sky-500 font-bold transition-colors">Beranda</a>
+                    <a href="#wahana" class="text-slate-600 hover:text-sky-500 font-bold transition-colors">Wahana</a>
+                    <a href="#harga" class="text-slate-600 hover:text-sky-500 font-bold transition-colors">Harga Tiket</a>
+                    <a href="#fasilitas" class="text-slate-600 hover:text-sky-500 font-bold transition-colors">Fasilitas</a>
+                    <a href="#peraturan" class="text-slate-600 hover:text-sky-500 font-bold transition-colors">Peraturan</a>
+                    <a href="#lokasi" class="text-slate-600 hover:text-sky-500 font-bold transition-colors">Lokasi</a>
+                    <a href="#tiket" class="text-slate-600 hover:text-sky-500 font-bold transition-colors">Promo</a>
+                </div>
+
+                <!-- Social Media Desktop (Berwarna) -->
+                <div class="hidden md:flex items-center space-x-5">
+                    <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 hover:opacity-75 transition-opacity text-2xl" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 hover:opacity-75 transition-opacity text-2xl" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="text-slate-900 hover:opacity-75 transition-opacity text-2xl" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank" class="text-red-600 hover:opacity-75 transition-opacity text-2xl" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-sky-500 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-sky-50 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="#beranda" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Beranda</a>
+            <a href="#wahana" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Wahana</a>
+            <a href="#harga" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Harga Tiket</a>
+            <a href="#fasilitas" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Fasilitas</a>
+            <a href="#peraturan" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Peraturan</a>
+            <a href="#lokasi" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Lokasi</a>
+            <a href="#tiket" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Promo</a>
+            
+            <!-- Social Media Mobile (Berwarna) -->
+            <div class="mt-4 pt-4 border-t border-sky-50 flex justify-center space-x-6 pb-2">
+                <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 hover:opacity-75 text-3xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 hover:opacity-75 text-3xl"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="text-slate-900 hover:opacity-75 text-3xl"><i class="fab fa-tiktok"></i></a>
+                <a href="#" target="_blank" class="text-red-600 hover:opacity-75 text-3xl"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 hero-bg flex items-center min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
+            <!-- Badge Promo BORIL -->
+            <a href="https://labersa.github.io/promo-booking/" target="_blank" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-black px-6 py-2 rounded-full text-sm md:text-base mb-6 shadow-lg animate-bounce transition-colors">
+                <i class="fas fa-star mr-2"></i> PROMO SPESIAL: BORIL (Booking Online April)
+            </a>
+            
+            <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight mb-6 drop-shadow-lg">
+                Petualangan Air <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-teal-300">Tak Terlupakan</span>
+            </h1>
+            <p class="text-lg md:text-xl text-sky-100 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
+                Selamat datang di Riau Fantasi, taman rekreasi air terbesar di Riau! Nikmati keseruan wahana air bersama keluarga dengan pemesanan tiket yang lebih mudah.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#tiket" class="w-full sm:w-auto bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 shadow-xl hover:-translate-y-1 text-lg flex items-center justify-center">
+                    Pesan Tiket BORIL <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#wahana" class="w-full sm:w-auto bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/50 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 text-lg flex items-center justify-center">
+                    Jelajahi Wahana
+                </a>
+            </div>
+        </div>
+
+        <!-- Wave Shape Divider (Matches bg-sky-50 #f0f9ff) -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-16 md:h-24" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C-17.14,96.15,34.8,87.35,101.4,75.92c64.3-10.99,141.4-23.8,219.99-19.48Z" fill="#f0f9ff"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Wahana Section -->
+    <section id="wahana" class="py-12 bg-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-black text-slate-800 mb-4">Wahana & Atraksi Kami</h2>
+                <p class="text-slate-500 max-w-3xl mx-auto text-lg">Jelajahi berbagai pilihan wahana seru, mulai dari seluncuran air yang menegangkan di Waterpark hingga berbagai atraksi menarik di Themepark.</p>
+            </div>
+
+            <!-- Kategori: WATERPARK -->
+            <div class="mb-12">
+                <div class="flex items-center mb-8 border-b-2 border-sky-200 pb-4">
+                    <i class="fas fa-water text-4xl text-sky-500 mr-4"></i>
+                    <h3 class="text-3xl font-black text-slate-800">Labersa Waterpark</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-waterpark">
+                    <!-- Item 1-3 (Ditampilkan secara default) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1582252156828-56cb2f26040e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Lazy River Pool]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-water text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Lazy River Pool</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Kolam arus bermain sungai buatan yang tenang. Kedalaman hanya 1 M dan sepanjang ±950 M, ditemani dengan pemandangan hewan-hewan khas asia timur.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1600208640034-71239c8ebba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Crocodille Beach]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-umbrella-beach text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Crocodille Beach</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Pantai buaya yang disulap menjadi kolam bermain luas 1200 m² dan kedalaman hingga 1,2 M. Ada juga paus raksasa lucu yang siap menemani.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1533664426555-e7a935ff4b10?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Vertical Slide]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-arrow-down text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Vertical Slide</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Seluncuran dengan ketinggian 12 M yang terbangun hampir tegak lurus. Wahana ini akan menguji nyali para pengunjung.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4+ (Disembunyikan dengan class 'waterpark-extra hidden') -->
+                    <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1572013343866-2f5b6ee7889e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Adventure Pool]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-swimming-pool text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Adventure Pool</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Area seluas 1800 m² dengan menara-menara terhubung jembatan goyang, serta drum raksasa yang siap menumpahkan 3000 liter air.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Race Slide]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-tachometer-alt text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Race Slide</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Permainan yang membuat pengunjung seperti terlempar dan kaget. Nikmati keseruan meluncur berdampingan dengan cepat.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1576610616656-d3aa5d1f4534?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Adult Pool]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-swimmer text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Adult Pool</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Kolam jernih khusus dewasa dengan kedalaman 1,5 M. Berenang sepuasnya sambil memainkan percikan air mancur di pinggir kolam.</p>
+                        </div>
+                    </div>
+
+                    <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1530293931602-540e13eb381f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Baby Pool]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-child text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Baby Pool</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Kolam khusus anak dan balita berkedalaman 30 cm dengan rentetan air mancur kecil yang memancar bergantian.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1629851720874-a74cf8dc8032?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Spirall Slide]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-sync text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Spirall Slide</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Permainan penguji adrenalin di atas ketinggian 15 M. Rasakan luncuran berputar yang mengejutkan hingga permukaan air.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1580214695509-8d77d1ca4283?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Big Jump Slide]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-rocket text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Big Jump Slide</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Wahana favorit dari ketinggian 12 M yang membuat jantung berdebar meluncur keras dan menghentakkan seperti melompat di udara.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1541846506307-2856db7fb8e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Boomerang Slide]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-route text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Boomerang Slide</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Seluncuran berbentuk setengah pipa (U-shape). Meluncur dari ketinggian lalu naik ke sisi berlawanan dengan ban (tube).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Super Bowl]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-circle-notch text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Super Bowl</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Seluncuran berbentuk mangkuk besar. Berputar mengelilingi dinding mangkuk lalu jatuh ke tengah menuju kolam.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="waterpark-extra hidden bg-sky-50 rounded-2xl shadow-sm border border-sky-200 hover:shadow-xl hover:shadow-sky-100 transition-all duration-300 overflow-hidden group">
+                        <div class="h-48 relative overflow-hidden bg-sky-100">
+                            <img src="https://images.unsplash.com/photo-1596395819057-e37f55a8516d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Gazebo]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-sky-500 shadow-sm">
+                                <i class="fas fa-campground text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">Gazebo</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Tempat bersantai & istirahat. Harga Sewa VIP: Weekdays Rp 150.000 & Weekend Rp 200.000.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tombol Lihat Semua Waterpark -->
+                <div class="text-center mt-8">
+                    <button id="btn-waterpark" onclick="toggleWahana('waterpark')" class="text-sky-500 border-2 border-sky-500 hover:bg-sky-500 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+                        Lihat Semua Waterpark <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kategori: THEMEPARK -->
+            <div>
+                <div class="flex items-center mb-8 border-b-2 border-orange-200 pb-4">
+                    <i class="fas fa-ticket-alt text-4xl text-orange-500 mr-4"></i>
+                    <h3 class="text-3xl font-black text-slate-800">Labersa Themepark</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="grid-themepark">
+                    <!-- Item 1-3 (Ditampilkan secara default) -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1563282276-857cde502b48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Kereta Wisata]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-train text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">1. Kereta Wisata</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Wahana transportasi untuk membawa pengunjung berkeliling area wisata dengan nyaman. Sangat cocok untuk keluarga dan lansia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1506422749506-69f21342f7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Wave Blaster]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-wind text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">2. Wave Blaster</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Wahana berputar dengan sensasi melayang dan naik-turun seperti dihantam ombak. Dinamis dan memacu adrenalin.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1506443432602-ac2fcd6f54e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Viking]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-ship text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">3. Viking</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Ayunan raksasa yang berayun semakin tinggi. Setiap ayunan memberikan efek gravitasi yang mendebarkan bagi pecinta tantangan.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4+ (Disembunyikan dengan class 'themepark-extra hidden') -->
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1605806616949-1e87b487cb2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Sky Tower]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-building text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">4. Sky Tower</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Menara hiburan yang membawa Anda naik untuk menikmati panorama menakjubkan keseluruhan kawasan taman hiburan dari atas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1513569771920-c9e1d31714fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Roller Coaster]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-subway text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">5. Roller Coaster</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Wahana ekstrem dengan lintasan berkelok, turunan tajam, dan kecepatan tinggi untuk memacu detak jantung Anda.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1528659556846-ea1e6b8c80fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Merry Go Around]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-horse text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">6. Merry Go Around</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Wahana komidi putar klasik yang penuh warna dan musik ceria. Pilihan aman dan favorit untuk anak-anak.</p>
+                        </div>
+                    </div>
+
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1533659228800-4b1f41b9d4e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Ferris Wheel]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-dharmachakra text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">7. Ferris Wheel</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Bianglala ikonik untuk bersantai menikmati pemandangan dari ketinggian secara perlahan. Spot favorit untuk berfoto.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1582236814271-92f7ea020dca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Family Swinger]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">8. Family Swinger</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Ayunan berputar yang aman dan nyaman dinikmati seluruh anggota keluarga. Sensasi berputar lembut dan menyenangkan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1585863266946-fdf92af7e761?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Bumper Car]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-car-crash text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">9. Bumper Car</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Keseruan bermain mobil tabrak yang interaktif di arena khusus. Melatih refleks dan penuh dengan tawa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="image_063dda.jpg" alt="[Gambar Go Kart]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-flag-checkered text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">10. Go Kart</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Pengalaman balap seru di lintasan profesional. Rasakan sensasi mengemudi layaknya pembalap dengan kontrol penuh.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1505635552518-3448ff116af3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Rumah Hantu]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-ghost text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">11. Rumah Hantu</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">Uji keberanian Anda dengan tata cahaya, suara, dan kejutan menegangkan di setiap sudutnya.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1536122985607-4fea00b1712d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Lapangan Futsal]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-futbol text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">12. Lapangan Futsal</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">2 Lapangan dengan standar modern dan pencahayaan optimal. Cocok untuk latihan maupun turnamen persahabatan.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="themepark-extra hidden bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:shadow-orange-100 transition-all duration-300 overflow-hidden group border-b-4 border-b-orange-400">
+                        <div class="h-48 relative overflow-hidden bg-orange-50">
+                            <img src="https://images.unsplash.com/photo-1622279457486-69d73ad5e06b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="[Gambar Lapangan Padel]" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-xl text-orange-500 shadow-sm">
+                                <i class="fas fa-table-tennis text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold text-slate-800 mb-2">13. Lapangan Padel</h4>
+                            <p class="text-slate-500 text-sm leading-relaxed">3 Lapangan padel modern yang nyaman, cocok untuk pemula hingga pemain profesional yang aktif berolahraga.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tombol Lihat Semua Themepark -->
+                <div class="text-center mt-8">
+                    <button id="btn-themepark" onclick="toggleWahana('themepark')" class="text-orange-500 border-2 border-orange-500 hover:bg-orange-500 hover:text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+                        Lihat Semua Themepark <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Harga Tiket & Sewa Section -->
+    <section id="harga" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-black text-slate-800 mb-4">Harga Tiket & Sewa</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Informasi lengkap tarif masuk Labersa Water & Theme Park serta biaya penyewaan fasilitas.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Harga Tiket -->
+                <div class="flex-1 bg-gradient-to-br from-sky-50 to-white border border-sky-100 rounded-3xl p-8 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-sky-100 text-sky-600 rounded-xl flex items-center justify-center text-xl mr-4">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Harga Tiket Masuk</h3>
+                    </div>
+                    <ul class="space-y-6">
+                        <li class="flex justify-between items-center border-b border-slate-200 pb-4">
+                            <div>
+                                <h4 class="font-bold text-slate-700 text-lg">Senin – Jumat</h4>
+                                <p class="text-sm text-slate-500">(Hari Biasa)</p>
+                            </div>
+                            <span class="text-2xl font-black text-sky-600">Rp 35.000</span>
+                        </li>
+                        <li class="flex justify-between items-center pt-2">
+                            <div>
+                                <h4 class="font-bold text-slate-700 text-lg">Sabtu, Minggu & Libur Nasional</h4>
+                                <p class="text-sm text-slate-500">(Akhir Pekan)</p>
+                            </div>
+                            <span class="text-2xl font-black text-sky-600">Rp 40.000</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tarif Sewa -->
+                <div class="flex-1 bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-3xl p-8 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-teal-100 text-teal-600 rounded-xl flex items-center justify-center text-xl mr-4">
+                            <i class="fas fa-life-ring"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Harga Sewa</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                            <h4 class="font-bold text-slate-700 mb-1">Loker (1 Kunci)</h4>
+                            <p class="text-teal-600 font-bold mb-1">Rp 20.000</p>
+                            <p class="text-xs text-slate-400">Deposit: Rp 10.000</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                            <h4 class="font-bold text-slate-700 mb-1">Gazebo</h4>
+                            <p class="text-teal-600 font-bold mb-1">Rp 150.000 <span class="text-xs font-normal text-slate-500">(Hari Biasa)</span> <br> Rp 200.000 <span class="text-xs font-normal text-slate-500">(Akhir Pekan)</span></p>
+                            <p class="text-xs text-slate-400">Deposit: Rp 50.000</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                            <h4 class="font-bold text-slate-700 mb-1">Pelampung</h4>
+                            <p class="text-teal-600 font-bold mb-1">Rp 20.000 <span class="text-xs font-normal text-slate-500">(1 Orang)</span> <br> Rp 25.000 <span class="text-xs font-normal text-slate-500">(2 Orang)</span></p>
+                            <p class="text-xs text-slate-400">Deposit: Rp 5.000</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                            <h4 class="font-bold text-slate-700 mb-1">Go Kart</h4>
+                            <p class="text-teal-600 font-bold mb-1">Rp 25.000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tiket & Promo (BORIL) Section -->
+    <section id="tiket" class="py-12 bg-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="inline-block py-1 px-3 rounded-full bg-orange-100 text-orange-600 font-bold text-sm mb-4 border border-orange-200">
+                    Promo Spesial Bulan Ini
+                </span>
+                <h2 class="text-4xl font-black text-slate-800 mb-4">Booking Online</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Pesan tiket secara online sekarang dan nikmati penawaran khusus BORIL.</p>
+            </div>
+
+            <!-- Kartu Promo BORIL -->
+            <div class="max-w-5xl mx-auto bg-gradient-to-br from-sky-400 to-blue-600 rounded-3xl shadow-2xl overflow-hidden relative">
+                <!-- Ornamen -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-20 rounded-full blur-3xl transform translate-x-10 -translate-y-10"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-cyan-300 opacity-30 rounded-full blur-2xl transform -translate-x-10 translate-y-10"></div>
+
+                <div class="flex flex-col md:flex-row">
+                    <!-- Detail Promo -->
+                    <div class="p-8 md:p-10 flex-1 relative z-10 text-white">
+                        <h3 class="text-4xl md:text-5xl font-black tracking-tight mb-2 drop-shadow-md">BORIL</h3>
+                        <p class="text-xl text-sky-100 font-medium mb-6 tracking-wide">Booking Online April</p>
+                        
+                        <ul class="space-y-4 mb-4 text-sm md:text-base bg-white/20 p-6 rounded-2xl backdrop-blur-md border border-white/30">
+                            <li class="flex items-start text-sky-50">
+                                <i class="fas fa-calendar-alt text-yellow-300 mr-3 mt-1 w-5 text-center"></i> 
+                                <div><span class="font-bold text-white">Berlaku:</span> 30 Mar - 30 Apr 2026</div>
+                            </li>
+                            <li class="flex items-start text-sky-50">
+                                <i class="fas fa-clock text-yellow-300 mr-3 mt-1 w-5 text-center"></i> 
+                                <div><span class="font-bold text-white">Jam Operasional:</span> 09:00 - 17:00</div>
+                            </li>
+                            <li class="flex items-start text-sky-50">
+                                <i class="fas fa-child text-yellow-300 mr-3 mt-1 w-5 text-center"></i> 
+                                <div><span class="font-bold text-white">Gratis:</span> Anak di bawah 80 cm</div>
+                            </li>
+                            <li class="flex items-start text-sky-50">
+                                <i class="fas fa-star text-yellow-300 mr-3 mt-1 w-5 text-center"></i> 
+                                <div><span class="font-bold text-white">Bonus:</span> Termasuk wahana Baru</div>
+                            </li>
+                            <li class="flex items-start text-sky-50">
+                                <i class="fas fa-money-bill-wave text-yellow-300 mr-3 mt-1 w-5 text-center"></i> 
+                                <div><span class="font-bold text-white">Pembayaran:</span> Hanya menerima PEMBAYARAN TUNAI saat kunjungan</div>
+                            </li>
+                            <li class="flex items-start text-sky-50">
+                                <i class="fas fa-id-card text-yellow-300 mr-3 mt-1 w-5 text-center"></i> 
+                                <div><span class="font-bold text-white">Smart Tag:</span> Jaminan Rp 25.000 (Wajib per booking & dikembalikan saat pulang)</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Box Harga / Pemesanan -->
+                    <div class="bg-white p-8 md:p-10 md:w-5/12 flex flex-col justify-center items-center text-center relative z-10">
+                        <div class="inline-block bg-orange-100 text-orange-600 font-bold px-4 py-1.5 rounded-full text-xs mb-6 tracking-widest uppercase">
+                            Harga Promo
+                        </div>
+                        
+                        <div class="w-full mb-4 border-b border-slate-100 pb-4">
+                            <p class="text-slate-500 font-medium text-sm mb-1 uppercase tracking-wider">Senin - Jumat</p>
+                            <div class="flex items-start justify-center">
+                                <span class="text-xl font-bold text-slate-800 mt-1 mr-1">Rp</span>
+                                <span class="text-4xl font-black text-sky-600">30<span class="text-2xl">.000</span></span>
+                            </div>
+                        </div>
+
+                        <div class="w-full mb-8">
+                            <p class="text-slate-500 font-medium text-sm mb-1 uppercase tracking-wider">Sabtu, Minggu & Libur Nasional</p>
+                            <div class="flex items-start justify-center">
+                                <span class="text-xl font-bold text-slate-800 mt-1 mr-1">Rp</span>
+                                <span class="text-4xl font-black text-sky-600">35<span class="text-2xl">.000</span></span>
+                            </div>
+                        </div>
+                        
+                        <a href="https://labersa.github.io/promo-booking/" target="_blank" class="w-full bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-black py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:-translate-y-1 flex items-center justify-center">
+                            Booking Sekarang <i class="fas fa-ticket-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fasilitas Section -->
+    <section id="fasilitas" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-10">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-4xl font-black text-slate-800 mb-4">Fasilitas Lengkap</h2>
+                    <p class="text-slate-500 text-lg">Kami menyediakan berbagai fasilitas pendukung untuk memastikan kenyamanan Anda dan keluarga selama berekreasi di Riau Fantasi.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4 md:w-1/2 w-full">
+                    <div class="bg-sky-50 p-6 rounded-2xl shadow-sm text-center border border-sky-100">
+                        <i class="fas fa-utensils text-3xl text-sky-500 mb-3"></i>
+                        <h4 class="font-bold text-slate-800">Food Court</h4>
+                    </div>
+                    <div class="bg-sky-50 p-6 rounded-2xl shadow-sm text-center border border-sky-100">
+                        <i class="fas fa-praying-hands text-3xl text-sky-500 mb-3"></i>
+                        <h4 class="font-bold text-slate-800">Musholla</h4>
+                    </div>
+                    <div class="bg-sky-50 p-6 rounded-2xl shadow-sm text-center border border-sky-100">
+                        <i class="fas fa-shower text-3xl text-sky-500 mb-3"></i>
+                        <h4 class="font-bold text-slate-800">Kamar Bilas</h4>
+                    </div>
+                    <div class="bg-sky-50 p-6 rounded-2xl shadow-sm text-center border border-sky-100">
+                        <i class="fas fa-parking text-3xl text-sky-500 mb-3"></i>
+                        <h4 class="font-bold text-slate-800">Parkir Luas</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Peraturan & Tata Tertib Section -->
+    <section id="peraturan" class="py-12 bg-sky-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-black text-slate-800 mb-4">Peraturan & Tata Tertib</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Demi kenyamanan dan keselamatan bersama, harap perhatikan tata tertib berikut selama berada di area Riau Fantasi Labersa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Yang Diharapkan -->
+                <div class="bg-white rounded-3xl p-8 border border-sky-200 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-sky-100 text-sky-500 rounded-xl flex items-center justify-center text-xl mr-4">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Pengunjung Diharapkan</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-slate-700">
+                            <i class="fas fa-check text-sky-500 mt-1.5 mr-3"></i>
+                            <span>Mematuhi tata tertib dan peraturan yang ada di Riau Fantasi Labersa Waterpark.</span>
+                        </li>
+                        <li class="flex items-start text-slate-700">
+                            <i class="fas fa-check text-sky-500 mt-1.5 mr-3"></i>
+                            <span>Berbusana renang atau berbusana yang sopan saat menikmati wahana air.</span>
+                        </li>
+                        <li class="flex items-start text-slate-700">
+                            <i class="fas fa-check text-sky-500 mt-1.5 mr-3"></i>
+                            <span>Masing-masing orang tua wajib bertanggung jawab penuh terhadap keselamatan anaknya.</span>
+                        </li>
+                        <li class="flex items-start text-slate-700">
+                            <i class="fas fa-check text-sky-500 mt-1.5 mr-3"></i>
+                            <span>Mengikuti dan mematuhi seluruh perintah/anjuran <em>Life Guard</em> dan petugas yang ada di lapangan, dll.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Yang Dilarang -->
+                <div class="bg-white rounded-3xl p-8 border border-rose-200 shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-rose-100 text-rose-500 rounded-xl flex items-center justify-center text-xl mr-4">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Pengunjung Dilarang</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-slate-700">
+                            <i class="fas fa-times text-rose-500 mt-1.5 mr-3"></i>
+                            <span>Dilarang membawa masuk hewan peliharaan ke dalam area Riau Fantasi.</span>
+                        </li>
+                        <li class="flex items-start text-slate-700">
+                            <i class="fas fa-times text-rose-500 mt-1.5 mr-3"></i>
+                            <span>Dilarang membawa makanan dan minuman dari luar area, dll.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lokasi / Denah Section -->
+    <section id="lokasi" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-black text-slate-800 mb-4">Lokasi Kami</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">Temukan rute terbaik menuju Riau Fantasi Labersa Waterpark & Themepark.</p>
+            </div>
+
+            <div class="bg-sky-50 p-4 md:p-8 rounded-3xl shadow-sm border border-sky-100 flex flex-col lg:flex-row gap-8">
+                <!-- Google Maps Iframe -->
+                <div class="w-full lg:w-2/3 h-80 md:h-[400px] rounded-2xl overflow-hidden shadow-inner border border-slate-200">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.65476722881!2d101.46995927500582!3d0.4333333995610531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a8ca5d752dd3%3A0x1c0b3f868d40ed01!2sLabersa%20Waterpark%20Riau%20Fantasi!5e0!3m2!1sen!2sid!4v1711850000000!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <!-- Info Alamat & Tombol -->
+                <div class="w-full lg:w-1/3 flex flex-col justify-center">
+                    <div class="bg-white p-6 rounded-2xl border border-sky-200 mb-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4 border-b border-sky-100 pb-2">Alamat Lengkap</h3>
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            <i class="fas fa-map-marker-alt text-sky-500 mr-2"></i>
+                            Jl. Labersa, Tanah Merah, Kec. Siak Hulu, Kabupaten Kampar, Riau 28284
+                        </p>
+                        <p class="text-slate-600 leading-relaxed text-sm">
+                            <i class="fas fa-car text-sky-500 mr-2"></i>
+                            Area parkir luas tersedia untuk motor, mobil, hingga bus pariwisata.
+                        </p>
+                    </div>
+
+                    <a href="https://maps.app.goo.gl/qCHAubETn7165Uuy8" target="_blank" class="w-full bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 flex items-center justify-center">
+                        <i class="fas fa-map-marked-alt mr-3 text-xl"></i> Buka di Google Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-slate-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="space-y-6">
+                    <div class="text-3xl font-black text-white flex items-center gap-2">
+                        <i class="fas fa-water text-sky-400"></i>
+                        Riau Fantasi
+                    </div>
+                    <p class="text-sm leading-relaxed text-blue-200">
+                        Taman Rekreasi Air Terbesar di Riau. Destinasi liburan keluarga pilihan dengan berbagai wahana seru dan menantang.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="w-10 h-10 rounded-full bg-white text-pink-600 flex items-center justify-center hover:scale-110 transition-transform shadow-sm text-lg">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition-transform shadow-sm text-lg">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-110 transition-transform shadow-sm text-lg">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#" target="_blank" class="w-10 h-10 rounded-full bg-white text-red-600 flex items-center justify-center hover:scale-110 transition-transform shadow-sm text-lg">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kontak -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-sm text-blue-200">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-sky-400"></i>
+                            <span>Jl. Labersa, Tanah Merah, Siak Hulu, Kabupaten Kampar, Riau 28284</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-3 text-green-400 text-lg"></i>
+                            <div class="flex flex-col space-y-2">
+                                <a href="https://wa.me/628117696599" target="_blank" class="hover:text-green-300 transition-colors">
+                                    +62 811-7696-599 (Hendra)
+                                </a>
+                                <a href="https://wa.me/628117673499" target="_blank" class="hover:text-green-300 transition-colors">
+                                    +62 811-7673-499 (Dedi)
+                                </a>
+                            </div>
+                        </li>
+                        <li class="flex items-center mt-4">
+                            <i class="fas fa-envelope mr-3 text-sky-400"></i>
+                            <span>info@riaufantasi.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Jam Operasional -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Jam Operasional</h4>
+                    <ul class="space-y-4 text-sm text-blue-200">
+                        <li class="flex justify-between border-b border-blue-900 pb-2">
+                            <span>Senin - Jumat</span>
+                            <span class="text-white font-medium">09:00 - 17:00 WIB</span>
+                        </li>
+                        <li class="flex justify-between border-b border-blue-900 pb-2">
+                            <span>Sabtu - Minggu</span>
+                            <span class="text-white font-medium">09:00 - 18:00 WIB</span>
+                        </li>
+                        <li class="flex justify-between text-yellow-400 pb-2">
+                            <span>Libur Nasional</span>
+                            <span class="font-bold">09:00 - 18:00 WIB</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tautan Cepat -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Tautan Cepat</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#beranda" class="hover:text-sky-400 transition-colors">Beranda</a></li>
+                        <li><a href="#harga" class="hover:text-sky-400 transition-colors">Harga Tiket & Sewa</a></li>
+                        <li><a href="#tiket" class="hover:text-sky-400 transition-colors">Promo BORIL April</a></li>
+                        <li><a href="#" class="hover:text-sky-400 transition-colors">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-blue-900 pt-8 text-center text-sm text-blue-300">
+                <p>&copy; 2026 Riau Fantasi (Labersa Waterpark). Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Toggle Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Toggle Lihat Semua Wahana
+        function toggleWahana(category) {
+            const extraItems = document.querySelectorAll(`.${category}-extra`);
+            const btn = document.getElementById(`btn-${category}`);
+            let isHidden = true;
+
+            if (extraItems.length > 0) {
+                isHidden = extraItems[0].classList.contains('hidden');
+            }
+
+            extraItems.forEach(item => {
+                if (isHidden) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            if (isHidden) {
+                btn.innerHTML = 'Tampilkan Lebih Sedikit <i class="fas fa-chevron-up ml-2"></i>';
+            } else {
+                const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+                btn.innerHTML = `Lihat Semua ${categoryName} <i class="fas fa-chevron-down ml-2"></i>`;
+            }
+        }
+    </script>
+</body>
+</html>
