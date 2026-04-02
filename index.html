@@ -130,16 +130,33 @@
     <!-- Daftar Wahana -->
     <section id="wahana" class="py-12 bg-sky-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-black text-slate-800 mb-2">Daftar Wahana Kami</h2>
-                <p class="text-slate-500 max-w-3xl mx-auto text-base font-medium">Jelajahi petualangan seru di Waterpark terbesar di Riau.</p>
+            
+            <!-- Judul Section: Daftar Wahana -->
+            <div class="text-center mb-14">
+                <div class="relative inline-block mx-4">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-sky-400 to-blue-500 rounded-[2rem] blur-lg opacity-40 animate-pulse"></div>
+                    <div class="relative bg-white/90 backdrop-blur-xl px-8 py-5 md:px-12 md:py-6 rounded-[2rem] shadow-xl border border-white/50">
+                        <h2 class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-700 mb-2 tracking-tight">Daftar Wahana Kami</h2>
+                        <p class="text-slate-500 text-sm md:text-base font-medium">Jelajahi petualangan seru di Waterpark terbesar di Riau.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- WATERPARK (12 Wahana) -->
+            <!-- WATERPARK -->
             <div class="mb-12">
-                <div class="flex items-center mb-6 border-b-2 border-sky-200 pb-3">
-                    <i class="fas fa-water text-3xl text-sky-500 mr-4"></i>
-                    <h3 class="text-2xl font-black text-slate-800">Labersa Waterpark</h3>
+                <div class="relative bg-gradient-to-r from-sky-400 to-blue-600 rounded-[2rem] p-6 md:p-8 mb-8 shadow-xl shadow-blue-200 overflow-hidden flex items-center">
+                    <div class="absolute right-0 top-0 opacity-10 transform translate-x-4 -translate-y-4 pointer-events-none">
+                        <i class="fas fa-water text-9xl text-white"></i>
+                    </div>
+                    <div class="relative z-10 flex items-center">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-5 shadow-inner border border-white/30">
+                            <i class="fas fa-water text-3xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-black text-white drop-shadow-md tracking-tight">Labersa Waterpark</h3>
+                            <p class="text-blue-100 text-sm font-medium mt-1 drop-shadow-sm">12 Wahana Air Seru & Menyegarkan</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-waterpark">
@@ -207,17 +224,28 @@
 
             <!-- THEMEPARK Maintenance -->
             <div class="mt-16">
-                <div class="flex items-center mb-8 border-b-2 border-orange-200 pb-4">
-                    <i class="fas fa-ticket-alt text-4xl text-orange-500 mr-4"></i>
-                    <h3 class="text-3xl font-black text-slate-800">Labersa Themepark</h3>
+                <div class="relative bg-gradient-to-r from-orange-400 to-rose-500 rounded-[2rem] p-6 md:p-8 mb-8 shadow-xl shadow-orange-200 overflow-hidden flex items-center">
+                    <div class="absolute right-0 top-0 opacity-10 transform translate-x-4 -translate-y-4 pointer-events-none">
+                        <i class="fas fa-ticket-alt text-9xl text-white"></i>
+                    </div>
+                    <div class="relative z-10 flex items-center">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-5 shadow-inner border border-white/30">
+                            <i class="fas fa-ticket-alt text-3xl text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-black text-white drop-shadow-md tracking-tight">Labersa Themepark</h3>
+                            <p class="text-orange-100 text-sm font-medium mt-1 drop-shadow-sm">Area Bermain Kering & Menegangkan</p>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="bg-orange-50 border-2 border-dashed border-orange-300 rounded-[2rem] p-10 text-center relative overflow-hidden shadow-sm">
                     <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-red-400"></div>
                     <div class="inline-block bg-orange-100 p-5 rounded-full mb-6">
                         <i class="fas fa-tools text-5xl text-orange-500 animate-pulse"></i>
                     </div>
                     <h4 class="text-3xl font-black text-slate-800 mb-4">Wahana Sedang Dalam Perbaikan</h4>
-                    <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                    <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed font-medium">
                         Mohon maaf, saat ini seluruh wahana di <strong>Labersa Themepark</strong> sedang dalam masa pemeliharaan rutin. Keseruan di <a href="#grid-waterpark" class="text-sky-600 font-bold hover:underline">Labersa Waterpark</a> tetap buka!
                     </p>
                 </div>
@@ -225,74 +253,82 @@
         </div>
     </section>
 
-    <!-- Harga Tiket & Sewa (Dengan Jam Operasional Terintegrasi) -->
+    <!-- Harga Tiket & Sewa (Desain Tiket Diperkecil & Modern) -->
     <section id="harga" class="py-20 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4 tracking-tight">Harga Tiket & Sewa</h2>
-                <p class="text-slate-500 text-lg font-medium">Liburan seru tanpa mahal dengan fasilitas lengkap.</p>
+            
+            <div class="text-center mb-14">
+                <div class="relative inline-block mx-4">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-orange-400 to-rose-500 rounded-[2rem] blur-lg opacity-40 animate-pulse"></div>
+                    <div class="relative bg-white/90 backdrop-blur-xl px-8 py-5 md:px-12 md:py-6 rounded-[2rem] shadow-xl border border-white/50">
+                        <h2 class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-rose-600 mb-2 tracking-tight">Harga Tiket & Sewa</h2>
+                        <p class="text-slate-500 text-sm md:text-base font-medium">Liburan seru tanpa mahal dengan fasilitas lengkap.</p>
+                    </div>
+                </div>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20 text-left items-stretch max-w-6xl mx-auto">
-                <!-- Tiket Masuk (Harga + Jam Operasional) -->
+                <!-- Tiket Masuk -->
                 <div class="grid grid-cols-1 gap-6">
-                    <div class="bg-gradient-to-r from-sky-400 to-blue-600 rounded-[2.5rem] p-0.5 shadow-xl animate-float">
-                        <div class="bg-white rounded-[2.4rem] p-6 md:p-8 flex flex-col justify-center h-full">
-                            <div class="flex justify-between items-center w-full mb-4">
+                    <!-- Weekday -->
+                    <div class="bg-gradient-to-br from-sky-400 to-blue-600 rounded-[2rem] p-[2px] shadow-xl animate-float h-full">
+                        <div class="bg-white rounded-[1.9rem] p-6 flex flex-col justify-between h-full">
+                            <div class="flex justify-between items-start mb-4">
                                 <div>
-                                    <h4 class="font-black text-slate-700 text-xl md:text-2xl uppercase tracking-wider">Senin – Jumat</h4>
-                                    <p class="text-sm font-bold text-sky-400 uppercase mt-1">Per Orang</p>
+                                    <h4 class="font-black text-slate-700 text-lg md:text-xl uppercase tracking-wider mb-1">Senin – Jumat</h4>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="text-base font-bold text-slate-400">Rp</span>
+                                        <span class="text-4xl md:text-5xl font-black text-sky-500 tracking-tight">35K</span>
+                                    </div>
                                 </div>
-                                <div class="w-14 h-14 bg-sky-50 text-sky-500 rounded-2xl flex items-center justify-center text-2xl shadow-inner"><i class="fas fa-calendar-day"></i></div>
-                            </div>
-                            <div>
-                                <span class="text-2xl font-bold text-slate-400 mr-1">Rp</span>
-                                <span class="text-6xl md:text-7xl font-black text-sky-500 tracking-tighter">35K</span>
+                                <div class="w-12 h-12 bg-sky-50 text-sky-500 rounded-xl flex items-center justify-center text-xl shadow-inner flex-shrink-0"><i class="fas fa-calendar-day"></i></div>
                             </div>
                             
-                            <!-- Terintegrasi: Jam Operasional Weekday -->
-                            <div class="mt-6 pt-5 border-t border-dashed border-slate-200 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-500 shadow-inner">
-                                        <i class="fas fa-clock text-lg"></i>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Jam Operasional</span>
-                                        <span class="text-base font-black text-sky-600">09:00 - 17:00 WIB</span>
-                                    </div>
-                                </div>
+                            <div class="mb-5">
+                                <span class="inline-block bg-sky-50 text-sky-600 font-bold px-3 py-1 rounded-full border border-sky-100 text-[10px] uppercase tracking-wide">Tiket Per Orang</span>
                             </div>
 
+                            <!-- Jam Operasional Weekday -->
+                            <div class="pt-4 border-t border-dashed border-slate-200 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-500 shadow-inner">
+                                    <i class="fas fa-clock text-base"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Jam Operasional</span>
+                                    <span class="text-sm font-black text-sky-600">09:00 - 17:00 WIB</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="bg-gradient-to-r from-orange-400 to-rose-500 rounded-[2.5rem] p-0.5 shadow-xl">
-                        <div class="bg-white rounded-[2.4rem] p-6 md:p-8 flex flex-col justify-center h-full">
-                            <div class="flex justify-between items-center w-full mb-4">
+                    <!-- Weekend -->
+                    <div class="bg-gradient-to-br from-orange-400 to-rose-500 rounded-[2rem] p-[2px] shadow-xl h-full transition-transform hover:-translate-y-1">
+                        <div class="bg-white rounded-[1.9rem] p-6 flex flex-col justify-between h-full">
+                            <div class="flex justify-between items-start mb-4">
                                 <div>
-                                    <h4 class="font-black text-slate-700 text-xl md:text-2xl uppercase tracking-wider leading-tight">Sabtu – Minggu <br>& Libur Nasional</h4>
-                                    <p class="text-sm font-bold text-orange-400 uppercase mt-1">Per Orang</p>
-                                </div>
-                                <div class="w-14 h-14 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center text-2xl shadow-inner"><i class="fas fa-star"></i></div>
-                            </div>
-                            <div>
-                                <span class="text-2xl font-bold text-slate-400 mr-1">Rp</span>
-                                <span class="text-6xl md:text-7xl font-black text-orange-500 tracking-tighter">40K</span>
-                            </div>
-
-                            <!-- Terintegrasi: Jam Operasional Weekend -->
-                            <div class="mt-6 pt-5 border-t border-dashed border-slate-200 flex items-center justify-between">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 shadow-inner">
-                                        <i class="fas fa-clock text-lg"></i>
-                                    </div>
-                                    <div class="flex flex-col">
-                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Jam Operasional</span>
-                                        <span class="text-base font-black text-orange-600">09:00 - 18:00 WIB</span>
+                                    <h4 class="font-black text-slate-700 text-lg md:text-xl uppercase tracking-wider mb-1 leading-tight">Sabtu – Minggu <br class="hidden md:block">& Libur Nasional</h4>
+                                    <div class="flex items-baseline gap-1">
+                                        <span class="text-base font-bold text-slate-400">Rp</span>
+                                        <span class="text-4xl md:text-5xl font-black text-orange-500 tracking-tight">40K</span>
                                     </div>
                                 </div>
+                                <div class="w-12 h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center text-xl shadow-inner flex-shrink-0"><i class="fas fa-star"></i></div>
+                            </div>
+                            
+                            <div class="mb-5">
+                                <span class="inline-block bg-orange-50 text-orange-600 font-bold px-3 py-1 rounded-full border border-orange-100 text-[10px] uppercase tracking-wide">Tiket Per Orang</span>
                             </div>
 
+                            <!-- Jam Operasional Weekend -->
+                            <div class="pt-4 border-t border-dashed border-slate-200 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 shadow-inner">
+                                    <i class="fas fa-clock text-base"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Jam Operasional</span>
+                                    <span class="text-sm font-black text-orange-600">09:00 - 18:00 WIB</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -396,10 +432,18 @@
     <!-- Fasilitas (KECIL) -->
     <section id="fasilitas" class="py-12 bg-white text-shadow-none">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl font-black text-slate-800 mb-2">Fasilitas Lengkap</h2>
-                <p class="text-slate-500 text-base font-medium">Kenyamanan Anda selama rekreasi adalah prioritas utama kami.</p>
+            
+            <!-- Judul Section: Fasilitas Lengkap -->
+            <div class="text-center mb-14">
+                <div class="relative inline-block mx-4">
+                    <div class="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-[2rem] blur-lg opacity-40 animate-pulse"></div>
+                    <div class="relative bg-white/90 backdrop-blur-xl px-8 py-5 md:px-12 md:py-6 rounded-[2rem] shadow-xl border border-white/50">
+                        <h2 class="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600 mb-2">Fasilitas Lengkap</h2>
+                        <p class="text-slate-500 text-sm md:text-base font-medium">Kenyamanan Anda selama rekreasi adalah prioritas utama kami.</p>
+                    </div>
+                </div>
             </div>
+            
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
                 <div class="group bg-gradient-to-br from-orange-50 to-orange-100 p-5 rounded-3xl border border-orange-100 text-center shadow-sm hover:shadow-md transition-all">
                     <div class="w-14 h-14 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-3 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-lg"><i class="fas fa-utensils"></i></div>
@@ -531,7 +575,7 @@
         </div>
     </section>
 
-    <!-- Footer (Dengan Menu Cepat Sebagai Pengganti Jam Operasional) -->
+    <!-- Footer -->
     <footer id="kontak" class="bg-blue-950 text-slate-300 pt-12 pb-8 text-shadow-none">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
@@ -547,7 +591,7 @@
                     </div>
                 </div>
 
-                <!-- Menu Cepat (Pengganti Jam Operasional) -->
+                <!-- Menu Cepat -->
                 <div>
                     <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block mb-5 tracking-wide uppercase text-xs">Menu Cepat</h4>
                     <ul class="space-y-3 text-xs font-medium text-blue-200">
