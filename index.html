@@ -15,6 +15,7 @@
         }
         .hero-slide {
             transition: opacity 1.5s ease-in-out;
+            image-rendering: -webkit-optimize-contrast;
         }
         @keyframes float {
             0% { transform: translateY(0px); }
@@ -28,7 +29,7 @@
             border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
         }
         .text-shadow-lg {
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
         }
     </style>
 </head>
@@ -79,6 +80,7 @@
             <a href="#fasilitas" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Fasilitas</a>
             <a href="#kontak" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md">Hubungi Kami</a>
             
+            <!-- Icon Media Sosial di Mobile Menu (HP) -->
             <div class="pt-4 mt-4 border-t border-sky-50 flex justify-center space-x-8">
                 <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 text-3xl"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 text-3xl"><i class="fab fa-facebook-f"></i></a>
@@ -88,37 +90,39 @@
         </div>
     </nav>
 
-    <!-- Hero Banner Slider -->
-    <section id="beranda" class="relative pt-28 pb-10 lg:pt-36 lg:pb-16 flex items-end h-[65vh] md:min-h-screen overflow-hidden">
-        <div id="hero-slider" class="absolute inset-0 w-full h-full z-0">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/10 to-transparent z-10"></div>
+    <!-- Hero Banner Slider - OPTIMASI PENUH UNTUK HP -->
+    <section id="beranda" class="relative flex items-end h-[75vh] md:min-h-screen overflow-hidden mt-0">
+        <div id="hero-slider" class="absolute inset-0 w-full h-full z-0 bg-slate-900">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent z-10"></div>
             <!-- 8 Gambar Wahana -->
-            <img src="https://labersa.github.io/boomerang2.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-100" alt="Boomerang">
-            <img src="https://labersa.github.io/superbowl.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Superbowl">
-            <img src="https://labersa.github.io/adventure.png" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Adventure">
-            <img src="https://labersa.github.io/arus.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Kolam Arus">
-            <img src="https://labersa.github.io/baby.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Baby Pool">
-            <img src="https://labersa.github.io/buaya.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Kolam Buaya">
-            <img src="https://labersa.github.io/vertikal.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Vertikal Slide">
-            <img src="https://labersa.github.io/bigjump.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0" alt="Big Jump">
+            <img src="https://labersa.github.io/boomerang2.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-100" alt="Boomerang">
+            <img src="https://labersa.github.io/superbowl.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" alt="Superbowl">
+            <img src="https://labersa.github.io/adventure.png" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" alt="Adventure">
+            <img src="https://labersa.github.io/arus.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" alt="Kolam Arus">
+            <img src="https://labersa.github.io/baby.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" alt="Baby Pool">
+            <img src="https://labersa.github.io/buaya.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" alt="Kolam Buaya">
+            <img src="https://labersa.github.io/vertikal.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" alt="Vertikal Slide">
+            <img src="https://labersa.github.io/bigjump.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover object-center opacity-0" alt="Big Jump">
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full text-center flex flex-col items-center mb-6 md:mb-12 text-shadow-lg">
-            <h1 id="hero-title" class="text-base md:text-lg font-bold tracking-widest uppercase mb-6 drop-shadow-md transition-opacity duration-500 opacity-100 text-white">
+        <!-- Konten Hero - Z-Index 30 agar di atas ombak dan MB-16 agar tidak tertutup -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 w-full text-center flex flex-col items-center mb-16 md:mb-24 text-white">
+            <h1 id="hero-title" class="text-sm md:text-lg font-bold tracking-widest uppercase mb-4 md:mb-6 drop-shadow-md transition-opacity duration-500 opacity-100">
                 Wahana Boomerang
             </h1>
-            <div class="flex flex-row justify-center items-center gap-3">
-                <a href="#promo" class="w-auto bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-black py-2.5 px-6 rounded-full transition-all duration-300 shadow-xl shadow-red-500/50 hover:-translate-y-1 text-sm flex items-center justify-center animate-pulse">
-                    Promo Spesial <i class="fas fa-tag ml-2"></i>
+            <div class="flex flex-row justify-center items-center gap-3 w-full max-w-sm md:max-w-md">
+                <a href="#promo" class="flex-1 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-black py-3 px-2 rounded-full transition-all duration-300 shadow-xl shadow-red-500/50 hover:-translate-y-1 text-[11px] md:text-sm flex items-center justify-center animate-pulse">
+                    Promo Spesial <i class="fas fa-tag ml-1 hidden sm:inline"></i>
                 </a>
-                <a href="#rombongan" class="w-auto bg-sky-500 hover:bg-sky-600 text-white font-bold py-2.5 px-6 rounded-full transition-all duration-300 shadow-xl hover:-translate-y-1 text-sm flex items-center justify-center">
-                    Penawaran Rombongan <i class="fas fa-users ml-2"></i>
+                <a href="#rombongan" class="flex-1 bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-2 rounded-full transition-all duration-300 shadow-xl hover:-translate-y-1 text-[11px] md:text-sm flex items-center justify-center">
+                    Rombongan <i class="fas fa-users ml-1 hidden sm:inline"></i>
                 </a>
             </div>
         </div>
 
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
-            <svg class="relative block w-full h-16 md:h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <!-- Wave Shape Divider - Pointer Events None agar tidak menghalangi klik -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+            <svg class="relative block w-full h-12 md:h-24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                 <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C-17.14,96.15,34.8,87.35,101.4,75.92c64.3-10.99,141.4-23.8,219.99-19.48Z" fill="#f0f9ff"></path>
             </svg>
         </div>
@@ -128,7 +132,7 @@
     <section id="wahana" class="py-12 bg-sky-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-2">Daftar Wahana Kami</h2>
+                <h2 class="text-3xl font-black text-slate-800 mb-2">Daftar Wahana Kami</h2>
                 <p class="text-slate-500 max-w-3xl mx-auto text-base font-medium">Jelajahi petualangan seru di Waterpark terbesar di Riau.</p>
             </div>
 
@@ -140,7 +144,6 @@
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="grid-waterpark">
-                    <!-- Wahana 1-3 -->
                     <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
                         <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/boomerang2.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Boomerang"></div>
                         <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Boomerang</h4><p class="text-slate-500 text-xs">Meluncur dari ketinggian lalu naik ke sisi berlawanan.</p></div>
@@ -153,48 +156,48 @@
                         <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/arus.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Kolam Arus"></div>
                         <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Kolam Arus</h4><p class="text-slate-500 text-xs">Sungai buatan sepanjang ±950 M dengan pemandangan asri.</p></div>
                     </div>
-                    <!-- Extra Wahana (4-12) -->
+                    <!-- Item tambahan (4-12) -->
                     <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
                         <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/baby.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Baby Pool"></div>
                         <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Baby Pool</h4><p class="text-slate-500 text-xs">Kolam khusus balita berkedalaman 30 cm dengan air mancur.</p></div>
                     </div>
                     <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                        <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/buaya.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Kolam Buaya"></div>
-                        <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Kolam Buaya</h4><p class="text-slate-500 text-xs">Pantai buaya luas 1200 m² yang menyenangkan.</p></div>
+                        <div class="h-48 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/buaya.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Kolam Buaya"></div>
+                        <div class="p-6"><h4 class="text-xl font-bold text-slate-800 mb-2">Kolam Buaya</h4><p class="text-slate-500 text-sm">Pantai buaya luas 1200 m² yang menyenangkan.</p></div>
                     </div>
                     <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                        <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/vertikal.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Vertikal Slide"></div>
-                        <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Vertikal Slide</h4><p class="text-slate-500 text-xs">Seluncuran ekstrem setinggi 12 meter.</p></div>
+                        <div class="h-48 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/vertikal.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Vertikal Slide"></div>
+                        <div class="p-6"><h4 class="text-xl font-bold text-slate-800 mb-2">Vertikal Slide</h4><p class="text-slate-500 text-sm">Seluncuran ketinggian 12 M yang terbangun hampir tegak lurus.</p></div>
                     </div>
                     <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                        <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/adventure.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Adventure"></div>
-                        <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Adventure Pool</h4><p class="text-slate-500 text-xs">Area menara dengan jembatan goyang dan drum air.</p></div>
+                        <div class="h-48 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/adventure.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Adventure"></div>
+                        <div class="p-6"><h4 class="text-xl font-bold text-slate-800 mb-2">Adventure Pool</h4><p class="text-slate-500 text-sm">Area menara dengan jembatan goyang dan drum air.</p></div>
                     </div>
                     <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                        <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/spiral.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Spiral Slide"></div>
-                        <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Spiral Slide</h4><p class="text-slate-500 text-xs">Nikmati keseruan meluncur berliku dengan cepat.</p></div>
+                        <div class="h-48 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/spiral.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Spiral Slide"></div>
+                        <div class="p-6"><h4 class="text-xl font-bold text-slate-800 mb-2">Spiral Slide</h4><p class="text-slate-500 text-sm">Nikmati keseruan meluncur berliku-liku dengan kecepatan tinggi.</p></div>
                     </div>
                     <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                        <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/dewasa.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Kolam Dewasa"></div>
-                        <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Kolam Dewasa</h4><p class="text-slate-500 text-xs">Kolam jernih khusus dewasa kedalaman 1.5 M.</p></div>
+                        <div class="h-48 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/dewasa.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Kolam Dewasa"></div>
+                        <div class="p-6"><h4 class="text-xl font-bold text-slate-800 mb-2">Kolam Dewasa</h4><p class="text-slate-500 text-sm">Kolam jernih khusus dewasa dengan kedalaman ideal 1.5 M.</p></div>
                     </div>
                     <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                        <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/bigjump.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Big Jump"></div>
-                        <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Big Jump</h4><p class="text-slate-500 text-xs">Wahana yang membuat sensasi melompat di udara.</p></div>
+                        <div class="h-48 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/bigjump.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Big Jump"></div>
+                        <div class="p-6"><h4 class="text-xl font-bold text-slate-800 mb-2">Big Jump</h4><p class="text-slate-500 text-sm">Wahana ekstrem yang membuat sensasi melompat di udara.</p></div>
                     </div>
                     <div class="waterpark-extra hidden bg-slate-50 rounded-2xl shadow-sm border border-slate-200 overflow-hidden relative">
-                        <div class="h-44 relative overflow-hidden bg-slate-200">
+                        <div class="h-48 relative overflow-hidden bg-slate-200">
                             <img src="https://labersa.github.io/race.jpeg" class="w-full h-full object-cover grayscale opacity-50" alt="Race Slide">
-                            <div class="absolute inset-0 bg-slate-800/60 flex flex-col items-center justify-center text-white backdrop-blur-[1px]">
-                                <i class="fas fa-tools text-2xl mb-1 text-orange-400"></i>
-                                <span class="font-bold text-[10px] uppercase">Dalam Perbaikan</span>
+                            <div class="absolute inset-0 bg-slate-800/60 flex flex-col items-center justify-center text-white backdrop-blur-[2px]">
+                                <i class="fas fa-tools text-3xl mb-2 text-orange-400"></i>
+                                <span class="font-bold tracking-wider text-xs uppercase text-center">Sedang Perbaikan</span>
                             </div>
                         </div>
-                        <div class="p-5"><h4 class="text-lg font-bold text-slate-400 mb-1">Race Slide</h4><p class="text-slate-400 text-xs">Sedang dalam perawatan rutin.</p></div>
+                        <div class="p-6"><h4 class="text-xl font-bold text-slate-400 mb-2">Race Slide</h4><p class="text-slate-400 text-xs">Wahana sedang dalam perawatan rutin.</p></div>
                     </div>
                     <div class="waterpark-extra hidden bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                        <div class="h-44 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/gazebo.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Gazebo"></div>
-                        <div class="p-5"><h4 class="text-lg font-bold text-slate-800 mb-1">Area Gazebo</h4><p class="text-slate-500 text-xs">Tempat teduh bersantai bersama keluarga.</p></div>
+                        <div class="h-48 relative overflow-hidden bg-sky-100"><img src="https://labersa.github.io/gazebo.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Gazebo"></div>
+                        <div class="p-6"><h4 class="text-xl font-bold text-slate-800 mb-2">Area Gazebo</h4><p class="text-slate-500 text-sm">Tempat teduh untuk berkumpul dan bersantai bersama keluarga.</p></div>
                     </div>
                 </div>
                 <div class="text-center mt-8">
@@ -206,35 +209,35 @@
 
             <!-- THEMEPARK Maintenance -->
             <div class="mt-16">
-                <div class="flex items-center mb-6 border-b-2 border-orange-200 pb-3">
-                    <i class="fas fa-ticket-alt text-3xl text-orange-500 mr-4"></i>
-                    <h3 class="text-2xl font-black text-slate-800">Labersa Themepark</h3>
+                <div class="flex items-center mb-8 border-b-2 border-orange-200 pb-4">
+                    <i class="fas fa-ticket-alt text-4xl text-orange-500 mr-4"></i>
+                    <h3 class="text-3xl font-black text-slate-800">Labersa Themepark</h3>
                 </div>
-                <div class="bg-orange-50 border-2 border-dashed border-orange-300 rounded-3xl p-8 text-center relative overflow-hidden shadow-sm">
-                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange-400 to-red-400"></div>
-                    <div class="inline-block bg-orange-100 p-4 rounded-full mb-4">
-                        <i class="fas fa-tools text-4xl text-orange-500 animate-pulse"></i>
+                <div class="bg-orange-50 border-2 border-dashed border-orange-300 rounded-[2rem] p-10 text-center relative overflow-hidden shadow-sm">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-red-400"></div>
+                    <div class="inline-block bg-orange-100 p-5 rounded-full mb-6">
+                        <i class="fas fa-tools text-5xl text-orange-500 animate-pulse"></i>
                     </div>
-                    <h4 class="text-2xl font-black text-slate-800 mb-2">Wahana Sedang Dalam Perbaikan</h4>
-                    <p class="text-slate-600 text-sm max-w-2xl mx-auto leading-relaxed">
-                        Mohon maaf, saat ini seluruh wahana di <strong>Labersa Themepark</strong> sedang dalam masa pemeliharaan rutin. Keseruan di <a href="#grid-waterpark" class="text-sky-600 font-bold hover:underline">Labersa Waterpark</a> tetap menanti Anda!
+                    <h4 class="text-3xl font-black text-slate-800 mb-4">Wahana Sedang Dalam Perbaikan</h4>
+                    <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                        Mohon maaf, saat ini seluruh wahana di <strong>Labersa Themepark</strong> sedang dalam masa pemeliharaan rutin. Keseruan di <a href="#grid-waterpark" class="text-sky-600 font-bold hover:underline">Labersa Waterpark</a> tetap buka!
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Harga Tiket & Sewa (VERSI KECIL & MENARIK) -->
-    <section id="harga" class="py-16 bg-white relative overflow-hidden">
+    <!-- Harga Tiket & Sewa -->
+    <section id="harga" class="py-20 bg-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="text-center mb-10">
-                <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-2 tracking-tight">Harga Tiket & Sewa</h2>
-                <p class="text-slate-500 text-base font-medium">Liburan seru tanpa mahal dengan fasilitas lengkap.</p>
+                <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-4 tracking-tight">Harga Tiket & Sewa</h2>
+                <p class="text-slate-500 text-lg font-medium">Liburan seru tanpa mahal dengan fasilitas lengkap.</p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12 text-left items-stretch max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20 text-left items-stretch max-w-6xl mx-auto">
                 <!-- Tiket Masuk -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4">
+                <div class="grid grid-cols-1 gap-6">
                     <div class="bg-gradient-to-r from-sky-400 to-blue-600 rounded-3xl p-0.5 shadow-lg animate-float">
                         <div class="bg-white rounded-[1.7rem] p-5 flex items-center justify-between h-full">
                             <div class="flex items-center gap-4">
@@ -254,7 +257,7 @@
                             <div class="flex items-center gap-4">
                                 <div class="w-12 h-12 bg-orange-50 text-orange-500 rounded-2xl flex items-center justify-center text-xl shadow-inner"><i class="fas fa-star"></i></div>
                                 <div>
-                                    <h4 class="font-black text-slate-700 text-base uppercase tracking-wider leading-tight">Akhir Pekan <br>& Libur</h4>
+                                    <h4 class="font-black text-slate-700 text-base uppercase tracking-wider leading-tight">Sabtu – Minggu <br>& Libur Nasional</h4>
                                     <p class="text-[10px] font-bold text-orange-400 uppercase">Per Orang</p>
                                 </div>
                             </div>
@@ -280,8 +283,8 @@
                             <div class="w-10 h-10 bg-emerald-500 text-white rounded-xl flex items-center justify-center text-lg mb-2 mx-auto shadow-md"><i class="fas fa-home"></i></div>
                             <h4 class="font-bold text-slate-700 text-sm">Gazebo</h4>
                             <div class="flex flex-col text-[11px] font-black leading-tight mt-1">
-                                <span class="text-emerald-500">150K <span class="text-[8px] font-medium text-slate-400">(Senin-jumat)</span></span>
-                                <span class="text-emerald-600 border-t border-emerald-100 mt-0.5 pt-0.5">200K <span class="text-[8px] font-medium text-slate-400">(Akhir pekan)</span></span>
+                                <span class="text-emerald-500">150K <span class="text-[8px] font-medium text-slate-400">(Sen-Jum)</span></span>
+                                <span class="text-emerald-600 border-t border-emerald-100 mt-0.5 pt-0.5">200K <span class="text-[8px] font-medium text-slate-400">(Sab-Min)</span></span>
                             </div>
                         </div>
                         <span class="text-[9px] font-black uppercase text-emerald-400 mt-2 bg-white rounded-full py-0.5 border border-emerald-50">Deposit: 50K</span>
@@ -290,12 +293,12 @@
                         <div>
                             <div class="w-10 h-10 bg-amber-400 text-white rounded-xl flex items-center justify-center text-lg mb-2 mx-auto shadow-md"><i class="fas fa-life-ring"></i></div>
                             <h4 class="font-bold text-slate-700 text-sm">Pelampung</h4>
-                            <div class="flex flex-col text-[11px] font-black leading-tight mt-1">
+                            <div class="flex flex-col text-[11px] font-black leading-tight mt-1 text-nowrap">
                                 <span class="text-amber-500">20K <span class="text-[8px] font-medium text-slate-400">(Single)</span></span>
                                 <span class="text-amber-600 border-t border-amber-100 mt-0.5 pt-0.5">25K <span class="text-[8px] font-medium text-slate-400">(Double)</span></span>
                             </div>
                         </div>
-                        <span class="text-[9px] font-black uppercase text-amber-500 mt-2 bg-white rounded-full py-0.5 border border-amber-50">Deposit: 5K</span>
+                        <span class="text-[9px] font-black uppercase text-amber-500 mt-2 bg-white rounded-full py-0.5 border border-amber-100">Deposit: 5K</span>
                     </div>
                     <div class="bg-purple-50/50 rounded-2xl p-4 border border-purple-100 text-center shadow-sm flex flex-col justify-between hover:border-purple-300 transition-colors">
                         <div>
@@ -303,55 +306,55 @@
                             <h4 class="font-bold text-slate-700 text-sm">Go Kart</h4>
                             <p class="text-purple-500 font-black text-xl leading-none mt-1">25K</p>
                         </div>
-                        <span class="text-[9px] font-black uppercase text-purple-400 mt-2 bg-white rounded-full py-0.5 border border-purple-50">4x Putaran</span>
+                        <span class="text-[9px] font-black uppercase text-purple-400 mt-2 bg-white rounded-full py-0.5 border border-purple-100">4x Putaran</span>
                     </div>
                 </div>
             </div>
 
             <!-- Banner Rombongan -->
-            <div id="rombongan" class="bg-gradient-to-r from-blue-600 to-sky-400 rounded-3xl p-6 md:p-10 shadow-xl text-white flex flex-col md:flex-row items-center justify-between border-4 border-white relative overflow-hidden text-left max-w-6xl mx-auto">
+            <div id="rombongan" class="bg-gradient-to-r from-blue-600 to-sky-400 rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-white flex flex-col md:flex-row items-center justify-between border-4 border-white relative overflow-hidden text-left max-w-6xl mx-auto">
                 <div class="absolute top-0 right-0 w-80 h-80 bg-white opacity-10 rounded-full blur-3xl transform translate-x-20 -translate-y-20"></div>
-                <div class="relative z-10 md:w-2/3 mb-6 md:mb-0">
-                    <div class="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase mb-3 tracking-widest">Penawaran Rombongan</div>
-                    <h3 class="text-2xl md:text-3xl font-black mb-3 leading-tight text-white">Liburan Rame-rame Lebih Hemat!</h3>
-                    <p class="text-sky-50 text-sm font-medium">Dapatkan tarif spesial untuk rombongan sekolah, instansi, perusahaan, atau reuni keluarga besar.</p>
+                <div class="relative z-10 md:w-2/3 mb-8 md:mb-0">
+                    <div class="inline-block bg-white/20 backdrop-blur-md border border-white/30 text-white px-4 py-1 rounded-full text-xs font-black uppercase mb-4 tracking-widest">Penawaran Rombongan</div>
+                    <h3 class="text-3xl md:text-4xl font-black mb-4">Liburan Rame-rame Lebih Hemat!</h3>
+                    <p class="text-sky-50 text-lg font-medium">Dapatkan tarif spesial untuk rombongan sekolah, instansi, perusahaan, atau reuni keluarga besar.</p>
                 </div>
-                <a href="#kontak" class="relative z-10 bg-white text-blue-600 hover:bg-yellow-400 hover:text-yellow-900 font-black py-3 px-8 rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center text-sm">
-                    <i class="fab fa-whatsapp text-xl mr-2 text-green-500"></i> Konsultasi Group
+                <a href="#kontak" class="relative z-10 bg-white text-blue-600 hover:bg-yellow-400 hover:text-yellow-900 font-black py-4 px-10 rounded-2xl shadow-xl transition-all duration-300 hover:-translate-y-1 flex items-center justify-center text-center">
+                    <i class="fab fa-whatsapp text-2xl mr-2 text-green-500"></i> Konsultasi Group
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Promo BORIL -->
-    <section id="promo" class="py-16 bg-sky-50 text-center">
+    <section id="promo" class="py-20 bg-sky-50 text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto bg-gradient-to-br from-blue-500 to-indigo-700 rounded-3xl shadow-2xl overflow-hidden relative border-4 border-white">
+            <div class="max-w-5xl mx-auto bg-gradient-to-br from-blue-500 to-indigo-700 rounded-[3rem] shadow-2xl overflow-hidden relative border-4 border-white">
                 <div class="flex flex-col md:flex-row">
-                    <div class="p-8 md:p-12 flex-1 text-white relative z-10 text-left">
-                        <span class="bg-yellow-400 text-yellow-900 font-black px-3 py-1 rounded-full text-[10px] uppercase mb-3 inline-block shadow-md">HOT PROMO</span>
-                        <h3 class="text-4xl md:text-6xl font-black mb-1 tracking-tighter">BORIL</h3>
-                        <p class="text-lg text-sky-100 font-bold mb-6 italic uppercase tracking-widest text-nowrap">Booking Online April</p>
-                        <ul class="space-y-3 text-xs md:text-sm font-medium">
-                            <li class="flex items-center"><i class="fas fa-calendar-check text-yellow-400 mr-2"></i> Berlaku: 30 Mar - 30 Apr 2026</li>
-                            <li class="flex items-center"><i class="fas fa-child text-yellow-400 mr-2"></i> Anak < 80cm: GRATIS!</li>
-                            <li class="flex items-center"><i class="fas fa-star text-yellow-400 mr-2"></i> Akses Wahana Baru Terintegrasi</li>
-                            <li class="flex items-center"><i class="fas fa-money-bill-wave text-yellow-400 mr-2"></i> Bayar Tunai saat kedatangan</li>
+                    <div class="p-10 md:p-14 flex-1 text-white relative z-10 text-left">
+                        <span class="bg-yellow-400 text-yellow-900 font-black px-4 py-1 rounded-full text-xs uppercase mb-4 inline-block shadow-md">HOT PROMO</span>
+                        <h3 class="text-5xl md:text-7xl font-black mb-2 tracking-tighter">BORIL</h3>
+                        <p class="text-xl text-sky-100 font-bold mb-8 italic uppercase tracking-widest text-nowrap">Booking Online April</p>
+                        <ul class="space-y-4 text-sm font-medium">
+                            <li class="flex items-center"><i class="fas fa-calendar-check text-yellow-400 mr-3 text-lg"></i> Berlaku: 30 Mar - 30 Apr 2026</li>
+                            <li class="flex items-center"><i class="fas fa-child text-yellow-400 mr-3 text-lg"></i> Anak di bawah 80cm: GRATIS!</li>
+                            <li class="flex items-center"><i class="fas fa-star text-yellow-400 mr-3 text-lg"></i> Termasuk akses Wahana Baru</li>
+                            <li class="flex items-center"><i class="fas fa-money-bill-wave text-yellow-400 mr-3 text-lg"></i> Pembayaran Tunai saat kunjungan</li>
                         </ul>
                     </div>
-                    <div class="bg-white p-8 md:w-5/12 flex flex-col justify-center items-center text-center relative z-10">
-                        <div class="mb-6 w-full">
-                            <p class="text-slate-400 font-bold text-[10px] uppercase mb-3 tracking-widest">Harga Promo Online</p>
-                            <div class="bg-blue-50 rounded-2xl p-3 mb-2 border border-blue-100 flex justify-between items-center px-6">
-                                <span class="text-slate-500 text-xs font-bold uppercase">Sen - Jum</span>
-                                <span class="text-blue-600 text-2xl font-black">30K</span>
+                    <div class="bg-white p-10 md:w-5/12 flex flex-col justify-center items-center text-center relative z-10">
+                        <div class="mb-8 w-full px-4">
+                            <p class="text-slate-400 font-bold text-xs uppercase mb-4 tracking-widest">Harga Promo Online</p>
+                            <div class="bg-blue-50 rounded-2xl p-4 mb-3 border border-blue-100 flex justify-between items-center px-8">
+                                <span class="text-slate-500 text-sm font-bold uppercase">Weekday</span>
+                                <span class="text-blue-600 text-3xl font-black">30K</span>
                             </div>
-                            <div class="bg-blue-50 rounded-2xl p-3 border border-blue-100 flex justify-between items-center px-6">
-                                <span class="text-slate-500 text-xs font-bold uppercase">Sab - Min</span>
-                                <span class="text-blue-600 text-2xl font-black">35K</span>
+                            <div class="bg-blue-50 rounded-2xl p-4 border border-blue-100 flex justify-between items-center px-8">
+                                <span class="text-slate-500 text-sm font-bold uppercase">Weekend</span>
+                                <span class="text-blue-600 text-3xl font-black">35K</span>
                             </div>
                         </div>
-                        <a href="https://labersa.github.io/promo-booking/" target="_blank" class="w-full bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-black py-3 rounded-xl shadow-lg transition-all text-sm uppercase tracking-wide">Pesan Online</a>
+                        <a href="https://labersa.github.io/promo-booking/" target="_blank" class="w-full max-w-xs bg-yellow-400 hover:bg-yellow-500 text-yellow-900 font-black py-4 rounded-2xl shadow-lg transition-all text-lg uppercase tracking-wide text-center">Pesan Online</a>
                     </div>
                 </div>
             </div>
@@ -362,67 +365,67 @@
     <section id="fasilitas" class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="text-center mb-8">
-                <h2 class="text-3xl font-black text-slate-800 mb-1">Fasilitas Lengkap</h2>
-                <p class="text-slate-500 text-sm font-medium">Kenyamanan Anda adalah prioritas utama kami.</p>
+                <h2 class="text-3xl font-black text-slate-800 mb-2">Fasilitas Lengkap</h2>
+                <p class="text-slate-500 text-base font-medium">Kenyamanan Anda selama rekreasi adalah prioritas utama kami.</p>
             </div>
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl mx-auto">
-                <div class="group bg-gradient-to-br from-orange-50 to-orange-100 p-4 rounded-2xl border border-orange-100 text-center shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-orange-500 text-white rounded-xl flex items-center justify-center text-xl mb-2 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-md"><i class="fas fa-utensils"></i></div>
-                    <h4 class="text-base font-black text-slate-800 mb-1 leading-tight">Food Court</h4>
-                    <p class="text-slate-500 text-[10px] leading-tight">Kuliner lezat & minuman segar.</p>
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div class="group bg-gradient-to-br from-orange-50 to-orange-100 p-5 rounded-3xl border border-orange-100 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-14 h-14 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-3 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-lg"><i class="fas fa-utensils"></i></div>
+                    <h4 class="text-lg font-black text-slate-800 mb-1 leading-tight">Food Court</h4>
+                    <p class="text-slate-600 text-[11px] leading-tight font-medium">Kuliner lezat & minuman segar untuk keluarga.</p>
                 </div>
-                <div class="group bg-gradient-to-br from-emerald-50 to-emerald-100 p-4 rounded-2xl border border-emerald-100 text-center shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center text-xl mb-2 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-md"><i class="fas fa-mosque"></i></div>
-                    <h4 class="text-base font-black text-slate-800 mb-1 leading-tight">Musholla</h4>
-                    <p class="text-slate-500 text-[10px] leading-tight">Tempat ibadah bersih & tenang.</p>
+                <div class="group bg-gradient-to-br from-emerald-50 to-emerald-100 p-5 rounded-3xl border border-emerald-100 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-14 h-14 bg-emerald-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-3 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-lg"><i class="fas fa-mosque"></i></div>
+                    <h4 class="text-lg font-black text-slate-800 mb-1 leading-tight">Musholla</h4>
+                    <p class="text-slate-600 text-[11px] leading-tight font-medium">Tempat ibadah bersih untuk kenyamanan Anda.</p>
                 </div>
-                <div class="group bg-gradient-to-br from-sky-50 to-sky-100 p-4 rounded-2xl border border-sky-100 text-center shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-cyan-500 text-white rounded-xl flex items-center justify-center text-xl mb-2 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-md"><i class="fas fa-shower"></i></div>
-                    <h4 class="text-base font-black text-slate-800 mb-1 leading-tight">Kamar Bilas</h4>
-                    <p class="text-slate-500 text-[10px] leading-tight">Bilik luas & kebersihan terjaga.</p>
+                <div class="group bg-gradient-to-br from-sky-50 to-sky-100 p-5 rounded-3xl border border-sky-100 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-14 h-14 bg-cyan-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-3 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-lg"><i class="fas fa-shower"></i></div>
+                    <h4 class="text-lg font-black text-slate-800 mb-1 leading-tight">Kamar Bilas</h4>
+                    <p class="text-slate-600 text-[11px] leading-tight font-medium">Bilik ganti luas dengan kebersihan terjaga.</p>
                 </div>
-                <div class="group bg-gradient-to-br from-slate-50 to-slate-200 p-4 rounded-2xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-slate-700 text-white rounded-xl flex items-center justify-center text-xl mb-2 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-md"><i class="fas fa-parking"></i></div>
-                    <h4 class="text-base font-black text-slate-800 mb-1 leading-tight">Parkir Luas</h4>
-                    <p class="text-slate-500 text-[10px] leading-tight">Lahan aman untuk semua kendaraan.</p>
+                <div class="group bg-gradient-to-br from-slate-50 to-slate-200 p-5 rounded-3xl border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-14 h-14 bg-slate-700 text-white rounded-2xl flex items-center justify-center text-2xl mb-3 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-lg"><i class="fas fa-parking"></i></div>
+                    <h4 class="text-lg font-black text-slate-800 mb-1 leading-tight">Parkir Luas</h4>
+                    <p class="text-slate-600 text-[11px] leading-tight font-medium">Lahan parkir aman untuk berbagai kendaraan.</p>
                 </div>
-                <div class="group bg-gradient-to-br from-indigo-50 to-indigo-100 p-4 rounded-2xl border border-indigo-100 text-center shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-indigo-500 text-white rounded-xl flex items-center justify-center text-xl mb-2 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-md"><i class="fas fa-wifi"></i></div>
-                    <h4 class="text-base font-black text-slate-800 mb-1 leading-tight">WiFi Gratis</h4>
-                    <p class="text-slate-500 text-[10px] leading-tight">Akses internet cepat & stabil.</p>
+                <div class="group bg-gradient-to-br from-indigo-50 to-indigo-100 p-5 rounded-3xl border border-indigo-100 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-14 h-14 bg-indigo-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-3 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-lg"><i class="fas fa-wifi"></i></div>
+                    <h4 class="text-lg font-black text-slate-800 mb-1 leading-tight">WiFi Gratis</h4>
+                    <p class="text-slate-600 text-[11px] leading-tight font-medium">Akses internet cepat di area rekreasi.</p>
                 </div>
-                <div class="group bg-gradient-to-br from-rose-50 to-rose-100 p-4 rounded-2xl border border-rose-100 text-center shadow-sm hover:shadow-md transition-all">
-                    <div class="w-12 h-12 bg-pink-500 text-white rounded-xl flex items-center justify-center text-xl mb-2 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-md"><i class="fas fa-building"></i></div>
-                    <h4 class="text-base font-black text-slate-800 mb-1 leading-tight">Aula / Hall</h4>
-                    <p class="text-slate-500 text-[10px] leading-tight">Gedung serbaguna untuk gathering.</p>
+                <div class="group bg-gradient-to-br from-rose-50 to-rose-100 p-5 rounded-3xl border border-rose-100 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-14 h-14 bg-pink-500 text-white rounded-2xl flex items-center justify-center text-2xl mb-3 mx-auto blob-shape group-hover:scale-105 transition-transform shadow-lg"><i class="fas fa-building"></i></div>
+                    <h4 class="text-lg font-black text-slate-800 mb-1 leading-tight">Aula / Hall</h4>
+                    <p class="text-slate-600 text-[11px] leading-tight font-medium">Gedung serbaguna untuk gathering & event.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Peraturan -->
-    <section id="peraturan" class="py-16 bg-sky-50 text-left">
+    <!-- Peraturan & Tata Tertib -->
+    <section id="peraturan" class="py-20 bg-sky-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-2">Peraturan & Tata Tertib</h2>
-                <p class="text-slate-500 text-base font-medium">Mohon patuhi aturan demi keamanan bersama.</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-slate-800 mb-4">Peraturan & Tata Tertib</h2>
+                <p class="text-slate-500 text-lg font-medium">Mohon patuhi aturan demi keamanan dan kenyamanan bersama.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white rounded-3xl p-6 border border-sky-100 shadow-sm">
-                    <div class="flex items-center mb-4"><div class="w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center mr-3 text-lg"><i class="fas fa-check"></i></div><h4 class="text-xl font-black text-slate-800">Pengunjung Diharapkan</h4></div>
-                    <ul class="space-y-3 text-slate-600 font-medium text-sm">
-                        <li class="flex items-start"><i class="fas fa-check-circle text-sky-500 mt-1 mr-2 text-base"></i> Mematuhi tata tertib di Riau Fantasi Waterpark.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-sky-500 mt-1 mr-2 text-base"></i> Menggunakan pakaian renang yang sopan.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-sky-500 mt-1 mr-2 text-base"></i> Orang tua wajib bertanggung jawab penuh atas anak.</li>
-                        <li class="flex items-start"><i class="fas fa-check-circle text-sky-500 mt-1 mr-2 text-base"></i> Mengikuti instruksi petugas Life Guard.</li>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <div class="bg-white rounded-3xl p-8 border border-sky-100 shadow-sm h-full">
+                    <div class="flex items-center mb-6"><div class="w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center mr-4"><i class="fas fa-check"></i></div><h4 class="text-2xl font-black text-slate-800">Pengunjung Diharapkan</h4></div>
+                    <ul class="space-y-4 text-slate-600 font-medium text-sm md:text-base">
+                        <li class="flex items-start"><i class="fas fa-check-circle text-sky-500 mt-1 mr-2 text-lg"></i> Mematuhi tata tertib di Riau Fantasi Waterpark.</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-sky-500 mt-1 mr-2 text-lg"></i> Menggunakan pakaian renang yang sopan.</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-sky-500 mt-1 mr-2 text-lg"></i> Orang tua bertanggung jawab penuh atas keselamatan anak.</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-sky-500 mt-1 mr-2 text-lg"></i> Mengikuti instruksi petugas Life Guard di lapangan.</li>
                     </ul>
                 </div>
-                <div class="bg-white rounded-3xl p-6 border border-red-100 shadow-sm">
-                    <div class="flex items-center mb-4"><div class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center mr-3 text-lg"><i class="fas fa-times"></i></div><h4 class="text-xl font-black text-slate-800">Pengunjung Dilarang</h4></div>
-                    <ul class="space-y-3 text-slate-600 font-medium text-sm">
-                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mt-1 mr-2 text-base"></i> Dilarang membawa makanan/minuman dari luar.</li>
-                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mt-1 mr-2 text-base"></i> Dilarang membawa hewan peliharaan ke dalam area.</li>
-                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mt-1 mr-2 text-base"></i> Dilarang membawa senjata tajam atau miras.</li>
+                <div class="bg-white rounded-3xl p-8 border border-red-100 shadow-sm h-full">
+                    <div class="flex items-center mb-6"><div class="w-10 h-10 bg-red-500 text-white rounded-full flex items-center justify-center mr-4"><i class="fas fa-times"></i></div><h4 class="text-2xl font-black text-slate-800">Pengunjung Dilarang</h4></div>
+                    <ul class="space-y-4 text-slate-600 font-medium text-sm md:text-base">
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mt-1 mr-2 text-lg"></i> Dilarang membawa makanan/minuman dari luar.</li>
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mt-1 mr-2 text-lg"></i> Dilarang membawa hewan peliharaan ke dalam area.</li>
+                        <li class="flex items-start"><i class="fas fa-times-circle text-red-500 mt-1 mr-2 text-lg"></i> Dilarang membawa senjata tajam atau minuman keras.</li>
                     </ul>
                 </div>
             </div>
@@ -430,53 +433,54 @@
     </section>
 
     <!-- Footer -->
-    <footer id="kontak" class="bg-blue-950 text-slate-300 pt-12 pb-8 border-t-8 border-sky-400">
+    <footer id="kontak" class="bg-blue-950 text-slate-300 pt-16 pb-8 border-t-8 border-sky-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
                 <!-- Info -->
-                <div class="space-y-5 text-shadow-none">
-                    <img src="https://labersa.github.io/rifan.png" alt="Logo Footer" class="h-16 w-auto rounded-2xl shadow-lg">
-                    <p class="text-xs leading-relaxed text-blue-200 font-medium">Destinasi wisata air terbaik di Pekanbaru, Riau. Ciptakan momen seru bersama keluarga tercinta.</p>
+                <div class="space-y-6">
+                    <img src="https://labersa.github.io/rifan.png" alt="Logo Footer" class="h-20 w-auto rounded-2xl shadow-lg">
+                    <p class="text-sm leading-relaxed text-blue-200 font-medium">Destinasi wisata air terbaik di Pekanbaru, Riau. Ciptakan momen seru bersama keluarga tercinta.</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="w-8 h-8 rounded-full bg-white text-pink-600 flex items-center justify-center hover:scale-110 transition-transform"><i class="fab fa-instagram text-base"></i></a>
-                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i class="fab fa-facebook-f text-base"></i></a>
-                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-110 transition-transform"><i class="fab fa-tiktok text-base"></i></a>
-                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-red-600 flex items-center justify-center hover:scale-110 transition-transform"><i class="fab fa-youtube text-base"></i></a>
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="w-10 h-10 rounded-full bg-white text-pink-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-tiktok text-xl"></i></a>
+                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="w-10 h-10 rounded-full bg-white text-red-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-youtube text-xl"></i></a>
                     </div>
                 </div>
 
                 <!-- Jam Operasional -->
                 <div>
-                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block mb-5 tracking-wide uppercase text-xs">Jam Operasional</h4>
-                    <div class="space-y-3 text-xs bg-blue-900/30 p-4 rounded-2xl border border-blue-800">
-                        <div class="flex justify-between border-b border-blue-900 pb-1.5"><span>Senin - Jumat</span><span class="text-white font-bold">09:00 - 17:00</span></div>
+                    <h4 class="text-white font-black text-xl border-b-2 border-sky-500 pb-2 inline-block mb-6 tracking-wide">Jam Operasional</h4>
+                    <div class="space-y-4 text-sm bg-blue-900/30 p-5 rounded-2xl border border-blue-800 shadow-inner">
+                        <div class="flex justify-between border-b border-blue-900 pb-2"><span>Senin - Jumat</span><span class="text-white font-bold">09:00 - 17:00</span></div>
                         <div class="flex justify-between text-yellow-400"><span>Sabtu, Minggu & Libur</span><span class="font-black underline">09:00 - 18:00</span></div>
                     </div>
                 </div>
 
                 <!-- Hubungi Kami -->
-                <div class="space-y-5">
-                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block tracking-wide uppercase text-xs">Hubungi Kami</h4>
-                    <ul class="space-y-3 text-xs font-medium">
-                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-sky-400"></i> Jl. Labersa, Tanah Merah, Siak Hulu, Kab. Kampar, Riau 28284</li>
-                        <li><a href="https://wa.me/628117696599" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> +62 811-7696-599 (Hendra)</a></li>
-                        <li><a href="https://wa.me/628117673499" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> +62 811-7673-499 (Dedi)</a></li>
-                        <li class="flex items-center"><i class="fas fa-envelope mr-2 text-sky-400"></i> riaufantasi@gmail.com</li>
+                <div class="space-y-6">
+                    <h4 class="text-white font-black text-xl border-b-2 border-sky-500 pb-2 inline-block tracking-wide">Hubungi Kami</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-3 text-sky-400"></i> Jl. Labersa, Tanah Merah, Siak Hulu, Kab. Kampar, Riau 28284</li>
+                        <li><a href="https://wa.me/628117696599" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-3 text-green-400 text-lg"></i> +62 811-7696-599 (Hendra)</a></li>
+                        <li><a href="https://wa.me/628117673499" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-3 text-green-400 text-lg"></i> +62 811-7673-499 (Dedi)</a></li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-sky-400"></i> riaufantasi@gmail.com</li>
                     </ul>
                     <!-- Peta Miniature -->
-                    <div class="group relative mt-3 rounded-2xl overflow-hidden shadow-inner border-2 border-sky-900 h-24 bg-slate-800 transition-all hover:border-sky-500">
+                    <div class="group relative mt-4 rounded-2xl overflow-hidden shadow-inner border-2 border-sky-900 h-28 bg-slate-800 transition-all hover:border-sky-500">
                         <a href="https://maps.app.goo.gl/qCHAubETn7165Uuy8" target="_blank" class="block w-full h-full relative">
-                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=400&h=200" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" alt="Map">
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=400&h=200" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" alt="Peta Miniature">
                             <div class="absolute inset-0 flex flex-col items-center justify-center bg-blue-900/40 group-hover:bg-blue-900/20">
-                                <i class="fas fa-map-marked-alt text-xl text-white mb-1"></i>
-                                <span class="text-[8px] font-black text-white uppercase tracking-widest bg-blue-600/80 px-2 py-0.5 rounded shadow-lg">Buka Google Maps</span>
+                                <i class="fas fa-map-marked-alt text-2xl text-white mb-1 shadow-md"></i>
+                                <span class="text-[10px] font-black text-white uppercase tracking-widest bg-blue-600/80 px-2 py-1 rounded shadow-lg">Buka Google Maps</span>
                             </div>
                         </a>
                     </div>
                 </div>
+
             </div>
 
-            <div class="border-t border-blue-900 pt-6 text-center text-[10px] text-blue-400 font-bold uppercase tracking-widest text-shadow-none">
+            <div class="border-t border-blue-900 pt-8 text-center text-xs text-blue-400 font-bold uppercase tracking-widest">
                 <p>&copy; 2026 Labersa Riau Fantasi - Water & Theme Park</p>
             </div>
         </div>
