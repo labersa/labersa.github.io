@@ -106,6 +106,18 @@
 
         <!-- Konten Hero -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 w-full text-center flex flex-col items-center mb-20 md:mb-32 lg:mb-36 text-white">
+            
+            <!-- Lencana Wahana Baru Banner (Dinamis) -->
+            <div class="h-8 sm:h-10 mb-1 flex items-end justify-center">
+                <div id="hero-badge" class="transition-opacity duration-500 opacity-100 inline-flex items-center gap-2 bg-gradient-to-r from-rose-500 to-red-600 text-white text-[10px] sm:text-xs font-black px-3 sm:px-4 py-1.5 rounded-full shadow-lg shadow-red-500/40 uppercase tracking-widest border border-white/20 backdrop-blur-sm">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-300"></span>
+                    </span>
+                    <span class="animate-pulse">Wahana Baru</span>
+                </div>
+            </div>
+
             <h1 id="hero-title" class="text-sm md:text-lg font-bold tracking-widest uppercase mb-4 md:mb-6 drop-shadow-md transition-opacity duration-500 opacity-100">
                 Wahana Boomerang
             </h1>
@@ -169,7 +181,7 @@
                                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
                                   <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-300"></span>
                                 </span>
-                                Wahana Baru
+                                <span class="animate-pulse">Wahana Baru</span>
                             </div>
                         </div>
                         <div class="p-5 flex-grow"><h4 class="text-lg font-bold text-slate-800 mb-1 text-shadow-none">Boomerang</h4><p class="text-slate-500 text-xs leading-relaxed mt-1">Meluncur cepat dari ketinggian menggunakan ban, lalu terhempas naik ke sisi papan seluncur yang berlawanan bak bumerang sungguhan.</p></div>
@@ -183,7 +195,7 @@
                                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
                                   <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-300"></span>
                                 </span>
-                                Wahana Baru
+                                <span class="animate-pulse">Wahana Baru</span>
                             </div>
                         </div>
                         <div class="p-5 flex-grow"><h4 class="text-lg font-bold text-slate-800 mb-1 text-shadow-none">Superbowl</h4><p class="text-slate-500 text-xs leading-relaxed mt-1">Rasakan sensasi berputar kencang mengelilingi mangkuk raksasa sebelum akhirnya terjatuh seru ke dalam kolam yang menyegarkan.</p></div>
@@ -821,6 +833,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const slides = document.querySelectorAll('.hero-slide');
             const heroTitle = document.getElementById('hero-title');
+            const heroBadge = document.getElementById('hero-badge');
             let currentSlide = 0;
             const slideTexts = ['Wahana Boomerang', 'Wahana Superbowl', 'Adventure Pool', 'Kolam Arus', 'Baby Pool', 'Kolam Buaya', 'Vertikal Slide', 'Big Jump'];
             
@@ -828,11 +841,24 @@
                 setInterval(() => {
                     slides[currentSlide].style.opacity = '0';
                     heroTitle.style.opacity = '0';
+                    if (heroBadge) heroBadge.style.opacity = '0';
+                    
                     currentSlide = (currentSlide + 1) % slides.length;
+                    
                     setTimeout(() => {
                         heroTitle.innerHTML = slideTexts[currentSlide] || 'Riau Fantasi';
                         heroTitle.style.opacity = '1';
                         slides[currentSlide].style.opacity = '1';
+                        
+                        // Menampilkan lencana hanya di Boomerang (0) dan Superbowl (1)
+                        if (heroBadge) {
+                            if (currentSlide === 0 || currentSlide === 1) {
+                                heroBadge.style.visibility = 'visible';
+                                heroBadge.style.opacity = '1';
+                            } else {
+                                heroBadge.style.visibility = 'hidden';
+                            }
+                        }
                     }, 500);
                 }, 4000);
             }
