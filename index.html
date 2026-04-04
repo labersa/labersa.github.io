@@ -901,157 +901,137 @@
                 <!-- Perubahan Layout: Tersusun vertikal dengan jarak elegan -->
                 <div class="flex flex-col gap-8 mb-12 max-w-6xl mx-auto text-left">
                     
-                    <!-- 1. Tiket Masuk & Promo (4 Kolom/Baris) -->
+                    <!-- 1. Tiket Masuk & Promo (4 Kolom/Baris Warna-Warni) -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
                         
-                        <!-- Weekday -->
-                        <div class="bg-gradient-to-br from-sky-400 to-blue-600 rounded-[2rem] p-[2px] shadow-xl animate-float h-full">
-                            <div class="bg-white rounded-[1.9rem] p-5 md:p-6 flex flex-col justify-between h-full">
-                                <div class="flex flex-col items-center justify-center text-center mb-2">
-                                    <h4 class="font-black text-slate-700 text-base md:text-lg uppercase tracking-wider">Senin – Jumat</h4>
+                        <!-- Card 1: Weekday (Biru) -->
+                        <div class="bg-gradient-to-br from-sky-400 to-blue-600 rounded-[2rem] p-6 md:p-8 shadow-xl h-full transition-transform hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden group">
+                            <i class="fas fa-sun absolute -bottom-6 -right-6 text-7xl text-white opacity-20 group-hover:scale-110 transition-transform pointer-events-none"></i>
+                            <div class="relative z-10 flex flex-col items-center text-center mb-2">
+                                <h4 class="font-black text-white text-lg uppercase tracking-wider">Senin – Jumat</h4>
+                                <span class="text-[10px] text-blue-100 font-bold uppercase tracking-widest mt-1">Weekday</span>
+                            </div>
+                            <div class="text-center my-6 relative z-10 flex-grow flex flex-col justify-center">
+                                <div class="flex justify-center items-start gap-1 text-white">
+                                    <span class="text-base font-bold mt-1">Rp</span>
+                                    <span class="text-5xl font-black tracking-tight drop-shadow-md">35K</span>
                                 </div>
-                                
-                                <div class="text-center my-4">
-                                    <div class="flex justify-center items-start gap-1">
-                                        <span class="text-base font-bold text-slate-400 mt-0.5">Rp</span>
-                                        <span class="text-4xl md:text-5xl font-black text-sky-500 tracking-tight">35K</span>
-                                    </div>
-                                    <span class="inline-block mt-2 bg-sky-50 text-sky-600 font-bold px-3 py-1 rounded-full border border-sky-100 text-[10px] uppercase tracking-wide">Tiket Per Orang</span>
+                                <span class="inline-block mt-3 bg-white/20 text-white font-bold px-3 py-1 rounded-full border border-white/30 text-[10px] uppercase tracking-wide backdrop-blur-sm">Tiket Per Orang</span>
+                            </div>
+                            <div class="pt-4 border-t border-dashed border-white/30 flex items-center justify-center gap-3 relative z-10">
+                                <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-white shadow-inner backdrop-blur-sm">
+                                    <i class="fas fa-clock text-base"></i>
                                 </div>
-
-                                <!-- Jam Operasional Weekday -->
-                                <div class="pt-4 border-t border-dashed border-slate-200 flex items-center justify-center gap-3">
-                                    <div class="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center text-sky-500 shadow-inner">
-                                        <i class="fas fa-clock text-base"></i>
-                                    </div>
-                                    <div class="flex flex-col text-left">
-                                        <span class="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-widest">Jam Operasional</span>
-                                        <span class="text-sm md:text-base font-black text-sky-600">09:00 - 17:00 WIB</span>
-                                    </div>
+                                <div class="flex flex-col text-left text-white">
+                                    <span class="text-[10px] font-bold text-blue-100 uppercase tracking-widest">Jam Operasional</span>
+                                    <span class="text-sm font-black">09:00 - 17:00 WIB</span>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Weekend -->
-                        <div class="bg-gradient-to-br from-orange-400 to-rose-500 rounded-[2rem] p-[2px] shadow-xl h-full transition-transform hover:-translate-y-1">
-                            <div class="bg-white rounded-[1.9rem] p-5 md:p-6 flex flex-col justify-between h-full">
-                                <div class="flex flex-col items-center justify-center text-center mb-2">
-                                    <h4 class="font-black text-slate-700 text-base md:text-lg uppercase tracking-wider leading-tight">Sabtu – Minggu <br class="hidden md:block">& Libur Nasional</h4>
+                        <!-- Card 2: Weekend (Oranye/Merah) -->
+                        <div class="bg-gradient-to-br from-orange-400 to-rose-500 rounded-[2rem] p-6 md:p-8 shadow-xl h-full transition-transform hover:-translate-y-2 flex flex-col justify-between relative overflow-hidden group">
+                            <i class="fas fa-umbrella-beach absolute -bottom-6 -right-6 text-7xl text-white opacity-20 group-hover:scale-110 transition-transform pointer-events-none"></i>
+                            <div class="relative z-10 flex flex-col items-center text-center mb-2">
+                                <h4 class="font-black text-white text-lg uppercase tracking-wider leading-tight">Sabtu – Minggu</h4>
+                                <span class="text-[10px] text-orange-100 font-bold uppercase tracking-widest mt-1">& Libur Nasional</span>
+                            </div>
+                            <div class="text-center my-6 relative z-10 flex-grow flex flex-col justify-center">
+                                <div class="flex justify-center items-start gap-1 text-white">
+                                    <span class="text-base font-bold mt-1">Rp</span>
+                                    <span class="text-5xl font-black tracking-tight drop-shadow-md">40K</span>
                                 </div>
-                                
-                                <div class="text-center my-4">
-                                    <div class="flex justify-center items-start gap-1">
-                                        <span class="text-base font-bold text-slate-400 mt-0.5">Rp</span>
-                                        <span class="text-4xl md:text-5xl font-black text-orange-500 tracking-tight">40K</span>
-                                    </div>
-                                    <span class="inline-block mt-2 bg-orange-50 text-orange-600 font-bold px-3 py-1 rounded-full border border-orange-100 text-[10px] uppercase tracking-wide">Tiket Per Orang</span>
+                                <span class="inline-block mt-3 bg-white/20 text-white font-bold px-3 py-1 rounded-full border border-white/30 text-[10px] uppercase tracking-wide backdrop-blur-sm">Tiket Per Orang</span>
+                            </div>
+                            <div class="pt-4 border-t border-dashed border-white/30 flex items-center justify-center gap-3 relative z-10">
+                                <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-white shadow-inner backdrop-blur-sm">
+                                    <i class="fas fa-clock text-base"></i>
                                 </div>
-
-                                <!-- Jam Operasional Weekend -->
-                                <div class="pt-4 border-t border-dashed border-slate-200 flex items-center justify-center gap-3">
-                                    <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-orange-500 shadow-inner">
-                                        <i class="fas fa-clock text-base"></i>
-                                    </div>
-                                    <div class="flex flex-col text-left">
-                                        <span class="text-[10px] md:text-[11px] font-bold text-slate-400 uppercase tracking-widest">Jam Operasional</span>
-                                        <span class="text-sm md:text-base font-black text-orange-600">09:00 - 18:00 WIB</span>
-                                    </div>
+                                <div class="flex flex-col text-left text-white">
+                                    <span class="text-[10px] font-bold text-orange-100 uppercase tracking-widest">Jam Operasional</span>
+                                    <span class="text-sm font-black">09:00 - 18:00 WIB</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Promo APBYUR (Kartu Vertikal) -->
-                        <div class="bg-gradient-to-br from-cyan-400 to-blue-600 rounded-[2rem] p-[2px] shadow-xl h-full transition-transform hover:-translate-y-1 cursor-pointer group" onclick="showArticle(3)">
-                            <div class="bg-white rounded-[1.9rem] p-5 md:p-6 flex flex-col justify-between h-full relative overflow-hidden group-hover:bg-white/95 transition-colors">
-                                <!-- Dekorasi Ikon Air -->
-                                <i class="fas fa-water absolute -bottom-6 -right-6 text-7xl text-cyan-50 opacity-50 group-hover:scale-110 transition-transform pointer-events-none"></i>
-
-                                <div>
-                                    <div class="flex flex-col items-center justify-center text-center mb-2">
-                                        <div class="inline-flex items-center gap-1.5 bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest mb-2 shadow-sm">
-                                            <i class="fas fa-certificate text-cyan-500"></i> Promo April
-                                        </div>
-                                        <h4 class="font-black text-slate-700 text-base md:text-lg uppercase tracking-wider leading-tight group-hover:text-cyan-600 transition-colors">Promo APBYUR!</h4>
-                                    </div>
-                                    
-                                    <div class="text-center my-4 relative z-10">
-                                        <div class="flex justify-center items-start gap-1">
-                                            <span class="text-base font-bold text-slate-400 mt-0.5">Rp</span>
-                                            <span class="text-4xl md:text-5xl font-black text-cyan-500 tracking-tight">300K</span>
-                                        </div>
-                                        <span class="inline-block mt-2 bg-cyan-50 text-cyan-600 font-bold px-3 py-1 rounded-full border border-cyan-100 text-[10px] uppercase tracking-wide">Paket 5 Orang</span>
-                                    </div>
-
-                                    <ul class="space-y-3 mb-6 relative z-10">
-                                        <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-slate-600">
-                                            <div class="w-5 h-5 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5"><i class="fas fa-check"></i></div> 
-                                            Tiket Masuk 5 Orang
-                                        </li>
-                                        <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-slate-600">
-                                            <div class="w-5 h-5 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5"><i class="fas fa-check"></i></div> 
-                                            Gratis Gazebo 4 Jam
-                                        </li>
-                                        <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-slate-600">
-                                            <div class="w-5 h-5 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5"><i class="fas fa-check"></i></div> 
-                                            Gratis Pelampung Single
-                                        </li>
-                                    </ul>
+                        <!-- Card 3: Promo APBYUR (Teal/Emerald) -->
+                        <div class="bg-gradient-to-br from-teal-400 to-emerald-500 rounded-[2rem] p-6 md:p-8 shadow-xl h-full transition-transform hover:-translate-y-2 cursor-pointer flex flex-col justify-between relative overflow-hidden group" onclick="showArticle(3)">
+                            <i class="fas fa-water absolute -bottom-6 -right-6 text-7xl text-white opacity-20 group-hover:scale-110 transition-transform pointer-events-none"></i>
+                            <div class="relative z-10 flex flex-col items-center text-center mb-2">
+                                <div class="inline-flex items-center gap-1.5 bg-white/20 text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest mb-2 shadow-sm backdrop-blur-sm border border-white/30">
+                                    <i class="fas fa-certificate text-yellow-300"></i> Promo April
                                 </div>
-
-                                <!-- Action Button -->
-                                <div class="pt-4 border-t border-dashed border-slate-200 flex items-center justify-center relative z-10 mt-auto">
-                                    <span class="text-xs font-black text-cyan-600 uppercase flex items-center gap-1.5 group-hover:text-cyan-800 transition-colors">
-                                        Baca Detail Promo <i class="fas fa-arrow-right"></i>
-                                    </span>
+                                <h4 class="font-black text-white text-xl uppercase tracking-wider leading-tight drop-shadow-md group-hover:text-yellow-200 transition-colors">APBYUR!</h4>
+                            </div>
+                            
+                            <div class="text-center my-4 relative z-10 flex-grow">
+                                <div class="flex justify-center items-start gap-1 text-white">
+                                    <span class="text-base font-bold mt-1">Rp</span>
+                                    <span class="text-5xl font-black tracking-tight drop-shadow-md">300K</span>
                                 </div>
+                                <span class="inline-block mt-3 bg-white/20 text-white font-bold px-3 py-1 rounded-full border border-white/30 text-[10px] uppercase tracking-wide backdrop-blur-sm">Paket 5 Orang</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-6 relative z-10">
+                                <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-teal-50">
+                                    <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5 backdrop-blur-sm"><i class="fas fa-check"></i></div> 
+                                    Tiket Masuk 5 Orang
+                                </li>
+                                <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-teal-50">
+                                    <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5 backdrop-blur-sm"><i class="fas fa-check"></i></div> 
+                                    Gratis Gazebo 4 Jam
+                                </li>
+                                <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-teal-50">
+                                    <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5 backdrop-blur-sm"><i class="fas fa-check"></i></div> 
+                                    Gratis Pelampung Single
+                                </li>
+                            </ul>
+
+                            <div class="pt-4 border-t border-dashed border-white/30 flex items-center justify-center relative z-10 mt-auto">
+                                <span class="text-xs font-black text-white uppercase flex items-center gap-1.5 group-hover:text-yellow-200 transition-colors">
+                                    Baca Detail Promo <i class="fas fa-arrow-right"></i>
+                                </span>
                             </div>
                         </div>
 
-                        <!-- Promo BORIL (Kartu Vertikal) -->
-                        <div class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-[2rem] p-[2px] shadow-xl h-full transition-transform hover:-translate-y-1 cursor-pointer group" onclick="showArticle(4)">
-                            <div class="bg-white rounded-[1.9rem] p-5 md:p-6 flex flex-col justify-between h-full relative overflow-hidden group-hover:bg-white/95 transition-colors">
-                                <!-- Dekorasi Ikon Tiket -->
-                                <i class="fas fa-ticket-alt absolute -bottom-6 -right-6 text-7xl text-indigo-50 opacity-50 group-hover:scale-110 transition-transform pointer-events-none"></i>
-
-                                <div>
-                                    <div class="flex flex-col items-center justify-center text-center mb-2">
-                                        <div class="inline-flex items-center gap-1.5 bg-red-100 text-red-700 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest mb-2 shadow-sm">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span> Hot Promo
-                                        </div>
-                                        <h4 class="font-black text-slate-700 text-base md:text-lg uppercase tracking-wider leading-tight group-hover:text-indigo-600 transition-colors">BORIL!</h4>
-                                    </div>
-                                    
-                                    <div class="text-center my-4 relative z-10">
-                                        <div class="flex justify-center items-start gap-1 text-indigo-600">
-                                            <span class="text-2xl font-black">30K</span>
-                                            <span class="text-xs font-bold mt-1 mx-1">-</span>
-                                            <span class="text-2xl font-black">35K</span>
-                                        </div>
-                                        <span class="inline-block mt-2 bg-indigo-50 text-indigo-600 font-bold px-3 py-1 rounded-full border border-indigo-100 text-[10px] uppercase tracking-wide">Pesan Online</span>
-                                    </div>
-
-                                    <ul class="space-y-3 mb-6 relative z-10">
-                                        <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-slate-600">
-                                            <div class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5"><i class="fas fa-check"></i></div> 
-                                            Weekday 30K, Weekend 35K
-                                        </li>
-                                        <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-slate-600">
-                                            <div class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5"><i class="fas fa-check"></i></div> 
-                                            Anak &lt; 80cm Gratis Masuk
-                                        </li>
-                                        <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-slate-600">
-                                            <div class="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5"><i class="fas fa-check"></i></div> 
-                                            Bayar Tunai di Loket (OTS)
-                                        </li>
-                                    </ul>
+                        <!-- Card 4: Promo BORIL (Ungu/Indigo) -->
+                        <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-[2rem] p-6 md:p-8 shadow-xl h-full transition-transform hover:-translate-y-2 cursor-pointer flex flex-col justify-between relative overflow-hidden group" onclick="showArticle(4)">
+                            <i class="fas fa-ticket-alt absolute -bottom-6 -right-6 text-7xl text-white opacity-20 group-hover:scale-110 transition-transform pointer-events-none"></i>
+                            <div class="relative z-10 flex flex-col items-center text-center mb-2">
+                                <div class="inline-flex items-center gap-1.5 bg-red-500/80 text-white px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest mb-2 shadow-sm backdrop-blur-sm border border-red-400">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-yellow-300 animate-pulse"></span> Hot Promo
                                 </div>
-
-                                <!-- Action Button -->
-                                <div class="pt-4 border-t border-dashed border-slate-200 flex items-center justify-center relative z-10 mt-auto">
-                                    <span class="text-xs font-black text-indigo-600 uppercase flex items-center gap-1.5 group-hover:text-indigo-800 transition-colors">
-                                        Baca Detail Promo <i class="fas fa-arrow-right"></i>
-                                    </span>
+                                <h4 class="font-black text-white text-xl uppercase tracking-wider leading-tight drop-shadow-md group-hover:text-yellow-200 transition-colors">BORIL!</h4>
+                            </div>
+                            
+                            <div class="text-center my-4 relative z-10 flex-grow">
+                                <div class="flex justify-center items-start gap-1 text-white drop-shadow-md">
+                                    <span class="text-3xl font-black mt-2">30K</span>
+                                    <span class="text-sm font-bold mt-3 mx-1">-</span>
+                                    <span class="text-3xl font-black mt-2">35K</span>
                                 </div>
+                                <span class="inline-block mt-3 bg-white/20 text-white font-bold px-3 py-1 rounded-full border border-white/30 text-[10px] uppercase tracking-wide backdrop-blur-sm">Pesan Online</span>
+                            </div>
+
+                            <ul class="space-y-3 mb-6 relative z-10">
+                                <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-indigo-50">
+                                    <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5 backdrop-blur-sm"><i class="fas fa-check"></i></div> 
+                                    Weekday 30K, Weekend 35K
+                                </li>
+                                <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-indigo-50">
+                                    <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5 backdrop-blur-sm"><i class="fas fa-check"></i></div> 
+                                    Anak &lt; 80cm Gratis Masuk
+                                </li>
+                                <li class="flex items-start gap-2 text-xs md:text-sm font-medium text-indigo-50">
+                                    <div class="w-5 h-5 rounded-full bg-white/20 text-white flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5 backdrop-blur-sm"><i class="fas fa-check"></i></div> 
+                                    Bayar Tunai di Loket (OTS)
+                                </li>
+                            </ul>
+
+                            <div class="pt-4 border-t border-dashed border-white/30 flex items-center justify-center relative z-10 mt-auto">
+                                <span class="text-xs font-black text-white uppercase flex items-center gap-1.5 group-hover:text-yellow-200 transition-colors">
+                                    Baca Detail Promo <i class="fas fa-arrow-right"></i>
+                                </span>
                             </div>
                         </div>
 
