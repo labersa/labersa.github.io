@@ -7,7 +7,8 @@
     <!-- Favicon -->
     <link rel="icon" href="https://labersa.github.io/rifan.png" type="image/png">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Memperbarui versi FontAwesome ke versi terbaru (6.5.1) agar logo X Twitter muncul -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
@@ -223,20 +224,39 @@
 
                             <!-- Social Share Block -->
                             <div class="flex flex-wrap items-center justify-between py-5 border-y border-slate-200 mt-10 mb-8 not-prose">
-                                <button class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
-                                    <i class="far fa-comment-dots text-lg"></i> 0 komentar
+                                <button onclick="toggleKomentar(4)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
+                                    <i class="far fa-comment-dots text-lg"></i> <span id="count-komentar-4">0</span> komentar
                                 </button>
                                 <div class="flex items-center gap-3 mt-4 sm:mt-0">
                                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block">Bagikan</span>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-telegram-plane"></i></a>
-                                    <button class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
+                                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=Cek artikel menarik ini!&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=Cek artikel menarik ini! ' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=Cek artikel menarik ini!', '_blank')" class="w-9 h-9 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-telegram-plane"></i></a>
+                                    <button onclick="copyLink()" class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
                                 </div>
                             </div>
 
-                            <div class="bg-red-50 p-8 md:p-10 rounded-[2rem] border border-red-100 text-center flex flex-col items-center not-prose">
+                            <!-- Komentar Section -->
+                            <div id="komentar-section-4" class="hidden mb-8 not-prose bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+                                <h4 class="font-bold text-slate-800 mb-6 text-xl">Tinggalkan Komentar</h4>
+                                <div class="flex gap-4 mb-8">
+                                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center text-lg shadow-inner flex-shrink-0">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <textarea id="input-komentar-4" rows="3" class="w-full rounded-2xl border border-slate-200 p-4 text-sm focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 transition-colors shadow-sm" placeholder="Tulis komentar Anda di sini..."></textarea>
+                                        <div class="flex justify-end mt-3">
+                                            <button onclick="tambahKomentar(4)" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2.5 px-6 rounded-full text-sm transition-transform hover:-translate-y-0.5 shadow-md shadow-red-500/30">Kirim Komentar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="list-komentar-4" class="space-y-6">
+                                    <!-- Komentar dinamis akan muncul di sini -->
+                                </div>
+                            </div>
+
+                            <div class="bg-red-50 p-8 md:p-10 rounded-[2rem] border border-red-100 text-center flex flex-col items-center not-prose mt-8">
                                 <h3 class="text-2xl md:text-3xl font-black text-red-700 mb-3">Jangan Sampai Kehabisan!</h3>
                                 <p class="text-red-600/80 font-medium mb-8 max-w-lg">
                                     Amankan tiket promo BORIL Anda sekarang juga sebelum kuota harian penuh. Klik tombol di bawah ini untuk memesan.
@@ -302,16 +322,35 @@
 
                             <!-- Social Share Block -->
                             <div class="flex flex-wrap items-center justify-between py-5 border-y border-slate-200 mt-10 mb-8 not-prose">
-                                <button class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
-                                    <i class="far fa-comment-dots text-lg"></i> 0 komentar
+                                <button onclick="toggleKomentar(3)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
+                                    <i class="far fa-comment-dots text-lg"></i> <span id="count-komentar-3">0</span> komentar
                                 </button>
                                 <div class="flex items-center gap-3 mt-4 sm:mt-0">
                                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block">Bagikan</span>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-telegram-plane"></i></a>
-                                    <button class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
+                                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=Cek artikel menarik ini!&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=Cek artikel menarik ini! ' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=Cek artikel menarik ini!', '_blank')" class="w-9 h-9 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-telegram-plane"></i></a>
+                                    <button onclick="copyLink()" class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Komentar Section -->
+                            <div id="komentar-section-3" class="hidden mb-8 not-prose bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+                                <h4 class="font-bold text-slate-800 mb-6 text-xl">Tinggalkan Komentar</h4>
+                                <div class="flex gap-4 mb-8">
+                                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center text-lg shadow-inner flex-shrink-0">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <textarea id="input-komentar-3" rows="3" class="w-full rounded-2xl border border-slate-200 p-4 text-sm focus:outline-none focus:border-emerald-400 focus:ring-1 focus:ring-emerald-400 transition-colors shadow-sm" placeholder="Tulis komentar Anda di sini..."></textarea>
+                                        <div class="flex justify-end mt-3">
+                                            <button onclick="tambahKomentar(3)" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2.5 px-6 rounded-full text-sm transition-transform hover:-translate-y-0.5 shadow-md shadow-emerald-500/30">Kirim Komentar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="list-komentar-3" class="space-y-6">
+                                    <!-- Komentar dinamis akan muncul di sini -->
                                 </div>
                             </div>
 
@@ -369,16 +408,35 @@
 
                             <!-- Social Share Block -->
                             <div class="flex flex-wrap items-center justify-between py-5 border-y border-slate-200 mt-10 mb-8 not-prose">
-                                <button class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
-                                    <i class="far fa-comment-dots text-lg"></i> 0 komentar
+                                <button onclick="toggleKomentar(2)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
+                                    <i class="far fa-comment-dots text-lg"></i> <span id="count-komentar-2">0</span> komentar
                                 </button>
                                 <div class="flex items-center gap-3 mt-4 sm:mt-0">
                                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block">Bagikan</span>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-telegram-plane"></i></a>
-                                    <button class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
+                                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=Cek artikel menarik ini!&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=Cek artikel menarik ini! ' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=Cek artikel menarik ini!', '_blank')" class="w-9 h-9 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-telegram-plane"></i></a>
+                                    <button onclick="copyLink()" class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Komentar Section -->
+                            <div id="komentar-section-2" class="hidden mb-8 not-prose bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+                                <h4 class="font-bold text-slate-800 mb-6 text-xl">Tinggalkan Komentar</h4>
+                                <div class="flex gap-4 mb-8">
+                                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center text-lg shadow-inner flex-shrink-0">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <textarea id="input-komentar-2" rows="3" class="w-full rounded-2xl border border-slate-200 p-4 text-sm focus:outline-none focus:border-orange-400 focus:ring-1 focus:ring-orange-400 transition-colors shadow-sm" placeholder="Tulis komentar Anda di sini..."></textarea>
+                                        <div class="flex justify-end mt-3">
+                                            <button onclick="tambahKomentar(2)" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-6 rounded-full text-sm transition-transform hover:-translate-y-0.5 shadow-md shadow-orange-500/30">Kirim Komentar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="list-komentar-2" class="space-y-6">
+                                    <!-- Komentar dinamis akan muncul di sini -->
                                 </div>
                             </div>
 
@@ -446,16 +504,35 @@
 
                             <!-- Social Share Block -->
                             <div class="flex flex-wrap items-center justify-between py-5 border-y border-slate-200 mt-10 mb-8 not-prose">
-                                <button class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
-                                    <i class="far fa-comment-dots text-lg"></i> 0 komentar
+                                <button onclick="toggleKomentar(1)" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
+                                    <i class="far fa-comment-dots text-lg"></i> <span id="count-komentar-1">0</span> komentar
                                 </button>
                                 <div class="flex items-center gap-3 mt-4 sm:mt-0">
                                     <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block">Bagikan</span>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
-                                    <a href="#" class="w-9 h-9 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-telegram-plane"></i></a>
-                                    <button class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
+                                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=Cek artikel menarik ini!&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=Cek artikel menarik ini! ' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="javascript:void(0)" onclick="window.open('https://t.me/share/url?url=' + encodeURIComponent(window.location.href) + '&text=Cek artikel menarik ini!', '_blank')" class="w-9 h-9 rounded-full bg-[#229ED9] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-telegram-plane"></i></a>
+                                    <button onclick="copyLink()" class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
+                                </div>
+                            </div>
+
+                            <!-- Komentar Section -->
+                            <div id="komentar-section-1" class="hidden mb-8 not-prose bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+                                <h4 class="font-bold text-slate-800 mb-6 text-xl">Tinggalkan Komentar</h4>
+                                <div class="flex gap-4 mb-8">
+                                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center text-lg shadow-inner flex-shrink-0">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="flex-grow">
+                                        <textarea id="input-komentar-1" rows="3" class="w-full rounded-2xl border border-slate-200 p-4 text-sm focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-colors shadow-sm" placeholder="Tulis komentar Anda di sini..."></textarea>
+                                        <div class="flex justify-end mt-3">
+                                            <button onclick="tambahKomentar(1)" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2.5 px-6 rounded-full text-sm transition-transform hover:-translate-y-0.5 shadow-md shadow-sky-500/30">Kirim Komentar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="list-komentar-1" class="space-y-6">
+                                    <!-- Komentar dinamis akan muncul di sini -->
                                 </div>
                             </div>
 
@@ -1342,11 +1419,87 @@
         </div>
     </footer>
 
+    <!-- Notifikasi Toast (Pesan Berhasil Copy Link/Kirim Komentar) -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-800 text-white px-5 py-3 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3 font-medium text-sm pointer-events-none">
+        <i class="fas fa-check-circle text-green-400"></i> <span id="toast-message">Tautan berhasil disalin!</span>
+    </div>
+
     <!-- Scripts -->
     <script>
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+        // Fungsi Menampilkan Notifikasi Pop-up (Toast)
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Fungsi Salin Tautan (Copy Link)
+        function copyLink() {
+            const tempInput = document.createElement('input');
+            tempInput.value = window.location.href;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            showToast('Tautan halaman berhasil disalin!');
+        }
+
+        // Fungsi Menampilkan/Menyembunyikan Kolom Komentar
+        function toggleKomentar(articleId) {
+            const section = document.getElementById('komentar-section-' + articleId);
+            section.classList.toggle('hidden');
+        }
+
+        // Fungsi Menambah Komentar Baru
+        function tambahKomentar(articleId) {
+            const input = document.getElementById('input-komentar-' + articleId);
+            const teks = input.value.trim();
+            
+            if(teks === '') {
+                return; // Jangan kirim jika kosong
+            }
+
+            const listKomentar = document.getElementById('list-komentar-' + articleId);
+            const countKomentar = document.getElementById('count-komentar-' + articleId);
+            
+            // Buat elemen komentar baru
+            const divKomentarBaru = document.createElement('div');
+            divKomentarBaru.className = 'flex gap-4 border-b border-slate-100 pb-5 last:border-0 animate-pulse';
+            
+            // Hapus efek pulse setelah beberapa saat
+            setTimeout(() => divKomentarBaru.classList.remove('animate-pulse'), 1000);
+
+            divKomentarBaru.innerHTML = `
+                <div class="w-10 h-10 rounded-full bg-slate-300 flex-shrink-0 overflow-hidden">
+                    <img src="https://ui-avatars.com/api/?name=Guest&background=random" alt="User">
+                </div>
+                <div>
+                    <h5 class="font-bold text-slate-800 text-sm">Tamu <span class="text-[10px] text-slate-400 font-normal ml-2 uppercase tracking-widest bg-slate-100 px-2 py-0.5 rounded">Baru saja</span></h5>
+                    <p class="text-slate-600 text-sm mt-1 leading-relaxed">${teks}</p>
+                </div>
+            `;
+            
+            // Masukkan ke posisi paling atas
+            listKomentar.prepend(divKomentarBaru);
+            
+            // Kosongkan textarea
+            input.value = '';
+            
+            // Tambah angka jumlah komentar
+            countKomentar.innerText = parseInt(countKomentar.innerText) + 1;
+            
+            // Tampilkan notifikasi
+            showToast('Komentar Anda berhasil dipublikasikan!');
+        }
 
         // Fungsi Tampilkan Artikel Dinamis
         function showArticle(articleId) {
