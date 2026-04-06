@@ -914,6 +914,43 @@
                         </article>
                     </div>
 
+                    <!-- ARTIKEL 16: Kebijakan Privasi (Privacy Policy) -->
+                    <div id="artikel-16" class="hidden">
+                        <article class="bg-white rounded-[2rem] shadow-sm border border-slate-200/60 p-6 md:p-12 prose prose-lg md:prose-xl prose-slate max-w-none">
+                            <header class="text-center mb-10 mt-4 not-prose">
+                                <div class="inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">
+                                    <i class="fas fa-shield-alt"></i> Legal
+                                </div>
+                                <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                                    Kebijakan Privasi (Privacy Policy)
+                                </h1>
+                            </header>
+                            <p class="font-bold text-slate-500 text-sm text-center -mt-6 mb-8">Terakhir Diperbarui: 04 April 2026</p>
+
+                            <p>Di Riau Fantasi (Labersa Water & Theme Park), yang dapat diakses di situs web kami, privasi pengunjung adalah salah satu prioritas utama kami. Dokumen Kebijakan Privasi ini menguraikan jenis informasi pribadi yang dikumpulkan dan dicatat oleh Riau Fantasi serta bagaimana kami menggunakannya.</p>
+
+                            <p>Jika Anda memiliki pertanyaan tambahan atau memerlukan informasi lebih lanjut tentang Kebijakan Privasi kami, jangan ragu untuk menghubungi kami melalui kontak yang tersedia di situs web ini.</p>
+
+                            <h2>File Log (Log Files)</h2>
+                            <p>Riau Fantasi mengikuti prosedur standar menggunakan file log. File-file ini mencatat pengunjung saat mereka mengunjungi situs web. Semua perusahaan hosting melakukan ini dan merupakan bagian dari analitik layanan hosting. Informasi yang dikumpulkan oleh file log termasuk alamat protokol internet (IP), jenis browser, Penyedia Layanan Internet (ISP), tanggal dan waktu, halaman rujukan/keluar, dan mungkin jumlah klik. Informasi ini tidak ditautkan ke informasi apa pun yang dapat diidentifikasi secara pribadi. Tujuan informasi ini adalah untuk menganalisis tren, mengelola situs, melacak pergerakan pengguna di situs web, dan mengumpulkan informasi demografis.</p>
+
+                            <h2>Cookie dan Suar Web (Cookies and Web Beacons)</h2>
+                            <p>Seperti situs web lainnya, Riau Fantasi menggunakan 'cookie'. Cookie ini digunakan untuk menyimpan informasi termasuk preferensi pengunjung, dan halaman-halaman di situs web yang diakses atau dikunjungi pengunjung. Informasi ini digunakan untuk mengoptimalkan pengalaman pengguna dengan menyesuaikan konten halaman web kami berdasarkan jenis browser pengunjung dan/atau informasi lainnya.</p>
+
+                            <h2>Cookie DART Google DoubleClick</h2>
+                            <p>Google adalah salah satu vendor pihak ketiga di situs kami. Google juga menggunakan cookie, yang dikenal sebagai cookie DART, untuk menayangkan iklan kepada pengunjung situs kami berdasarkan kunjungan mereka ke situs kami dan situs web lain di internet. Namun, pengunjung dapat memilih untuk tidak menggunakan cookie DART dengan mengunjungi Kebijakan Privasi jaringan iklan dan konten Google di URL berikut – <a href="https://policies.google.com/technologies/ads" target="_blank" class="text-sky-600 hover:underline">https://policies.google.com/technologies/ads</a>.</p>
+
+                            <h2>Mitra Iklan Pihak Ketiga (AdSense)</h2>
+                            <p>Beberapa pengiklan di situs kami mungkin menggunakan cookie dan web beacon. Mitra periklanan kami termasuk Google AdSense. Setiap mitra periklanan kami memiliki Kebijakan Privasi mereka sendiri untuk kebijakan mereka tentang data pengguna. Server iklan pihak ketiga atau jaringan iklan ini menggunakan teknologi seperti cookie, JavaScript, atau Web Beacon yang digunakan di masing-masing iklan dan tautan yang muncul di Riau Fantasi, yang dikirim langsung ke browser pengguna. Mereka secara otomatis menerima alamat IP Anda saat hal ini terjadi. Teknologi ini digunakan untuk mengukur efektivitas kampanye periklanan mereka dan/atau untuk mempersonalisasi konten iklan yang Anda lihat di situs web yang Anda kunjungi.</p>
+                            <p>Perlu dicatat bahwa Riau Fantasi tidak memiliki akses atau kontrol atas cookie ini yang digunakan oleh pengiklan pihak ketiga.</p>
+
+                            <h2>Persetujuan</h2>
+                            <p>Dengan menggunakan situs web kami, Anda dengan ini menyetujui Kebijakan Privasi kami dan menyetujui syarat dan ketentuannya.</p>
+
+                            <button onclick="hideArticle(); document.getElementById('kontak').scrollIntoView({behavior:'smooth'})" class="mt-8 bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all">Kembali ke Beranda</button>
+                        </article>
+                    </div>
+
                 </div>
 
                 <!-- BAGIAN KANAN: SIDEBAR (Artikel Populer & Menu Cepat) -->
@@ -1830,8 +1867,11 @@
                 </div>
             </div>
 
-            <div class="border-t border-blue-900 pt-6 text-center text-[10px] text-blue-400 font-bold uppercase tracking-widest text-shadow-none">
+            <div class="border-t border-blue-900 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-blue-400 font-bold uppercase tracking-widest text-shadow-none">
                 <p>&copy; 2026 Labersa Riau Fantasi - Water & Theme Park</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" onclick="showArticle(16); return false;" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -1844,7 +1884,7 @@
     <!-- Scripts -->
     <script>
         // ==========================================
-        // DEKLARASI VARIABEL GLOBAL (Mencegah Error)
+        // DEKLARASI VARIABEL GLOBAL
         // ==========================================
         var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
         var PRICE_WEEKDAY = 30000;
@@ -1875,13 +1915,13 @@
         }
 
         function updateTotalBoril() {
-            var tanggalValue = document.getElementById('boril-tanggal').value;
-            var jumlahStr = document.getElementById('boril-jumlah').value;
+            var tanggalValue = document.getElementById('boril-tanggal')?.value;
+            var jumlahStr = document.getElementById('boril-jumlah')?.value;
             var jumlah = parseInt(jumlahStr) || 0;
             
             if (!tanggalValue || jumlah <= 0) {
-                document.getElementById('boril-priceUnitDisplay').innerText = "-";
-                document.getElementById('boril-totalDisplay').innerText = "Rp 0";
+                if(document.getElementById('boril-priceUnitDisplay')) document.getElementById('boril-priceUnitDisplay').innerText = "-";
+                if(document.getElementById('boril-totalDisplay')) document.getElementById('boril-totalDisplay').innerText = "Rp 0";
                 return;
             }
 
@@ -1889,8 +1929,8 @@
             var totalTicket = jumlah * pricePerTicket;
             var grandTotal = totalTicket + DEPOSIT_SMART_TAG;
 
-            document.getElementById('boril-priceUnitDisplay').innerText = "Rp " + totalTicket.toLocaleString('id-ID');
-            document.getElementById('boril-totalDisplay').innerText = "Rp " + grandTotal.toLocaleString('id-ID');
+            if(document.getElementById('boril-priceUnitDisplay')) document.getElementById('boril-priceUnitDisplay').innerText = "Rp " + totalTicket.toLocaleString('id-ID');
+            if(document.getElementById('boril-totalDisplay')) document.getElementById('boril-totalDisplay').innerText = "Rp " + grandTotal.toLocaleString('id-ID');
         }
 
         async function handleBooking(e) {
@@ -2054,8 +2094,8 @@ Info Penting:
             if(mainContent) mainContent.classList.add('hidden');
             if(detailContainer) detailContainer.classList.remove('hidden');
             
-            // Sembunyikan semua artikel terlebih dahulu (1 s/d 15)
-            for(var i=1; i<=15; i++) {
+            // Sembunyikan semua artikel terlebih dahulu (1 s/d 20)
+            for(var i=1; i<=20; i++) {
                 var el = document.getElementById('artikel-' + i);
                 if(el) {
                     el.classList.add('hidden');
