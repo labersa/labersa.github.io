@@ -7,7 +7,12 @@
     <!-- Favicon -->
     <link rel="icon" href="https://labersa.github.io/rifan.png" type="image/png">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- Memperbarui versi FontAwesome ke versi terbaru (6.5.1) agar logo X Twitter muncul -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Kode Verifikasi Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7937373136749693" crossorigin="anonymous"></script>
+
     <style>
         .glass-nav {
             background: rgba(255, 255, 255, 0.95);
@@ -971,7 +976,7 @@
                             <li><a href="#artikel" onclick="hideArticle();" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Artikel & Blog <i class="fas fa-chevron-right text-[10px]"></i></a></li>
                             <li><a href="#wahana" onclick="hideArticle();" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Daftar Wahana <i class="fas fa-chevron-right text-[10px]"></i></a></li>
                             <li><a href="#harga" onclick="hideArticle();" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Harga Tiket & Sewa <i class="fas fa-chevron-right text-[10px]"></i></a></li>
-                            <li><a href="#promo" onclick="hideArticle();" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Promo Spesial <i class="fas fa-chevron-right text-[10px]"></i></a></li>
+                            <li><a href="#promo" onclick="showArticle(4)" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Promo Spesial <i class="fas fa-chevron-right text-[10px]"></i></a></li>
                             <li><a href="#fasilitas" onclick="hideArticle();" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Fasilitas <i class="fas fa-chevron-right text-[10px]"></i></a></li>
                         </ul>
                     </div>
@@ -1838,12 +1843,8 @@
 
     <!-- Scripts -->
     <script>
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-
         // ==========================================
-        // FUNGSI BOOKING BORIL
+        // DEKLARASI VARIABEL GLOBAL (Mencegah Error)
         // ==========================================
         var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
         var PRICE_WEEKDAY = 30000;
@@ -1851,12 +1852,15 @@
         var DEPOSIT_SMART_TAG = 25000;
         var LIBUR_NASIONAL = ["2026-04-03"]; // Format YYYY-MM-DD
 
+        // ==========================================
+        // FUNGSI BOOKING BORIL
+        // ==========================================
         function getPriceByDate(dateString) {
             if (!dateString) return 0;
-            const date = new Date(dateString);
-            const day = date.getDay(); 
-            const isWeekend = (day === 0 || day === 6);
-            const isHoliday = LIBUR_NASIONAL.includes(dateString);
+            var date = new Date(dateString);
+            var day = date.getDay(); 
+            var isWeekend = (day === 0 || day === 6);
+            var isHoliday = LIBUR_NASIONAL.includes(dateString);
             return (isWeekend || isHoliday) ? PRICE_WEEKEND : PRICE_WEEKDAY;
         }
 
@@ -1871,9 +1875,9 @@
         }
 
         function updateTotalBoril() {
-            const tanggalValue = document.getElementById('boril-tanggal').value;
-            const jumlahStr = document.getElementById('boril-jumlah').value;
-            const jumlah = parseInt(jumlahStr) || 0;
+            var tanggalValue = document.getElementById('boril-tanggal').value;
+            var jumlahStr = document.getElementById('boril-jumlah').value;
+            var jumlah = parseInt(jumlahStr) || 0;
             
             if (!tanggalValue || jumlah <= 0) {
                 document.getElementById('boril-priceUnitDisplay').innerText = "-";
@@ -1881,9 +1885,9 @@
                 return;
             }
 
-            const pricePerTicket = getPriceByDate(tanggalValue);
-            const totalTicket = jumlah * pricePerTicket;
-            const grandTotal = totalTicket + DEPOSIT_SMART_TAG;
+            var pricePerTicket = getPriceByDate(tanggalValue);
+            var totalTicket = jumlah * pricePerTicket;
+            var grandTotal = totalTicket + DEPOSIT_SMART_TAG;
 
             document.getElementById('boril-priceUnitDisplay').innerText = "Rp " + totalTicket.toLocaleString('id-ID');
             document.getElementById('boril-totalDisplay').innerText = "Rp " + grandTotal.toLocaleString('id-ID');
@@ -1891,29 +1895,29 @@
 
         async function handleBooking(e) {
             e.preventDefault();
-            const btn = document.getElementById('boril-submitBtn');
+            var btn = document.getElementById('boril-submitBtn');
             
-            let nama = document.getElementById("boril-nama").value.trim();
-            let nomorInput = document.getElementById("boril-nomor").value.trim();
-            const tanggal = document.getElementById("boril-tanggal").value;
-            const jumlah = parseInt(document.getElementById("boril-jumlah").value);
-            const catatan = document.getElementById("boril-catatan").value || "-";
+            var nama = document.getElementById("boril-nama").value.trim();
+            var nomorInput = document.getElementById("boril-nomor").value.trim();
+            var tanggal = document.getElementById("boril-tanggal").value;
+            var jumlah = parseInt(document.getElementById("boril-jumlah").value);
+            var catatan = document.getElementById("boril-catatan").value || "-";
 
-            const nomor = formatNomor(nomorInput);
+            var nomor = formatNomor(nomorInput);
 
             if (!validateNomor(nomor)) {
                 alert("Nomor WhatsApp tidak valid! Gunakan format: 08xxxx atau 62xxxx");
                 return;
             }
 
-            const pricePerTicket = getPriceByDate(tanggal);
-            const totalTicket = jumlah * pricePerTicket;
-            const grandTotalNum = totalTicket + DEPOSIT_SMART_TAG;
-            const grandTotalFormatted = grandTotalNum.toLocaleString('id-ID');
+            var pricePerTicket = getPriceByDate(tanggal);
+            var totalTicket = jumlah * pricePerTicket;
+            var grandTotalNum = totalTicket + DEPOSIT_SMART_TAG;
+            var grandTotalFormatted = grandTotalNum.toLocaleString('id-ID');
             
-            const dateParts = tanggal.split("-");
-            const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-            const tipeHari = (pricePerTicket === PRICE_WEEKEND) ? "Weekend" : "Weekday";
+            var dateParts = tanggal.split("-");
+            var formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+            var tipeHari = (pricePerTicket === PRICE_WEEKEND) ? "Weekend" : "Weekday";
 
             // Ubah state tombol
             btn.disabled = true;
@@ -1922,7 +1926,7 @@
 
             try {
                 // 1. KIRIM KE GOOGLE SHEETS
-                const formData = new FormData();
+                var formData = new FormData();
                 formData.append("nama", nama);
                 formData.append("nomor", nomor);
                 formData.append("tanggal", formattedDate);
@@ -1937,7 +1941,7 @@
                 });
 
                 // 2. FORMAT PESAN WHATSAPP
-                const pesan = 
+                var pesan = 
 `Halo Riau Fantasi Labersa!
 
 *BOOKING PROMO BORIL (APRIL)*
@@ -1959,7 +1963,7 @@ Info Penting:
 - Jaminan tag dikembalikan saat pulang
 - Wajib menunjukkan bukti booking`;
 
-                const encodedPesan = encodeURIComponent(pesan);
+                var encodedPesan = encodeURIComponent(pesan);
                 
                 // Redirect ke WhatsApp
                 setTimeout(() => {
@@ -1981,7 +1985,7 @@ Info Penting:
         // ==========================================
 
         function showToast(message) {
-            const toast = document.getElementById('toast');
+            var toast = document.getElementById('toast');
             if(toast) {
                 document.getElementById('toast-message').innerText = message;
                 toast.classList.remove('translate-y-20', 'opacity-0');
@@ -1993,8 +1997,8 @@ Info Penting:
         }
 
         function copyLink(articleTitle) {
-            const tempInput = document.createElement('input');
-            const textToCopy = articleTitle ? articleTitle + ' - ' + window.location.href : window.location.href;
+            var tempInput = document.createElement('input');
+            var textToCopy = articleTitle ? articleTitle + ' - ' + window.location.href : window.location.href;
             tempInput.value = textToCopy;
             document.body.appendChild(tempInput);
             tempInput.select();
@@ -2005,23 +2009,23 @@ Info Penting:
         }
 
         function toggleKomentar(articleId) {
-            const section = document.getElementById('komentar-section-' + articleId);
+            var section = document.getElementById('komentar-section-' + articleId);
             if(section) section.classList.toggle('hidden');
         }
 
         function tambahKomentar(articleId) {
-            const input = document.getElementById('input-komentar-' + articleId);
+            var input = document.getElementById('input-komentar-' + articleId);
             if(!input) return;
-            const teks = input.value.trim();
+            var teks = input.value.trim();
             
             if(teks === '') {
                 return;
             }
 
-            const listKomentar = document.getElementById('list-komentar-' + articleId);
-            const countKomentar = document.getElementById('count-komentar-' + articleId);
+            var listKomentar = document.getElementById('list-komentar-' + articleId);
+            var countKomentar = document.getElementById('count-komentar-' + articleId);
             
-            const divKomentarBaru = document.createElement('div');
+            var divKomentarBaru = document.createElement('div');
             divKomentarBaru.className = 'flex gap-4 border-b border-slate-100 pb-5 last:border-0 animate-pulse';
             
             setTimeout(() => divKomentarBaru.classList.remove('animate-pulse'), 1000);
@@ -2044,15 +2048,15 @@ Info Penting:
         }
 
         function showArticle(articleId) {
-            const mainContent = document.getElementById('main-content');
-            const detailContainer = document.getElementById('artikel-detail-container');
+            var mainContent = document.getElementById('main-content');
+            var detailContainer = document.getElementById('artikel-detail-container');
             
             if(mainContent) mainContent.classList.add('hidden');
             if(detailContainer) detailContainer.classList.remove('hidden');
             
             // Sembunyikan semua artikel terlebih dahulu (1 s/d 15)
-            for(let i=1; i<=15; i++) {
-                let el = document.getElementById('artikel-' + i);
+            for(var i=1; i<=15; i++) {
+                var el = document.getElementById('artikel-' + i);
                 if(el) {
                     el.classList.add('hidden');
                 }
@@ -2060,7 +2064,7 @@ Info Penting:
             
             // Tampilkan hanya artikel yang diklik
             if(articleId) {
-                let activeArticle = document.getElementById('artikel-' + articleId);
+                var activeArticle = document.getElementById('artikel-' + articleId);
                 if(activeArticle) {
                     activeArticle.classList.remove('hidden');
                 }
@@ -2070,18 +2074,18 @@ Info Penting:
         }
 
         function hideArticle() {
-            const detailContainer = document.getElementById('artikel-detail-container');
-            const mainContent = document.getElementById('main-content');
+            var detailContainer = document.getElementById('artikel-detail-container');
+            var mainContent = document.getElementById('main-content');
             if(detailContainer) detailContainer.classList.add('hidden');
             if(mainContent) mainContent.classList.remove('hidden');
         }
 
         function toggleArtikel() {
-            const extraItems = document.querySelectorAll('.artikel-extra');
-            const toggleBtn = document.getElementById('btn-artikel');
+            var extraItems = document.querySelectorAll('.artikel-extra');
+            var toggleBtn = document.getElementById('btn-artikel');
             if(!extraItems || !toggleBtn) return;
 
-            let isHidden = true;
+            var isHidden = true;
             if (extraItems.length > 0) {
                 isHidden = extraItems[0].classList.contains('hidden');
             }
@@ -2096,11 +2100,11 @@ Info Penting:
         }
 
         function toggleWahana(category) {
-            const extraItems = document.querySelectorAll(`.${category}-extra`);
-            const toggleBtn = document.getElementById(`btn-${category}`);
+            var extraItems = document.querySelectorAll(`.${category}-extra`);
+            var toggleBtn = document.getElementById(`btn-${category}`);
             if(!extraItems || !toggleBtn) return;
 
-            let isHidden = true;
+            var isHidden = true;
             if (extraItems.length > 0) {
                 isHidden = extraItems[0].classList.contains('hidden');
             }
@@ -2114,22 +2118,34 @@ Info Penting:
             toggleBtn.innerHTML = isHidden ? 'Tampilkan Lebih Sedikit <i class="fas fa-chevron-up ml-2"></i>' : 'Lihat Semua Wahana <i class="fas fa-chevron-down ml-2"></i>';
         }
 
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
         document.addEventListener('DOMContentLoaded', () => {
-            const inputTanggal = document.getElementById("boril-tanggal");
+            // Setup Tombol Menu Mobile
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+            }
+
+            // Setup Form Boril
+            var inputTanggal = document.getElementById("boril-tanggal");
             if(inputTanggal) {
-                const today = new Date();
-                const todayStr = today.toISOString().split('T')[0];
+                var today = new Date();
+                var todayStr = today.toISOString().split('T')[0];
                 inputTanggal.min = todayStr;
                 inputTanggal.max = "2026-04-30";
                 inputTanggal.value = todayStr;
                 updateTotalBoril();
             }
 
-            const slides = document.querySelectorAll('.hero-slide');
-            const heroTitle = document.getElementById('hero-title');
-            const heroBadge = document.getElementById('hero-badge');
-            let currentSlide = 0;
-            const slideTexts = ['Wahana Boomerang', 'Wahana Superbowl', 'Adventure Pool', 'Kolam Arus', 'Baby Pool', 'Kolam Buaya', 'Vertikal Slide', 'Big Jump'];
+            // Setup Slider Hero
+            var slides = document.querySelectorAll('.hero-slide');
+            var heroTitle = document.getElementById('hero-title');
+            var heroBadge = document.getElementById('hero-badge');
+            var currentSlide = 0;
+            var slideTexts = ['Wahana Boomerang', 'Wahana Superbowl', 'Adventure Pool', 'Kolam Arus', 'Baby Pool', 'Kolam Buaya', 'Vertikal Slide', 'Big Jump'];
             
             if(slides.length > 1) {
                 setInterval(() => {
