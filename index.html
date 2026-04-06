@@ -7,7 +7,6 @@
     <!-- Favicon -->
     <link rel="icon" href="https://labersa.github.io/rifan.png" type="image/png">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <!-- Memperbarui versi FontAwesome ke versi terbaru (6.5.1) agar logo X Twitter muncul -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <style>
         .glass-nav {
@@ -68,7 +67,7 @@
                     <a href="#artikel" class="text-slate-600 hover:text-sky-500 font-bold transition-colors" onclick="hideArticle()">Artikel</a>
                     <a href="#wahana" class="text-slate-600 hover:text-sky-500 font-bold transition-colors" onclick="hideArticle()">Wahana</a>
                     <a href="#harga" class="text-slate-600 hover:text-sky-500 font-bold transition-colors" onclick="hideArticle()">Harga Tiket</a>
-                    <a href="#promo" class="text-slate-600 hover:text-sky-500 font-bold transition-colors" onclick="hideArticle()">Promo</a>
+                    <a href="#promo" class="text-slate-600 hover:text-sky-500 font-bold transition-colors" onclick="showArticle(4)">Promo</a>
                     <a href="#fasilitas" class="text-slate-600 hover:text-sky-500 font-bold transition-colors" onclick="hideArticle()">Fasilitas</a>
                     <a href="#kontak" class="text-slate-600 hover:text-sky-500 font-bold transition-colors">Hubungi Kami</a>
                 </div>
@@ -103,7 +102,7 @@
             <a href="#artikel" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md" onclick="hideArticle(); document.getElementById('mobile-menu').classList.add('hidden')">Artikel</a>
             <a href="#wahana" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md" onclick="hideArticle(); document.getElementById('mobile-menu').classList.add('hidden')">Wahana</a>
             <a href="#harga" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md" onclick="hideArticle(); document.getElementById('mobile-menu').classList.add('hidden')">Harga Tiket</a>
-            <a href="#promo" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md" onclick="hideArticle(); document.getElementById('mobile-menu').classList.add('hidden')">Promo</a>
+            <a href="#promo" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md" onclick="showArticle(4); document.getElementById('mobile-menu').classList.add('hidden')">Promo</a>
             <a href="#fasilitas" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md" onclick="hideArticle(); document.getElementById('mobile-menu').classList.add('hidden')">Fasilitas</a>
             <a href="#kontak" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-500 rounded-md" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Hubungi Kami</a>
         </div>
@@ -142,7 +141,7 @@
                 Wahana Boomerang
             </h1>
             <div class="flex flex-row justify-center items-center gap-3 w-full max-w-sm md:max-w-md pointer-events-auto">
-                <a href="#promo" onclick="hideArticle()" class="flex-1 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-black py-2.5 px-4 rounded-full transition-all duration-300 shadow-xl shadow-red-500/50 hover:-translate-y-1 text-xs md:text-sm flex items-center justify-center animate-pulse">
+                <a href="#promo" onclick="showArticle(4)" class="flex-1 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-black py-2.5 px-4 rounded-full transition-all duration-300 shadow-xl shadow-red-500/50 hover:-translate-y-1 text-xs md:text-sm flex items-center justify-center animate-pulse">
                     Promo Spesial <i class="fas fa-tag ml-2 hidden sm:inline"></i>
                 </a>
                 <a href="#rombongan" onclick="hideArticle()" class="flex-1 bg-sky-500 hover:bg-sky-600 text-white font-bold py-2.5 px-4 rounded-full transition-all duration-300 shadow-xl hover:-translate-y-1 text-xs md:text-sm flex items-center justify-center">
@@ -212,7 +211,7 @@
 
                             <h2>Pesan Online, Bayar di Tempat (OTS)</h2>
                             <p>
-                                Keunggulan utama dari promo BORIL ini adalah fleksibilitasnya. Anda cukup melakukan <em>booking</em> tiket secara <em>online</em> melalui tautan resmi kami untuk mengamankan harga promo. Sesampainya di Riau Fantasi, Anda bisa langsung menunjukkan bukti pemesanan di loket dan melakukan pembayaran secara tunai (<em>On The Spot</em>). Mohon maaf, pembayaran promo ini <strong>hanya menerima uang tunai (tidak bisa menggunakan QRIS)</strong>. Tidak perlu repot transfer sebelum datang!
+                                Keunggulan utama dari promo BORIL ini adalah fleksibilitasnya. Anda cukup melakukan <em>booking</em> tiket secara <em>online</em> melalui formulir di bawah ini untuk mengamankan harga promo. Sesampainya di Riau Fantasi, Anda bisa langsung menunjukkan bukti pemesanan di loket dan melakukan pembayaran secara tunai (<em>On The Spot</em>). Mohon maaf, pembayaran promo ini <strong>hanya menerima uang tunai (tidak bisa menggunakan QRIS)</strong>. Tidak perlu repot transfer sebelum datang!
                             </p>
 
                             <h2>Syarat & Ketentuan</h2>
@@ -254,14 +253,66 @@
                                 </div>
                             </div>
 
-                            <div class="bg-red-50 p-8 md:p-10 rounded-[2rem] border border-red-100 text-center flex flex-col items-center not-prose mt-8">
-                                <h3 class="text-2xl md:text-3xl font-black text-red-700 mb-3">Jangan Sampai Kehabisan!</h3>
-                                <p class="text-red-600/80 font-medium mb-8 max-w-lg">
-                                    Amankan tiket promo BORIL Anda sekarang juga sebelum kuota harian penuh. Klik tombol di bawah ini untuk memesan.
-                                </p>
-                                <a href="https://labersa.github.io/promo-booking/" target="_blank" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-black text-lg py-4 px-10 rounded-full shadow-xl shadow-red-500/30 transition-all duration-300 hover:-translate-y-1">
-                                    <i class="fas fa-ticket-alt text-xl"></i> Booking Sekarang
-                                </a>
+                            <!-- FORM BOOKING LANGSUNG -->
+                            <div class="bg-white p-6 md:p-8 rounded-[2rem] border border-red-100 shadow-xl mt-10 not-prose relative overflow-hidden border-t-8 border-t-red-500">
+                                <div class="text-center mb-8">
+                                    <h3 class="text-2xl md:text-3xl font-black text-slate-800 mb-2">Pesan Tiket BORIL Sekarang</h3>
+                                    <p class="text-slate-500 text-sm">Isi data di bawah ini untuk mengamankan tiket Anda. Pembayaran dilakukan di loket.</p>
+                                </div>
+                                
+                                <form id="borilForm" onsubmit="handleBooking(event)" class="max-w-2xl mx-auto space-y-5">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div class="form-group">
+                                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Nama Lengkap</label>
+                                            <input type="text" id="boril-nama" placeholder="Tulis nama sesuai KTP" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Nomor WhatsApp</label>
+                                            <input type="tel" id="boril-nomor" placeholder="Contoh: 08123456789" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                        <div class="form-group">
+                                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Tanggal Kunjungan</label>
+                                            <input type="date" id="boril-tanggal" onchange="updateTotalBoril()" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="block text-sm font-bold text-slate-700 mb-1.5">Jumlah Tiket</label>
+                                            <input type="number" id="boril-jumlah" value="1" min="1" oninput="updateTotalBoril()" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="block text-sm font-bold text-slate-700 mb-1.5">Catatan Tambahan (Opsional)</label>
+                                        <textarea id="boril-catatan" rows="2" placeholder="Contoh: Rombongan sekolah atau keluarga" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium"></textarea>
+                                    </div>
+                                    
+                                    <!-- Ringkasan Total -->
+                                    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 mt-6 shadow-inner">
+                                        <div class="flex justify-between items-center mb-3">
+                                            <span class="text-sm font-medium text-slate-600">Harga Tiket:</span>
+                                            <span id="boril-priceUnitDisplay" class="font-bold text-slate-800">-</span>
+                                        </div>
+                                        <div class="flex justify-between items-center mb-4">
+                                            <span class="text-sm font-medium text-slate-600">Jaminan Smart Tag:</span>
+                                            <span id="boril-depositDisplay" class="font-bold text-slate-800">Rp 25.000</span>
+                                        </div>
+                                        <div class="pt-4 border-t border-slate-200 flex justify-between items-center">
+                                            <span class="font-black text-slate-800 text-lg">Total Pembayaran:</span>
+                                            <b id="boril-totalDisplay" class="text-2xl text-red-600 font-black">Rp 0</b>
+                                        </div>
+                                        <div class="mt-4 text-center">
+                                            <span class="inline-block bg-red-100 text-red-700 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg border border-red-200">
+                                                ⚠️ Pembayaran Hanya Tunai (Cash) di Loket
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" id="boril-submitBtn" class="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-black text-lg py-4 rounded-xl shadow-lg shadow-red-500/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2 mt-4">
+                                        <span>📲 Konfirmasi Via WhatsApp</span>
+                                    </button>
+                                </form>
                             </div>
                         </article>
                     </div>
@@ -852,7 +903,7 @@
                                 Race slide adalah jalur lintasan balap air multi-lane sejajar yang sangat populer. Namun, keselamatan pengunjung adalah prioritas absolut Riau Fantasi.
                             </p>
                             <p>
-                                Saat ini wahana kompetitif tersebut sedang mengalami masa perawatan berkala (*maintenance*) teknis, guna memastikan kualitas struktur dan seluncurannya tetap prima. Sembari menunggu perbaikan selesai, Anda dapat menyewa <strong>Pelampung Single dan Double</strong> lalu mencoba belasan wahana air spektakuler kami lainnya yang beroperasi normal!
+                                Saat ini wahana kompetitif tersebut sedang mengalami masa perawatan berkala (*maintenance*) teknis, guna memastikan kualitas struktur dan seluncurannya tetap prima. Sembari menunggu perbaikan selesai, Anda dapat mencoba belasan wahana air spektakuler kami lainnya yang beroperasi normal!
                             </p>
                             <button onclick="hideArticle(); document.getElementById('wahana').scrollIntoView({behavior:'smooth'})" class="mt-8 bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-full shadow-md transition-all">Kembali ke Daftar Wahana</button>
                         </article>
@@ -1747,7 +1798,7 @@
                         <li><a href="#artikel" class="hover:text-white transition-colors flex items-center gap-2" onclick="hideArticle()"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Artikel & Blog</a></li>
                         <li><a href="#wahana" class="hover:text-white transition-colors flex items-center gap-2" onclick="hideArticle()"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Daftar Wahana</a></li>
                         <li><a href="#harga" class="hover:text-white transition-colors flex items-center gap-2" onclick="hideArticle()"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Harga Tiket & Sewa</a></li>
-                        <li><a href="#promo" class="hover:text-white transition-colors flex items-center gap-2" onclick="hideArticle()"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Promo Spesial</a></li>
+                        <li><a href="#promo" class="hover:text-white transition-colors flex items-center gap-2" onclick="showArticle(4)"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Promo Spesial</a></li>
                         <li><a href="#fasilitas" class="hover:text-white transition-colors flex items-center gap-2" onclick="hideArticle()"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Fasilitas</a></li>
                     </ul>
                 </div>
@@ -1791,18 +1842,156 @@
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-        // Fungsi Menampilkan Notifikasi Pop-up (Toast)
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-message').innerText = message;
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            
-            setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-            }, 3000);
+        // ==========================================
+        // FUNGSI BOOKING BORIL
+        // ==========================================
+        var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
+        var PRICE_WEEKDAY = 30000;
+        var PRICE_WEEKEND = 35000;
+        var DEPOSIT_SMART_TAG = 25000;
+        var LIBUR_NASIONAL = ["2026-04-03"]; // Format YYYY-MM-DD
+
+        function getPriceByDate(dateString) {
+            if (!dateString) return 0;
+            const date = new Date(dateString);
+            const day = date.getDay(); 
+            const isWeekend = (day === 0 || day === 6);
+            const isHoliday = LIBUR_NASIONAL.includes(dateString);
+            return (isWeekend || isHoliday) ? PRICE_WEEKEND : PRICE_WEEKDAY;
         }
 
-        // Fungsi Salin Tautan (Copy Link) dengan Judul Artikel
+        function formatNomor(nomor) {
+            nomor = nomor.replace(/\D/g, '');
+            if (nomor.startsWith('0')) return '62' + nomor.substring(1);
+            return nomor.startsWith('62') ? nomor : '62' + nomor;
+        }
+
+        function validateNomor(nomor) {
+            return /^62[0-9]{8,14}$/.test(nomor);
+        }
+
+        function updateTotalBoril() {
+            const tanggalValue = document.getElementById('boril-tanggal').value;
+            const jumlahStr = document.getElementById('boril-jumlah').value;
+            const jumlah = parseInt(jumlahStr) || 0;
+            
+            if (!tanggalValue || jumlah <= 0) {
+                document.getElementById('boril-priceUnitDisplay').innerText = "-";
+                document.getElementById('boril-totalDisplay').innerText = "Rp 0";
+                return;
+            }
+
+            const pricePerTicket = getPriceByDate(tanggalValue);
+            const totalTicket = jumlah * pricePerTicket;
+            const grandTotal = totalTicket + DEPOSIT_SMART_TAG;
+
+            document.getElementById('boril-priceUnitDisplay').innerText = "Rp " + totalTicket.toLocaleString('id-ID');
+            document.getElementById('boril-totalDisplay').innerText = "Rp " + grandTotal.toLocaleString('id-ID');
+        }
+
+        async function handleBooking(e) {
+            e.preventDefault();
+            const btn = document.getElementById('boril-submitBtn');
+            
+            let nama = document.getElementById("boril-nama").value.trim();
+            let nomorInput = document.getElementById("boril-nomor").value.trim();
+            const tanggal = document.getElementById("boril-tanggal").value;
+            const jumlah = parseInt(document.getElementById("boril-jumlah").value);
+            const catatan = document.getElementById("boril-catatan").value || "-";
+
+            const nomor = formatNomor(nomorInput);
+
+            if (!validateNomor(nomor)) {
+                alert("Nomor WhatsApp tidak valid! Gunakan format: 08xxxx atau 62xxxx");
+                return;
+            }
+
+            const pricePerTicket = getPriceByDate(tanggal);
+            const totalTicket = jumlah * pricePerTicket;
+            const grandTotalNum = totalTicket + DEPOSIT_SMART_TAG;
+            const grandTotalFormatted = grandTotalNum.toLocaleString('id-ID');
+            
+            const dateParts = tanggal.split("-");
+            const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+            const tipeHari = (pricePerTicket === PRICE_WEEKEND) ? "Weekend" : "Weekday";
+
+            // Ubah state tombol
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin text-xl"></i> Memproses...';
+            showToast('Sedang memproses pesanan Anda...');
+
+            try {
+                // 1. KIRIM KE GOOGLE SHEETS
+                const formData = new FormData();
+                formData.append("nama", nama);
+                formData.append("nomor", nomor);
+                formData.append("tanggal", formattedDate);
+                formData.append("jumlah", jumlah);
+                formData.append("catatan", catatan);
+                formData.append("total", "Rp" + grandTotalFormatted);
+
+                fetch(SCRIPT_URL, {
+                    method: "POST",
+                    body: formData,
+                    mode: "no-cors"
+                });
+
+                // 2. FORMAT PESAN WHATSAPP
+                const pesan = 
+`Halo Riau Fantasi Labersa!
+
+*BOOKING PROMO BORIL (APRIL)*
+━━━━━━━━━━━━━━━━━━
+👤 Nama: *${nama.toUpperCase()}*
+📱 No HP: ${nomor}
+📅 Tanggal: *${formattedDate}* (${tipeHari})
+🎟️ Jumlah: ${jumlah} Tiket
+💵 Tiket: Rp${totalTicket.toLocaleString('id-ID')}
+💳 Jaminan Tag: Rp25.000 (Flat)
+💰 *TOTAL BAYAR: Rp${grandTotalFormatted}*
+━━━━━━━━━━━━━━━━━━
+📝 Catatan: ${catatan}
+
+Info Penting:
+- Berlaku 30 maret - 30 April 2026
+- Anak dibawah 80cm Gratis
+- Pembayaran tunai saat kunjungan
+- Jaminan tag dikembalikan saat pulang
+- Wajib menunjukkan bukti booking`;
+
+                const encodedPesan = encodeURIComponent(pesan);
+                
+                // Redirect ke WhatsApp
+                setTimeout(() => {
+                    window.open(`https://wa.me/628117696599?text=${encodedPesan}`, '_blank');
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fab fa-whatsapp text-xl"></i> Konfirmasi Via WhatsApp';
+                }, 1500);
+
+            } catch (error) {
+                console.error(error);
+                window.open(`https://wa.me/628117696599?text=Halo Riau Fantasi Labersa, saya ingin booking tiket BORIL atas nama ${nama}`, '_blank');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fab fa-whatsapp text-xl"></i> Konfirmasi Via WhatsApp';
+            }
+        }
+
+        // ==========================================
+        // FUNGSI UI & ARTIKEL
+        // ==========================================
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if(toast) {
+                document.getElementById('toast-message').innerText = message;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20', 'opacity-0');
+                }, 3000);
+            }
+        }
+
         function copyLink(articleTitle) {
             const tempInput = document.createElement('input');
             const textToCopy = articleTitle ? articleTitle + ' - ' + window.location.href : window.location.href;
@@ -1815,29 +2004,26 @@
             showToast('Judul dan tautan berhasil disalin!');
         }
 
-        // Fungsi Menampilkan/Menyembunyikan Kolom Komentar
         function toggleKomentar(articleId) {
             const section = document.getElementById('komentar-section-' + articleId);
-            section.classList.toggle('hidden');
+            if(section) section.classList.toggle('hidden');
         }
 
-        // Fungsi Menambah Komentar Baru
         function tambahKomentar(articleId) {
             const input = document.getElementById('input-komentar-' + articleId);
+            if(!input) return;
             const teks = input.value.trim();
             
             if(teks === '') {
-                return; // Jangan kirim jika kosong
+                return;
             }
 
             const listKomentar = document.getElementById('list-komentar-' + articleId);
             const countKomentar = document.getElementById('count-komentar-' + articleId);
             
-            // Buat elemen komentar baru
             const divKomentarBaru = document.createElement('div');
             divKomentarBaru.className = 'flex gap-4 border-b border-slate-100 pb-5 last:border-0 animate-pulse';
             
-            // Hapus efek pulse setelah beberapa saat
             setTimeout(() => divKomentarBaru.classList.remove('animate-pulse'), 1000);
 
             divKomentarBaru.innerHTML = `
@@ -1850,26 +2036,21 @@
                 </div>
             `;
             
-            // Masukkan ke posisi paling atas
-            listKomentar.prepend(divKomentarBaru);
-            
-            // Kosongkan textarea
+            if(listKomentar) listKomentar.prepend(divKomentarBaru);
             input.value = '';
+            if(countKomentar) countKomentar.innerText = parseInt(countKomentar.innerText) + 1;
             
-            // Tambah angka jumlah komentar
-            countKomentar.innerText = parseInt(countKomentar.innerText) + 1;
-            
-            // Tampilkan notifikasi
             showToast('Komentar Anda berhasil dipublikasikan!');
         }
 
-        // Fungsi Tampilkan Artikel Dinamis
         function showArticle(articleId) {
-            // Sembunyikan halaman utama dan tampilkan kontainer artikel
-            document.getElementById('main-content').classList.add('hidden');
-            document.getElementById('artikel-detail-container').classList.remove('hidden');
+            const mainContent = document.getElementById('main-content');
+            const detailContainer = document.getElementById('artikel-detail-container');
             
-            // Sembunyikan semua artikel (1 hingga 15) terlebih dahulu
+            if(mainContent) mainContent.classList.add('hidden');
+            if(detailContainer) detailContainer.classList.remove('hidden');
+            
+            // Sembunyikan semua artikel terlebih dahulu (1 s/d 15)
             for(let i=1; i<=15; i++) {
                 let el = document.getElementById('artikel-' + i);
                 if(el) {
@@ -1885,20 +2066,21 @@
                 }
             }
 
-            // Scroll ke atas (tepat di bawah banner)
-            document.getElementById('artikel-detail-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if(detailContainer) detailContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Fungsi Sembunyikan Artikel (Kembali ke Halaman Utama)
         function hideArticle() {
-            document.getElementById('artikel-detail-container').classList.add('hidden');
-            document.getElementById('main-content').classList.remove('hidden');
+            const detailContainer = document.getElementById('artikel-detail-container');
+            const mainContent = document.getElementById('main-content');
+            if(detailContainer) detailContainer.classList.add('hidden');
+            if(mainContent) mainContent.classList.remove('hidden');
         }
 
-        // Fungsi Menampilkan Artikel Ekstra (Tombol "Lihat Artikel Lainnya")
         function toggleArtikel() {
             const extraItems = document.querySelectorAll('.artikel-extra');
             const toggleBtn = document.getElementById('btn-artikel');
+            if(!extraItems || !toggleBtn) return;
+
             let isHidden = true;
             if (extraItems.length > 0) {
                 isHidden = extraItems[0].classList.contains('hidden');
@@ -1916,6 +2098,8 @@
         function toggleWahana(category) {
             const extraItems = document.querySelectorAll(`.${category}-extra`);
             const toggleBtn = document.getElementById(`btn-${category}`);
+            if(!extraItems || !toggleBtn) return;
+
             let isHidden = true;
             if (extraItems.length > 0) {
                 isHidden = extraItems[0].classList.contains('hidden');
@@ -1931,6 +2115,16 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            const inputTanggal = document.getElementById("boril-tanggal");
+            if(inputTanggal) {
+                const today = new Date();
+                const todayStr = today.toISOString().split('T')[0];
+                inputTanggal.min = todayStr;
+                inputTanggal.max = "2026-04-30";
+                inputTanggal.value = todayStr;
+                updateTotalBoril();
+            }
+
             const slides = document.querySelectorAll('.hero-slide');
             const heroTitle = document.getElementById('hero-title');
             const heroBadge = document.getElementById('hero-badge');
@@ -1939,18 +2133,19 @@
             
             if(slides.length > 1) {
                 setInterval(() => {
-                    slides[currentSlide].style.opacity = '0';
-                    heroTitle.style.opacity = '0';
+                    if(slides[currentSlide]) slides[currentSlide].style.opacity = '0';
+                    if(heroTitle) heroTitle.style.opacity = '0';
                     if (heroBadge) heroBadge.style.opacity = '0';
                     
                     currentSlide = (currentSlide + 1) % slides.length;
                     
                     setTimeout(() => {
-                        heroTitle.innerHTML = slideTexts[currentSlide] || 'Riau Fantasi';
-                        heroTitle.style.opacity = '1';
-                        slides[currentSlide].style.opacity = '1';
+                        if(heroTitle) {
+                            heroTitle.innerHTML = slideTexts[currentSlide] || 'Riau Fantasi';
+                            heroTitle.style.opacity = '1';
+                        }
+                        if(slides[currentSlide]) slides[currentSlide].style.opacity = '1';
                         
-                        // Menampilkan lencana hanya di Boomerang (0) dan Superbowl (1)
                         if (heroBadge) {
                             if (currentSlide === 0 || currentSlide === 1) {
                                 heroBadge.style.visibility = 'visible';
