@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Promo BORIL (Booking Online April) dari Riau Fantasi. Dapatkan harga tiket lebih murah, mulai dari Rp 30.000. Pesan sekarang dan bayar di loket!">
+    <title>BORIL Hadir! Promo Booking Online April Bikin Liburan Makin Hemat - Riau Fantasi</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://labersa.github.io/rifan.png" type="image/png">
+    <!-- Tailwind & Typography -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Kode Verifikasi Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7937373136749693" crossorigin="anonymous"></script>
+
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .text-shadow-lg {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
+        /* Custom Typography untuk Artikel */
+        .prose p {
+            text-align: justify;
+            line-height: 1.8;
+            color: #334155;
+            margin-bottom: 1.5em;
+        }
+        .prose h2 {
+            color: #0f172a;
+            border-bottom: 2px solid #fecaca; /* Red border untuk tema BORIL */
+            padding-bottom: 0.5em;
+            margin-top: 2em;
+        }
+        .prose h3 {
+            color: #1e293b;
+            margin-top: 1.5em;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 selection:bg-red-200 selection:text-red-900">
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="fixed bottom-0 left-0 w-full bg-slate-900/95 backdrop-blur-md text-slate-300 p-4 md:px-8 z-[100] hidden flex-col md:flex-row items-center justify-between gap-4 shadow-[0_-10px_20px_rgba(0,0,0,0.2)] border-t border-slate-700">
+        <div class="text-xs md:text-sm font-medium text-center md:text-left leading-relaxed">
+            Situs web ini menggunakan cookie dari Google untuk menayangkan iklan yang relevan dan menganalisis traffic. 
+            <a href="privacy-policy.html" class="text-sky-400 hover:text-sky-300 underline font-bold ml-1">Pelajari Kebijakan Privasi</a>.
+        </div>
+        <button onclick="acceptCookies()" class="bg-red-500 hover:bg-red-400 text-white font-black py-2.5 px-8 rounded-full text-sm whitespace-nowrap transition-all hover:scale-105 shadow-lg shadow-red-500/30">Mengerti & Setuju</button>
+    </div>
+
+    <!-- Navbar Lengkap (Persis seperti Homepage) -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-red-100 transition-all duration-300 shadow-sm text-shadow-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <a href="index.html">
+                        <img src="https://labersa.github.io/rifan.png" alt="Logo Riau Fantasi" class="h-10 sm:h-12 md:h-16 w-auto drop-shadow-md transition-transform hover:scale-105 rounded-2xl object-contain">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu (Link disesuaikan ke index.html) -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Beranda</a>
+                    <a href="index.html#artikel" class="text-red-600 font-black transition-colors border-b-2 border-red-500">Artikel</a>
+                    <a href="index.html#wahana" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Wahana</a>
+                    <a href="index.html#harga" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Harga Tiket</a>
+                    <a href="index.html#promo" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Promo</a>
+                    <a href="index.html#fasilitas" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Fasilitas</a>
+                    <a href="#kontak" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Hubungi Kami</a>
+                </div>
+
+                <!-- Social Media Desktop -->
+                <div class="hidden md:flex items-center space-x-5">
+                    <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 hover:opacity-75 transition-opacity text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 hover:opacity-75 transition-opacity text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="text-slate-900 hover:opacity-75 transition-opacity text-2xl"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="text-red-600 hover:opacity-75 transition-opacity text-2xl"><i class="fab fa-youtube"></i></a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-3 sm:gap-4">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-red-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="index.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-red-50 hover:text-red-600 rounded-md">Beranda</a>
+            <a href="index.html#artikel" class="block px-3 py-2 text-red-600 font-black bg-red-50 rounded-md">Artikel</a>
+            <a href="index.html#wahana" class="block px-3 py-2 text-slate-600 font-medium hover:bg-red-50 hover:text-red-600 rounded-md">Wahana</a>
+            <a href="index.html#harga" class="block px-3 py-2 text-slate-600 font-medium hover:bg-red-50 hover:text-red-600 rounded-md">Harga Tiket</a>
+            <a href="index.html#promo" class="block px-3 py-2 text-slate-600 font-medium hover:bg-red-50 hover:text-red-600 rounded-md">Promo</a>
+            <a href="index.html#fasilitas" class="block px-3 py-2 text-slate-600 font-medium hover:bg-red-50 hover:text-red-600 rounded-md">Fasilitas</a>
+            <a href="#kontak" class="block px-3 py-2 text-slate-600 font-medium hover:bg-red-50 hover:text-red-600 rounded-md">Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <!-- Main Layout (2 Kolom: Artikel Kiri, Sidebar Kanan) -->
+    <div class="relative z-30 pt-28 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Tombol Kembali -->
+            <a href="index.html" class="mb-8 inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-red-600 transition-colors bg-white hover:bg-red-50 px-5 py-2.5 rounded-full shadow-sm border border-slate-100 w-fit">
+                <i class="fas fa-arrow-left"></i> Kembali ke Beranda
+            </a>
+
+            <div class="flex flex-col lg:flex-row gap-8 items-start">
+                
+                <!-- BAGIAN KIRI: KONTEN ARTIKEL -->
+                <div class="w-full lg:w-2/3">
+                    <article class="bg-white rounded-[2rem] shadow-sm border border-slate-200/60 p-6 md:p-12 prose prose-lg md:prose-xl prose-red max-w-none relative">
+                        
+                        <!-- Header Artikel -->
+                        <header class="text-center mb-10 mt-4 not-prose">
+                            <div class="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 border border-red-200 shadow-sm">
+                                <span class="w-1.5 h-1.5 rounded-full bg-red-600 animate-pulse"></span> Hot Promo
+                            </div>
+                            <h1 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-6">
+                                BORIL Hadir! Promo Booking Online April Bikin Liburan Makin Hemat
+                            </h1>
+                            <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-slate-500 uppercase tracking-wide">
+                                <span class="flex items-center gap-1.5"><i class="fas fa-calendar-day text-red-500"></i> 04 April 2026</span>
+                                <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+                                <span class="flex items-center gap-1.5"><i class="fas fa-user-circle text-red-500"></i> Oleh Marketing</span>
+                            </div>
+                        </header>
+
+                        <!-- Gambar Artikel -->
+                        <figure class="mb-10 not-prose">
+                            <img src="https://labersa.github.io/boril.jpeg" alt="Promo BORIL Riau Fantasi" class="w-full rounded-[2rem] shadow-lg object-cover h-[300px] md:h-[450px]">
+                            <figcaption class="text-center text-xs text-slate-400 mt-3 font-medium">Promo BORIL (Booking Online April) untuk liburan cerdas tanpa antre.</figcaption>
+                        </figure>
+
+                        <!-- Isi Artikel -->
+                        <p class="lead text-xl text-slate-600 font-medium leading-relaxed">
+                            Bulan April ini, Riau Fantasi kembali memanjakan pengunjung setianya dengan menghadirkan promo super spesial bernama <strong>BORIL (Booking Online April)</strong>. Bagi Anda yang ingin menikmati keseruan bermain air tanpa perlu khawatir kantong jebol dan malas antre di loket, promo ini adalah jawabannya!
+                        </p>
+                        
+                        <h2>Harga Tiket Lebih Murah</h2>
+                        <p>
+                            Melalui promo BORIL, pengunjung bisa mendapatkan potongan harga tiket masuk yang sangat signifikan jika dibandingkan dengan pembelian langsung di loket tanpa reservasi. Rincian harga promo BORIL adalah sebagai berikut:
+                        </p>
+                        <ul>
+                            <li><strong>Senin - Jumat (Weekday):</strong> Rp 30.000,- / orang <del class="text-slate-400 text-sm ml-2">(Harga Normal Rp 35.000)</del></li>
+                            <li><strong>Sabtu - Minggu (Weekend) & Libur Nasional:</strong> Rp 35.000,- / orang <del class="text-slate-400 text-sm ml-2">(Harga Normal Rp 40.000)</del></li>
+                        </ul>
+                        <p>
+                            Hebatnya lagi, untuk anak-anak dengan tinggi badan di bawah 80 sentimeter, kami menggratiskan tiket masuk! Ini tentu menjadi kabar gembira bagi para orang tua yang membawa balita untuk bermain di area <em>Baby Pool</em> kami.
+                        </p>
+
+                        <h2>Pesan Online, Bayar di Tempat (OTS)</h2>
+                        <p>
+                            Keunggulan utama dari promo BORIL ini adalah fleksibilitasnya. Anda tidak perlu melakukan transfer bank atau top-up e-wallet sebelumnya. Anda cukup melakukan <em>booking</em> tiket secara <em>online</em> melalui formulir di bagian bawah artikel ini untuk mengamankan harga promo. 
+                        </p>
+                        <p>
+                            Sesampainya di Riau Fantasi, Anda bisa langsung menuju loket khusus, menunjukkan bukti pesan WhatsApp Anda kepada petugas, dan melakukan pembayaran secara tunai (<em>On The Spot</em>). Mohon maaf, pembayaran untuk promo khusus ini <strong>hanya menerima uang tunai (cash) dan tidak bisa menggunakan QRIS</strong>. Sistem ini kami buat untuk meminimalisir antrean panjang pemindaian kode QR di loket.
+                        </p>
+
+                        <h2>Syarat & Ketentuan Berlaku</h2>
+                        <p>
+                            Agar proses liburan Anda lancar, mohon perhatikan beberapa syarat dan ketentuan promo BORIL berikut ini:
+                        </p>
+                        <ul>
+                            <li>Promo ini hanya berlaku untuk kunjungan mulai tanggal <strong>30 Maret 2026 hingga 30 April 2026</strong>.</li>
+                            <li>Pastikan Anda melakukan pemesanan (booking) setidaknya H-1 sebelum kedatangan agar data Anda terverifikasi dengan baik oleh sistem kami. Pemesanan di hari H (hari yang sama dengan kedatangan) mungkin tidak akan mendapatkan harga promo.</li>
+                            <li>Setiap pengunjung wajib membayar deposit Jaminan Smart Tag sebesar Rp 25.000 per rombongan (uang ini akan dikembalikan 100% saat Anda pulang dan mengembalikan gelang Smart Tag).</li>
+                        </ul>
+
+                        <!-- Block Bagikan & Komentar -->
+                        <div class="flex flex-wrap items-center justify-between py-6 border-y border-slate-200 mt-12 mb-8 not-prose">
+                            <button onclick="toggleKomentar()" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-bold py-2.5 px-6 rounded-full flex items-center gap-2 transition-colors border border-slate-200">
+                                <i class="far fa-comment-dots text-lg"></i> <span id="count-komentar">0</span> Komentar
+                            </button>
+                            <div class="flex items-center gap-3 mt-4 sm:mt-0">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mr-2 hidden sm:block">Bagikan</span>
+                                <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '&quote=' + encodeURIComponent('BORIL Hadir! Promo Booking Online April Bikin Liburan Makin Hemat'), '_blank')" class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-facebook-f"></i></a>
+                                <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('BORIL Hadir! Promo Booking Online April Bikin Liburan Makin Hemat') + '&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-x-twitter"></i></a>
+                                <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent('BORIL Hadir! Promo Booking Online April Bikin Liburan Makin Hemat | Riau Fantasi: ') + encodeURIComponent(window.location.href), '_blank')" class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 shadow-md transition-all"><i class="fab fa-whatsapp"></i></a>
+                                <button onclick="copyLink()" class="w-9 h-9 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 shadow-md transition-all" title="Copy Link"><i class="fas fa-link"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Bagian Komentar -->
+                        <div id="komentar-section" class="hidden mb-12 not-prose bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200">
+                            <h4 class="font-bold text-slate-800 mb-6 text-xl">Tinggalkan Komentar</h4>
+                            <div class="flex gap-4 mb-8">
+                                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center text-lg shadow-inner flex-shrink-0">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="flex-grow">
+                                    <textarea id="input-komentar" rows="3" class="w-full rounded-2xl border border-slate-200 p-4 text-sm focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-200 transition-all shadow-sm" placeholder="Bagikan pendapat atau pertanyaan Anda tentang promo ini..."></textarea>
+                                    <div class="flex justify-end mt-3">
+                                        <button onclick="tambahKomentar()" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2.5 px-6 rounded-full text-sm transition-transform hover:-translate-y-0.5 shadow-md shadow-red-500/30">Kirim Komentar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="list-komentar" class="space-y-6">
+                                <!-- Komentar muncul di sini -->
+                            </div>
+                        </div>
+
+                        <!-- FORM BOOKING LANGSUNG -->
+                        <div id="form-booking" class="bg-white p-6 md:p-10 rounded-[2rem] border border-red-100 shadow-2xl mt-12 not-prose relative overflow-hidden border-t-8 border-t-red-500">
+                            <i class="fas fa-ticket-alt absolute -right-10 -bottom-10 text-9xl text-slate-50 opacity-50 pointer-events-none transform -rotate-12"></i>
+                            
+                            <div class="text-center mb-10 relative z-10">
+                                <div class="inline-block bg-red-100 text-red-600 p-4 rounded-full mb-4 shadow-sm">
+                                    <i class="fas fa-calendar-check text-3xl"></i>
+                                </div>
+                                <h3 class="text-2xl md:text-3xl font-black text-slate-800 mb-2">Pesan Tiket BORIL Sekarang</h3>
+                                <p class="text-slate-500 text-sm max-w-md mx-auto">Amankan tiket Anda sebelum kuota harian habis. Isi data di bawah ini, tunjukkan di loket, dan bayar tunai (Cash).</p>
+                            </div>
+                            
+                            <form id="borilForm" onsubmit="handleBooking(event)" class="max-w-2xl mx-auto space-y-6 relative z-10">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="form-group">
+                                        <label class="block text-sm font-bold text-slate-700 mb-2">Nama Lengkap</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400"><i class="fas fa-user"></i></div>
+                                            <input type="text" id="boril-nama" placeholder="Tulis nama sesuai KTP" required class="w-full pl-11 pr-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="block text-sm font-bold text-slate-700 mb-2">Nomor WhatsApp</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400"><i class="fab fa-whatsapp"></i></div>
+                                            <input type="tel" id="boril-nomor" placeholder="Contoh: 08123456789" required class="w-full pl-11 pr-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="form-group">
+                                        <label class="block text-sm font-bold text-slate-700 mb-2">Tanggal Kunjungan</label>
+                                        <div class="relative">
+                                            <input type="date" id="boril-tanggal" onchange="updateTotalBoril()" required class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="block text-sm font-bold text-slate-700 mb-2">Jumlah Tiket</label>
+                                        <div class="relative">
+                                            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400"><i class="fas fa-ticket-alt"></i></div>
+                                            <input type="number" id="boril-jumlah" value="1" min="1" oninput="updateTotalBoril()" required class="w-full pl-11 pr-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="block text-sm font-bold text-slate-700 mb-2">Catatan Tambahan (Opsional)</label>
+                                    <textarea id="boril-catatan" rows="2" placeholder="Contoh: Rombongan sekolah atau tiba jam 10 pagi" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-red-400 focus:border-transparent transition-all bg-slate-50 focus:bg-white text-slate-800 font-medium"></textarea>
+                                </div>
+                                
+                                <!-- Ringkasan Total -->
+                                <div class="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-2xl border border-slate-200 mt-8 shadow-inner">
+                                    <h4 class="font-black text-slate-800 mb-4 border-b border-slate-200 pb-2"><i class="fas fa-receipt text-slate-400 mr-2"></i> Ringkasan Pesanan</h4>
+                                    
+                                    <div class="space-y-3 mb-4">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm font-medium text-slate-600">Harga Tiket:</span>
+                                            <span id="boril-priceUnitDisplay" class="font-bold text-slate-800">-</span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm font-medium text-slate-600">Jaminan Smart Tag (Deposit):</span>
+                                            <span id="boril-depositDisplay" class="font-bold text-slate-800">Rp 25.000</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-4 border-t border-slate-200 border-dashed flex justify-between items-center">
+                                        <span class="font-black text-slate-800 text-lg">Total Pembayaran:</span>
+                                        <b id="boril-totalDisplay" class="text-3xl text-red-600 font-black tracking-tight drop-shadow-sm">Rp 0</b>
+                                    </div>
+                                    <div class="mt-5 text-center">
+                                        <span class="inline-flex items-center gap-1.5 bg-red-100 text-red-700 text-[11px] font-black uppercase tracking-widest px-4 py-2 rounded-lg border border-red-200 shadow-sm">
+                                            <i class="fas fa-exclamation-triangle"></i> Pembayaran Hanya Tunai (Cash) di Loket
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" id="boril-submitBtn" class="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-black text-lg py-4 rounded-xl shadow-lg shadow-red-500/30 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3 mt-8 group">
+                                    <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i> <span>Kirim & Konfirmasi Via WhatsApp</span>
+                                </button>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- BAGIAN KANAN: SIDEBAR (Artikel Populer & Menu Cepat) -->
+                <aside class="w-full lg:w-1/3 mt-8 lg:mt-0">
+                    <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200/60 sticky top-24">
+                        
+                        <!-- Berita Populer -->
+                        <h3 class="text-xl font-black text-slate-800 mb-6 border-b-2 border-red-200 pb-3 flex items-center gap-2">
+                            <span class="w-2 h-6 bg-red-500 rounded-full inline-block"></span> Artikel Populer
+                        </h3>
+                        <div class="space-y-6">
+                            <!-- Item 1 -->
+                            <a href="promo-boril.html" class="flex gap-4 cursor-pointer group">
+                                <span class="text-4xl font-black text-red-500 leading-none">#1</span>
+                                <div>
+                                    <h4 class="font-bold text-red-600 text-sm leading-snug">BORIL Hadir! Promo Booking Online April Bikin Liburan Makin Hemat</h4>
+                                    <span class="text-[10px] text-slate-400 font-bold mt-1 inline-block uppercase">04 April 2026</span>
+                                </div>
+                            </a>
+                            <!-- Item 2 -->
+                            <a href="promo-apbyur.html" class="flex gap-4 cursor-pointer group">
+                                <span class="text-4xl font-black text-slate-200 group-hover:text-red-500 transition-colors leading-none">#2</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-sm leading-snug group-hover:text-sky-600 transition-colors">Promo APBYUR Hadir! Cara Hemat Liburan Rame-Rame Bulan Ini</h4>
+                                    <span class="text-[10px] text-slate-400 font-bold mt-1 inline-block uppercase">04 April 2026</span>
+                                </div>
+                            </a>
+                            <!-- Item 3 -->
+                            <a href="wahana-boomerang.html" class="flex gap-4 cursor-pointer group">
+                                <span class="text-4xl font-black text-slate-200 group-hover:text-red-500 transition-colors leading-none">#3</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-sm leading-snug group-hover:text-sky-600 transition-colors">Mengenal Wahana Boomerang: Uji Adrenalin Paling Menantang</h4>
+                                    <span class="text-[10px] text-slate-400 font-bold mt-1 inline-block uppercase">04 April 2026</span>
+                                </div>
+                            </a>
+                            <!-- Item 4 -->
+                            <a href="wahana-superbowl.html" class="flex gap-4 cursor-pointer group">
+                                <span class="text-4xl font-black text-slate-200 group-hover:text-red-500 transition-colors leading-none">#4</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-sm leading-snug group-hover:text-sky-600 transition-colors">Mengenal Wahana Superbowl: Sensasi Berputar di Mangkuk Raksasa</h4>
+                                    <span class="text-[10px] text-slate-400 font-bold mt-1 inline-block uppercase">04 April 2026</span>
+                                </div>
+                            </a>
+                            <!-- Item 5 -->
+                            <a href="tips-liburan-anak.html" class="flex gap-4 cursor-pointer group">
+                                <span class="text-4xl font-black text-slate-200 group-hover:text-red-500 transition-colors leading-none">#5</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-700 text-sm leading-snug group-hover:text-sky-600 transition-colors">5 Tips Liburan Seru dan Aman Bersama Anak di Waterpark</h4>
+                                    <span class="text-[10px] text-slate-400 font-bold mt-1 inline-block uppercase">04 April 2026</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Menu Cepat Sidebar -->
+                        <h3 class="text-xl font-black text-slate-800 mb-6 border-b-2 border-sky-100 pb-3 mt-10 flex items-center gap-2">
+                            <span class="w-2 h-6 bg-sky-500 rounded-full inline-block"></span> Menu Cepat
+                        </h3>
+                        <ul class="space-y-3">
+                            <li><a href="index.html" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Beranda <i class="fas fa-chevron-right text-[10px]"></i></a></li>
+                            <li><a href="index.html#artikel" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Artikel & Blog <i class="fas fa-chevron-right text-[10px]"></i></a></li>
+                            <li><a href="index.html#wahana" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Daftar Wahana <i class="fas fa-chevron-right text-[10px]"></i></a></li>
+                            <li><a href="index.html#harga" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Harga Tiket & Sewa <i class="fas fa-chevron-right text-[10px]"></i></a></li>
+                            <li><a href="index.html#promo" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Promo Spesial <i class="fas fa-chevron-right text-[10px]"></i></a></li>
+                            <li><a href="index.html#fasilitas" class="flex items-center justify-between text-sm font-bold text-slate-600 hover:text-sky-600 bg-slate-50 hover:bg-sky-50 border border-slate-100 hover:border-sky-100 px-5 py-3 rounded-xl transition-all hover:scale-[1.02]">Fasilitas <i class="fas fa-chevron-right text-[10px]"></i></a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Persis seperti Homepage) -->
+    <footer id="kontak" class="bg-blue-950 text-slate-300 pt-12 pb-8 text-shadow-none relative z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+                <!-- Info -->
+                <div class="space-y-5 text-shadow-none">
+                    <img src="https://labersa.github.io/rifan.png" alt="Logo Footer" class="h-16 w-auto rounded-2xl shadow-lg">
+                    <p class="text-xs leading-relaxed text-blue-200 font-medium pr-4">Destinasi wisata air terbaik di Pekanbaru, Riau. Ciptakan momen seru bersama keluarga tercinta.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="w-8 h-8 rounded-full bg-white text-pink-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-instagram text-base"></i></a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-facebook-f text-base"></i></a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-tiktok text-base"></i></a>
+                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-red-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-youtube text-base"></i></a>
+                    </div>
+                </div>
+
+                <!-- Menu Cepat -->
+                <div>
+                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block mb-5 tracking-wide uppercase text-xs">Menu Cepat</h4>
+                    <ul class="space-y-3 text-xs font-medium text-blue-200">
+                        <li><a href="index.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Beranda</a></li>
+                        <li><a href="index.html#artikel" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Artikel & Blog</a></li>
+                        <li><a href="index.html#wahana" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Daftar Wahana</a></li>
+                        <li><a href="index.html#harga" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Harga Tiket & Sewa</a></li>
+                        <li><a href="index.html#promo" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Promo Spesial</a></li>
+                        <li><a href="index.html#fasilitas" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Fasilitas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Hubungi Kami -->
+                <div class="space-y-5">
+                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block tracking-wide uppercase text-xs">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-xs font-medium">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-sky-400"></i> Jl. Labersa, Tanah Merah, Siak Hulu, Kab. Kampar, Riau 28284</li>
+                        <li><a href="https://wa.me/628117696599" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> +62 811-7696-599 (Hendra)</a></li>
+                        <li><a href="https://wa.me/628117673499" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> +62 811-7673-499 (Dedi)</a></li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-2 text-sky-400"></i> riaufantasi@gmail.com</li>
+                    </ul>
+                    <!-- Peta Miniature -->
+                    <div class="group relative mt-3 rounded-2xl overflow-hidden shadow-inner border-2 border-sky-900 h-24 bg-slate-800 transition-all hover:border-sky-500">
+                        <a href="https://maps.app.goo.gl/qCHAubETn7165Uuy8" target="_blank" class="block w-full h-full relative">
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=400&h=200" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" alt="Map">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-blue-900/40 group-hover:bg-blue-900/20">
+                                <i class="fas fa-map-marked-alt text-xl text-white mb-1 shadow-md"></i>
+                                <span class="text-[8px] font-black text-white uppercase tracking-widest bg-blue-600/80 px-2 py-0.5 rounded shadow-lg">Buka Google Maps</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-900 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-blue-400 font-bold uppercase tracking-widest text-shadow-none">
+                <p>&copy; 2026 Labersa Riau Fantasi - Water & Theme Park</p>
+                <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
+                    <a href="tentang-kami.html" class="hover:text-white transition-colors">Tentang Kami</a>
+                    <span class="text-slate-600">|</span>
+                    <a href="syarat-ketentuan.html" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+                    <span class="text-slate-600">|</span>
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notifikasi Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-800 text-white px-5 py-3 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3 font-medium text-sm pointer-events-none">
+        <i class="fas fa-check-circle text-green-400"></i> <span id="toast-message">Berhasil!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // ==========================================
+        // DEKLARASI VARIABEL GLOBAL
+        // ==========================================
+        var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
+        var PRICE_WEEKDAY = 30000;
+        var PRICE_WEEKEND = 35000;
+        var DEPOSIT_SMART_TAG = 25000;
+        var LIBUR_NASIONAL = ["2026-04-03"]; // Format YYYY-MM-DD
+
+        // ==========================================
+        // FUNGSI UMUM & UI
+        // ==========================================
+        function showToast(message) {
+            var toast = document.getElementById('toast');
+            if(toast) {
+                document.getElementById('toast-message').innerText = message;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 3000);
+            }
+        }
+
+        function copyLink() {
+            var tempInput = document.createElement('input');
+            tempInput.value = "BORIL Hadir! Promo Booking Online April - " + window.location.href;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('Judul dan tautan berhasil disalin!');
+        }
+
+        function acceptCookies() {
+            var banner = document.getElementById('cookie-consent');
+            if(banner) banner.style.display = 'none';
+            try { localStorage.setItem('cookiesAccepted', 'true'); } catch(e) {}
+        }
+
+        function toggleKomentar() {
+            var section = document.getElementById('komentar-section');
+            if(section) section.classList.toggle('hidden');
+        }
+
+        function tambahKomentar() {
+            var input = document.getElementById('input-komentar');
+            if(!input || input.value.trim() === '') return;
+            var teks = input.value.trim();
+
+            var listKomentar = document.getElementById('list-komentar');
+            var countKomentar = document.getElementById('count-komentar');
+            
+            var divKomentarBaru = document.createElement('div');
+            divKomentarBaru.className = 'flex gap-4 border-b border-slate-100 pb-5 last:border-0 animate-pulse';
+            setTimeout(() => divKomentarBaru.classList.remove('animate-pulse'), 1000);
+
+            divKomentarBaru.innerHTML = `
+                <div class="w-10 h-10 rounded-full bg-slate-300 flex-shrink-0 overflow-hidden">
+                    <img src="https://ui-avatars.com/api/?name=Guest&background=random" alt="User">
+                </div>
+                <div>
+                    <h5 class="font-bold text-slate-800 text-sm">Tamu <span class="text-[10px] text-slate-400 font-normal ml-2 uppercase tracking-widest bg-slate-100 px-2 py-0.5 rounded">Baru saja</span></h5>
+                    <p class="text-slate-600 text-sm mt-1 leading-relaxed">${teks}</p>
+                </div>
+            `;
+            
+            if(listKomentar) listKomentar.prepend(divKomentarBaru);
+            input.value = '';
+            if(countKomentar) countKomentar.innerText = parseInt(countKomentar.innerText) + 1;
+            showToast('Komentar Anda dipublikasikan!');
+        }
+
+        // ==========================================
+        // FUNGSI BOOKING BORIL
+        // ==========================================
+        function getPriceByDate(dateString) {
+            if (!dateString) return 0;
+            var date = new Date(dateString);
+            var day = date.getDay(); 
+            var isWeekend = (day === 0 || day === 6);
+            var isHoliday = LIBUR_NASIONAL.includes(dateString);
+            return (isWeekend || isHoliday) ? PRICE_WEEKEND : PRICE_WEEKDAY;
+        }
+
+        function formatNomor(nomor) {
+            nomor = nomor.replace(/\D/g, '');
+            if (nomor.startsWith('0')) return '62' + nomor.substring(1);
+            return nomor.startsWith('62') ? nomor : '62' + nomor;
+        }
+
+        function validateNomor(nomor) {
+            return /^62[0-9]{8,14}$/.test(nomor);
+        }
+
+        function updateTotalBoril() {
+            var tanggalValue = document.getElementById('boril-tanggal')?.value;
+            var jumlahStr = document.getElementById('boril-jumlah')?.value;
+            var jumlah = parseInt(jumlahStr) || 0;
+            
+            if (!tanggalValue || jumlah <= 0) {
+                if(document.getElementById('boril-priceUnitDisplay')) document.getElementById('boril-priceUnitDisplay').innerText = "-";
+                if(document.getElementById('boril-totalDisplay')) document.getElementById('boril-totalDisplay').innerText = "Rp 0";
+                return;
+            }
+
+            var pricePerTicket = getPriceByDate(tanggalValue);
+            var totalTicket = jumlah * pricePerTicket;
+            var grandTotal = totalTicket + DEPOSIT_SMART_TAG;
+
+            if(document.getElementById('boril-priceUnitDisplay')) document.getElementById('boril-priceUnitDisplay').innerText = "Rp " + totalTicket.toLocaleString('id-ID');
+            if(document.getElementById('boril-totalDisplay')) document.getElementById('boril-totalDisplay').innerText = "Rp " + grandTotal.toLocaleString('id-ID');
+        }
+
+        async function handleBooking(e) {
+            e.preventDefault();
+            var btn = document.getElementById('boril-submitBtn');
+            
+            var nama = document.getElementById("boril-nama").value.trim();
+            var nomorInput = document.getElementById("boril-nomor").value.trim();
+            var tanggal = document.getElementById("boril-tanggal").value;
+            var jumlah = parseInt(document.getElementById("boril-jumlah").value);
+            var catatan = document.getElementById("boril-catatan").value || "-";
+
+            var nomor = formatNomor(nomorInput);
+
+            if (!validateNomor(nomor)) {
+                alert("Nomor WhatsApp tidak valid! Gunakan format: 08xxxx atau 62xxxx");
+                return;
+            }
+
+            var pricePerTicket = getPriceByDate(tanggal);
+            var totalTicket = jumlah * pricePerTicket;
+            var grandTotalNum = totalTicket + DEPOSIT_SMART_TAG;
+            var grandTotalFormatted = grandTotalNum.toLocaleString('id-ID');
+            
+            var dateParts = tanggal.split("-");
+            var formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+            var tipeHari = (pricePerTicket === PRICE_WEEKEND) ? "Weekend" : "Weekday";
+
+            // Ubah state tombol
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin text-2xl"></i> <span>Memproses...</span>';
+            showToast('Menyiapkan pesanan Anda...');
+
+            try {
+                // 1. KIRIM KE GOOGLE SHEETS
+                var formData = new FormData();
+                formData.append("nama", nama);
+                formData.append("nomor", nomor);
+                formData.append("tanggal", formattedDate);
+                formData.append("jumlah", jumlah);
+                formData.append("catatan", catatan);
+                formData.append("total", "Rp" + grandTotalFormatted);
+
+                fetch(SCRIPT_URL, {
+                    method: "POST",
+                    body: formData,
+                    mode: "no-cors"
+                });
+
+                // 2. FORMAT PESAN WHATSAPP
+                var pesan = 
+`Halo Riau Fantasi Labersa!
+
+*BOOKING PROMO BORIL (APRIL)*
+━━━━━━━━━━━━━━━━━━
+👤 Nama: *${nama.toUpperCase()}*
+📱 No HP: ${nomor}
+📅 Tanggal: *${formattedDate}* (${tipeHari})
+🎟️ Jumlah: ${jumlah} Tiket
+💵 Tiket: Rp${totalTicket.toLocaleString('id-ID')}
+💳 Jaminan Tag: Rp25.000 (Flat)
+💰 *TOTAL BAYAR: Rp${grandTotalFormatted}*
+━━━━━━━━━━━━━━━━━━
+📝 Catatan: ${catatan}
+
+Info Penting:
+- Berlaku 30 maret - 30 April 2026
+- Anak dibawah 80cm Gratis
+- Pembayaran tunai saat kunjungan
+- Jaminan tag dikembalikan saat pulang
+- Wajib menunjukkan bukti booking ini di loket`;
+
+                var encodedPesan = encodeURIComponent(pesan);
+                
+                // Redirect ke WhatsApp
+                setTimeout(() => {
+                    window.open(`https://wa.me/628117696599?text=${encodedPesan}`, '_blank');
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fab fa-whatsapp text-2xl"></i> <span>Kirim & Konfirmasi Via WhatsApp</span>';
+                }, 1500);
+
+            } catch (error) {
+                console.error(error);
+                window.open(`https://wa.me/628117696599?text=Halo Riau Fantasi Labersa, saya ingin booking tiket BORIL atas nama ${nama}`, '_blank');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fab fa-whatsapp text-2xl"></i> <span>Kirim & Konfirmasi Via WhatsApp</span>';
+            }
+        }
+
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cek Cookie
+            try {
+                if(localStorage.getItem('cookiesAccepted') !== 'true') {
+                    var banner = document.getElementById('cookie-consent');
+                    if(banner) banner.style.display = 'flex';
+                }
+            } catch(e) {}
+
+            // Setup Tombol Menu Mobile
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+            }
+
+            // Setup Form Boril
+            var inputTanggal = document.getElementById("boril-tanggal");
+            if(inputTanggal) {
+                var today = new Date();
+                var todayStr = today.toISOString().split('T')[0];
+                inputTanggal.min = todayStr;
+                inputTanggal.max = "2026-04-30";
+                inputTanggal.value = todayStr;
+                updateTotalBoril();
+            }
+        });
+    </script>
+</body>
+</html>
