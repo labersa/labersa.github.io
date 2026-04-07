@@ -53,11 +53,11 @@
                     <div class="hidden md:flex space-x-4 lg:space-x-6 items-center text-slate-600 font-bold text-sm lg:text-base">
                         <a href="index.html" class="hover:text-sky-600 transition-colors">Beranda</a>
                         <a href="artikel.html" class="hover:text-sky-600 transition-colors">Artikel</a>
-                        <a href="wahana.html" class="hover:text-sky-600 transition-colors">Wahana</a>
+                        <a href="wahana.html" class="text-sky-600 font-black border-b-2 border-sky-500">Wahana</a>
                         <a href="harga-tiket.html" class="hover:text-sky-600 transition-colors">Harga Tiket</a>
                         <a href="promo.html" class="hover:text-sky-600 transition-colors">Promo</a>
                         <a href="fasilitas.html" class="hover:text-sky-600 transition-colors">Fasilitas</a>
-                        <a href="hubungi-kami.html" class="text-sky-600 font-black border-b-2 border-sky-500">Hubungi Kami</a>
+                        <a href="hubungi-kami.html" class="hover:text-sky-600 transition-colors">Hubungi Kami</a>
                     </div>
 
                     <!-- Ikon Sosmed (Mobile & Desktop) - Lebih Besar & Di Samping Menu Drop -->
@@ -80,13 +80,13 @@
 
         <!-- Dropdown Mobile -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-sky-50 px-4 pt-2 pb-4 space-y-1 shadow-lg text-shadow-none text-sm">
-            <a href="index.html" class="block px-3 py-2 text-slate-600 font-medium">Beranda</a>
-            <a href="artikel.html" class="block px-3 py-2 text-slate-600 font-medium">Artikel</a>
-            <a href="wahana.html" class="block px-3 py-2 text-slate-600 font-medium">Wahana</a>
-            <a href="harga-tiket.html" class="block px-3 py-2 text-slate-600 font-medium">Harga Tiket</a>
-            <a href="promo.html" class="block px-3 py-2 text-slate-600 font-medium">Promo</a>
-            <a href="fasilitas.html" class="block px-3 py-2 text-slate-600 font-medium">Fasilitas</a>
-            <a href="hubungi-kami.html" class="block px-3 py-2 text-sky-600 font-bold">Hubungi Kami</a>
+            <a href="index.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Beranda</a>
+            <a href="artikel.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Artikel</a>
+            <a href="wahana.html" class="block px-3 py-2 text-sky-600 font-bold bg-sky-50 rounded-md">Wahana</a>
+            <a href="harga-tiket.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Harga Tiket</a>
+            <a href="promo.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Promo</a>
+            <a href="fasilitas.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Fasilitas</a>
+            <a href="hubungi-kami.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Hubungi Kami</a>
         </div>
     </nav>
 
@@ -206,18 +206,20 @@
                         </div>
                     </div>
 
-                    <!-- 6. Big Jump -->
-                    <a href="wahana-bigjump.html" class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col">
-                    <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col">
+                    <!-- 6. Big Jump (Link to Article) -->
+                    <a href="wahana-bigjump.html" class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col cursor-pointer">
                         <div class="h-48 relative overflow-hidden bg-sky-100 flex-shrink-0">
                             <img src="https://labersa.github.io/bigjump.jpeg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Big Jump">
                         </div>
                         <div class="p-5 flex-grow flex flex-col">
                             <h4 class="text-lg font-bold text-slate-800 mb-1 group-hover:text-sky-600 transition-colors">Big Jump</h4>
                             <p class="text-slate-500 text-xs leading-relaxed mt-1 flex-grow">Wahana ekstrem yang membuat sensasi melompat di udara sesaat sebelum jatuh mendebarkan ke kolam dalam.</p>
-                            <div class="mt-4"><span class="bg-amber-50 text-amber-600 text-[9px] font-black px-2.5 py-1.5 rounded-lg border border-amber-200 uppercase tracking-widest flex items-center gap-1.5 w-fit shadow-sm"><i class="fas fa-life-ring"></i> Pelampung Single & Double</span></div>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="bg-amber-50 text-amber-600 text-[9px] font-black px-2.5 py-1.5 rounded-lg border border-amber-200 uppercase tracking-widest flex items-center gap-1.5 shadow-sm"><i class="fas fa-life-ring"></i> Pelampung Single & Double</span>
+                                <i class="fas fa-arrow-right text-sky-500 opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- 7. Vertikal Slide -->
                     <div class="bg-white rounded-2xl shadow-sm border border-sky-100 hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col">
@@ -304,84 +306,105 @@
                 </div>
             </div>
 
-                    <div class="bg-orange-50 border-2 border-dashed border-orange-300 rounded-[2rem] p-10 text-center relative overflow-hidden shadow-sm">
-                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-red-400"></div>
-                        <div class="inline-block bg-orange-100 p-5 rounded-full mb-6">
-                            <i class="fas fa-tools text-5xl text-orange-500 animate-pulse"></i>
+            <!-- 2. THEMEPARK SECTION -->
+            <div>
+                <!-- Section Header -->
+                <div class="relative bg-gradient-to-r from-orange-500 to-red-600 rounded-[2rem] p-6 md:p-8 mb-10 shadow-xl shadow-red-200 overflow-hidden flex items-center">
+                    <div class="absolute right-0 top-0 opacity-10 transform translate-x-4 -translate-y-4 pointer-events-none">
+                        <i class="fas fa-ticket-alt text-9xl text-white"></i>
+                    </div>
+                    <div class="relative z-10 flex items-center">
+                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mr-5 shadow-inner border border-white/30">
+                            <i class="fas fa-ticket-alt text-3xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-black text-slate-800 mb-4">Wahana Sedang Dalam Perbaikan</h3>
-                        <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
-                            Mohon maaf, saat ini seluruh wahana di <strong>Labersa Themepark</strong> sedang dalam masa pemeliharaan rutin. Namun jangan khawatir, keseruan di area <strong class="text-sky-600">Labersa Waterpark</strong> tetap beroperasi normal!
-                        </p>
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-black text-white drop-shadow-md tracking-tight">Labersa Themepark</h2>
+                            <p class="text-red-100 text-sm font-medium mt-1 drop-shadow-sm">Dunia Fantasi Wahana Kering</p>
+                        </div>
                     </div>
                 </div>
+
+                <div class="bg-orange-50 border-2 border-dashed border-orange-300 rounded-[2rem] p-10 text-center relative overflow-hidden shadow-sm">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-red-400"></div>
+                    <div class="inline-block bg-orange-100 p-5 rounded-full mb-6">
+                        <i class="fas fa-tools text-5xl text-orange-500 animate-pulse"></i>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-black text-slate-800 mb-4">Wahana Sedang Dalam Perbaikan</h3>
+                    <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
+                        Mohon maaf, saat ini seluruh wahana di <strong>Labersa Themepark</strong> sedang dalam masa pemeliharaan rutin. Namun jangan khawatir, keseruan di area <strong class="text-sky-600">Labersa Waterpark</strong> tetap beroperasi normal!
+                    </p>
+                </div>
+            </div>
 
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Lengkap -->
     <footer id="kontak" class="bg-blue-950 text-slate-300 pt-12 pb-8 text-shadow-none relative z-40 mt-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left text-shadow-none">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
                 <!-- Info -->
                 <div class="space-y-5 text-shadow-none">
                     <img src="https://labersa.github.io/rifan.png" alt="Logo Footer" class="h-16 w-auto rounded-2xl shadow-lg">
                     <p class="text-xs leading-relaxed text-blue-200 font-medium pr-4">Destinasi wisata air terbaik di Pekanbaru, Riau. Ciptakan momen seru bersama keluarga tercinta.</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="w-8 h-8 rounded-full bg-white text-pink-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-instagram text-base"></i></a>
-                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-facebook-f text-base"></i></a>
-                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-tiktok text-base"></i></a>
-                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-red-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"><i class="fab fa-youtube text-base"></i></a>
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="w-8 h-8 rounded-full bg-white text-pink-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-instagram text-base"></i></a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-facebook-f text-base"></i></a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-tiktok text-base"></i></a>
+                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-red-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-youtube text-base"></i></a>
                     </div>
                 </div>
 
                 <!-- Menu Cepat -->
                 <div>
-                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block mb-5 tracking-wide uppercase text-xs">Menu Cepat</h4>
-                    <ul class="space-y-3 text-xs font-medium text-blue-200">
-                        <li><a href="index.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Beranda</a></li>
-                        <li><a href="index.html#artikel" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Artikel & Blog</a></li>
-                        <li><a href="wahana.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Daftar Wahana</a></li>
-                        <li><a href="harga-tiket.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Harga Tiket & Sewa</a></li>
-                        <li><a href="promo-boril.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Promo Spesial</a></li>
-                        <li><a href="fasilitas.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-sky-500"></i> Fasilitas</a></li>
+                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block mb-5 tracking-wide uppercase text-[10px]">Menu Cepat</h4>
+                    <ul class="space-y-3 text-[11px] font-bold uppercase tracking-widest text-blue-200">
+                        <li><a href="index.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Beranda</a></li>
+                        <li><a href="artikel.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Artikel & Blog</a></li>
+                        <li><a href="wahana.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Daftar Wahana</a></li>
+                        <li><a href="harga-tiket.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Harga Tiket & Sewa</a></li>
+                        <li><a href="promo.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Promo Spesial</a></li>
+                        <li><a href="fasilitas.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Fasilitas</a></li>
                     </ul>
                 </div>
 
                 <!-- Hubungi Kami -->
                 <div class="space-y-5">
-                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block tracking-wide uppercase text-xs">Hubungi Kami</h4>
-                    <ul class="space-y-3 text-xs font-medium">
-                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-sky-400"></i> Jl. Labersa, Tanah Merah, Kab. Kampar, Riau 28284</li>
+                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block tracking-wide uppercase text-[10px]">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-xs font-medium text-blue-200">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-sky-400"></i> Jl. Labersa, Tanah Merah, Siak Hulu, Kab. Kampar, Riau 28284</li>
                         <li><a href="https://wa.me/628117696599" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> 0811-7696-599 (Hendra)</a></li>
                         <li><a href="https://wa.me/628117673499" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> 0811-7673-499 (Dedi)</a></li>
+                        <li><a href="mailto:riaufantasi@gmail.com" class="flex items-center hover:text-sky-400 transition-colors"><i class="fas fa-envelope mr-2 text-sky-400 text-base"></i> riaufantasi@gmail.com</a></li>
                     </ul>
                     <!-- Peta Miniature -->
                     <div class="group relative mt-3 rounded-2xl overflow-hidden shadow-inner border-2 border-sky-900 h-24 bg-slate-800 transition-all hover:border-sky-500">
-                        <a href="https://maps.app.goo.gl/qCHAubETn7165Uuy8" target="_blank" class="block w-full h-full relative">
+                        <a href="https://maps.app.goo.gl/qCHAubETn7165Uuy8" target="_blank" class="block w-full h-full relative text-shadow-none">
                             <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=400&h=200" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" alt="Map">
-                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-blue-900/40 group-hover:bg-blue-900/20">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors text-shadow-none">
                                 <i class="fas fa-map-marked-alt text-xl text-white mb-1 shadow-md"></i>
-                                <span class="text-[8px] font-black text-white uppercase tracking-widest bg-blue-600/80 px-2 py-0.5 rounded shadow-lg">Buka Google Maps</span>
+                                <span class="text-[8px] font-black text-white uppercase tracking-widest bg-blue-600/80 px-2 py-0.5 rounded shadow-lg text-shadow-none">Buka Google Maps</span>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- COPYRIGHT BAR -->
             <div class="border-t border-blue-900 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-blue-400 font-bold uppercase tracking-widest text-shadow-none">
-                <p>&copy; 2026 Labersa Riau Fantasi - All Rights Reserved</p>
-                <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0">
-                    <a href="tentang-kami.html" class="hover:text-white transition-colors">Tentang Kami</a>
-                    <span class="text-slate-600">|</span>
-                    <a href="syarat-ketentuan.html" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
-                    <span class="text-slate-600">|</span>
-                    <a href="privacy-policy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+                <p>© 2026 LABERSA RIAU FANTASI - ALL RIGHTS RESERVED</p>
+                <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0 items-center">
+                    <a href="tentang-kami.html" class="hover:text-white transition-colors">TENTANG KAMI</a>
+                    <span class="text-blue-900/50">|</span>
+                    <a href="syarat-ketentuan.html" class="hover:text-white transition-colors">SYARAT & KETENTUAN</a>
+                    <span class="text-blue-900/50">|</span>
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors text-white font-black underline">KEBIJAKAN PRIVASI</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
         function acceptCookies() {
             var banner = document.getElementById('cookie-consent');
@@ -390,7 +413,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            // Tampilkan banner cookie jika belum disetujui
             try {
                 if(localStorage.getItem('cookiesAccepted') !== 'true') {
                     var banner = document.getElementById('cookie-consent');
@@ -398,7 +420,6 @@
                 }
             } catch(e) {}
 
-            // Tombol Navigasi Mobile
             var btn = document.getElementById('mobile-menu-btn');
             var menu = document.getElementById('mobile-menu');
             if(btn && menu) {
