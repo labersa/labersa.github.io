@@ -63,31 +63,33 @@
                     </a>
                 </div>
 
-                <!-- Desktop Menu (Link disesuaikan ke index.html) -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="index.html" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Beranda</a>
-                    <a href="index.html#artikel" class="text-red-600 font-black transition-colors border-b-2 border-red-500">Artikel</a>
-                    <a href="index.html#wahana" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Wahana</a>
-                    <a href="index.html#harga" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Harga Tiket</a>
-                    <a href="index.html#promo" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Promo</a>
-                    <a href="index.html#fasilitas" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Fasilitas</a>
-                    <a href="#kontak" class="text-slate-600 hover:text-red-600 font-bold transition-colors">Hubungi Kami</a>
-                </div>
+               <!-- Kanan: Menu Utama, Sosmed & Hamburger -->
+                <div class="flex items-center gap-3 sm:gap-4 lg:gap-8">
+                    <!-- Navigasi Desktop -->
+                    <div class="hidden md:flex space-x-4 lg:space-x-6 items-center text-slate-600 font-bold text-sm lg:text-base">
+                        <a href="index.html" class="hover:text-sky-600 transition-colors">Beranda</a>
+                        <a href="artikel.html" class="hover:text-sky-600 transition-colors">Artikel</a>
+                        <a href="wahana.html" class="hover:text-sky-600 transition-colors">Wahana</a>
+                        <a href="harga-tiket.html" class="hover:text-sky-600 transition-colors">Harga Tiket</a>
+                        <a href="promo.html" class="hover:text-sky-600 transition-colors">Promo</a>
+                        <a href="fasilitas.html" class="hover:text-sky-600 transition-colors">Fasilitas</a>
+                        <a href="hubungi-kami.html" class="hover:text-sky-600 transition-colors">Hubungi Kami</a>
+                    </div>
 
-                <!-- Social Media Desktop -->
-                <div class="hidden md:flex items-center space-x-5">
-                    <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 hover:opacity-75 transition-opacity text-2xl"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 hover:opacity-75 transition-opacity text-2xl"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="text-slate-900 hover:opacity-75 transition-opacity text-2xl"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="text-red-600 hover:opacity-75 transition-opacity text-2xl"><i class="fab fa-youtube"></i></a>
-                </div>
+                    <!-- Ikon Sosmed (Mobile & Desktop) -->
+                    <div class="flex items-center space-x-2.5 sm:space-x-4 md:border-l md:border-slate-200 md:pl-4 lg:pl-6">
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 text-xl sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 text-xl sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="text-slate-900 text-xl sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="text-red-600 text-xl sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-youtube"></i></a>
+                    </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center gap-3 sm:gap-4">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-red-600 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
+                    <!-- Tombol Menu Drop (Mobile) -->
+                    <div class="md:hidden flex items-center border-l border-slate-200 pl-2.5 sm:pl-4">
+                        <button id="mobile-menu-btn" class="text-slate-600 hover:text-sky-500 focus:outline-none p-1">
+                            <i class="fas fa-bars text-2xl sm:text-3xl"></i>
+                        </button>
+                    </div>
             </div>
         </div>
 
