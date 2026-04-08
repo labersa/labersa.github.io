@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Booking tiket Riau Fantasi Labersa secara online. Dapatkan promo spesial, pesan sekarang dengan mudah, dan bayar tunai di loket.">
+    <title>Booking Online Tiket & Promo - Riau Fantasi</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://labersa.github.io/rifan.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Kode Verifikasi Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7937373136749693" crossorigin="anonymous"></script>
+
+    <style>
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .text-shadow-none { text-shadow: none !important; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+
+        /* Animasi Background Modern (Blob Air) */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite alternate; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-sky-50 selection:bg-sky-200 selection:text-sky-900 relative">
+
+    <!-- Efek Latar Belakang Air/Blob -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-cyan-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-sky-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-[20%] w-[30rem] h-[30rem] bg-blue-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="fixed bottom-0 left-0 w-full bg-slate-900/95 backdrop-blur-md text-slate-300 p-4 md:px-8 z-[100] hidden flex-col md:flex-row items-center justify-between gap-4 shadow-[0_-10px_20px_rgba(0,0,0,0.2)] border-t border-slate-700 text-shadow-none text-center md:text-left">
+        <div class="text-xs md:text-sm font-medium leading-relaxed">
+            Situs web ini menggunakan cookie dari Google untuk menayangkan iklan yang relevan dan menganalisis traffic.
+            <a href="privacy-policy.html" class="text-sky-400 hover:text-sky-300 underline font-bold ml-1 text-shadow-none">Pelajari Kebijakan Privasi</a>.
+        </div>
+        <button onclick="acceptCookies()" class="bg-sky-500 hover:bg-sky-400 text-white font-black py-2.5 px-8 rounded-full text-sm whitespace-nowrap transition-all hover:scale-105 shadow-lg shadow-sky-500/30 text-shadow-none">Mengerti & Setuju</button>
+    </div>
+
+    <!-- NAVBAR (HEADER) -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-sky-100 transition-all duration-300 shadow-sm text-shadow-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                
+                <!-- Kiri: Logo Riau Fantasi -->
+                <div class="flex items-center flex-shrink-0">
+                    <a href="index.html">
+                        <img src="https://labersa.github.io/rifan.png" alt="Logo Riau Fantasi" class="h-11 sm:h-14 md:h-16 w-auto drop-shadow-md rounded-xl sm:rounded-2xl object-contain">
+                    </a>
+                </div>
+
+                <!-- Kanan: Menu Utama, Sosmed & Hamburger -->
+                <div class="flex items-center gap-3 sm:gap-4 lg:gap-8">
+                    <!-- Navigasi Desktop -->
+                    <div class="hidden md:flex space-x-4 lg:space-x-6 items-center text-slate-600 font-bold text-sm lg:text-base">
+                        <a href="index.html" class="hover:text-sky-600 transition-colors">Beranda</a>
+                        <a href="artikel.html" class="hover:text-sky-600 transition-colors">Artikel</a>
+                        <a href="wahana.html" class="hover:text-sky-600 transition-colors">Wahana</a>
+                        <a href="harga-tiket.html" class="hover:text-sky-600 transition-colors">Harga Tiket</a>
+                        <a href="promo.html" class="hover:text-sky-600 transition-colors">Promo</a>
+                        <a href="fasilitas.html" class="hover:text-sky-600 transition-colors">Fasilitas</a>
+                        <a href="hubungi-kami.html" class="hover:text-sky-600 transition-colors">Hubungi Kami</a>
+                    </div>
+
+                    <!-- Ikon Sosmed (Mobile & Desktop) -->
+                    <div class="flex items-center space-x-2.5 sm:space-x-4 md:border-l md:border-slate-200 md:pl-4 lg:pl-6">
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 text-xl sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 text-xl sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="text-slate-900 text-xl sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="text-red-600 text-xl sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                    <!-- Tombol Menu Drop (Mobile) -->
+                    <div class="md:hidden flex items-center border-l border-slate-200 pl-2.5 sm:pl-4">
+                        <button id="mobile-menu-btn" class="text-slate-600 hover:text-sky-500 focus:outline-none p-1">
+                            <i class="fas fa-bars text-2xl sm:text-3xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-sky-50 px-4 pt-2 pb-4 space-y-1 shadow-lg text-shadow-none text-sm">
+            <a href="index.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Beranda</a>
+            <a href="artikel.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Artikel</a>
+            <a href="wahana.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Wahana</a>
+            <a href="harga-tiket.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Harga Tiket</a>
+            <a href="promo.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Promo</a>
+            <a href="fasilitas.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Fasilitas</a>
+            <a href="hubungi-kami.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-sky-50 hover:text-sky-600 rounded-md">Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <!-- HEADER HALAMAN BOOKING -->
+    <header class="pt-32 pb-12 relative z-10 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="inline-block bg-sky-200/80 backdrop-blur-sm text-sky-800 px-4 py-2 rounded-full font-black text-xs uppercase tracking-widest mb-4 shadow-sm text-shadow-none border border-sky-300">
+                Reservasi Cepat & Mudah
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-slate-900 mb-6 uppercase tracking-tight">Booking <span class="text-sky-600">Online</span></h1>
+            <p class="text-lg text-slate-700 max-w-3xl mx-auto font-medium leading-relaxed">Pesan tiket promo Anda sekarang, amankan kuota hari ini, dan lakukan pembayaran langsung di loket.</p>
+        </div>
+    </header>
+
+    <main class="pb-0 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-shadow-none">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- BAGIAN KIRI: INFO HARGA & ATURAN (4 Kolom lg) -->
+                <div class="lg:col-span-4 space-y-6">
+                    
+                    <!-- Kartu Harga -->
+                    <div class="bg-white/90 backdrop-blur-xl rounded-[2rem] shadow-xl border border-white/50 p-6 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-sky-100 rounded-bl-[100%] pointer-events-none"></div>
+                        <h3 class="text-lg font-black text-slate-800 mb-4 border-b border-slate-100 pb-3 flex items-center gap-2">
+                            <i class="fas fa-tags text-sky-500"></i> Harga Promo
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center bg-slate-50/80 p-4 rounded-xl border border-slate-100">
+                                <div>
+                                    <span class="block text-[10px] font-black text-slate-400 uppercase tracking-widest">Senin - Jumat</span>
+                                    <span class="text-slate-800 font-bold text-sm">Weekday</span>
+                                </div>
+                                <span class="text-2xl font-black text-sky-600">30K</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-slate-50/80 p-4 rounded-xl border border-slate-100">
+                                <div>
+                                    <span class="block text-[10px] font-black text-slate-400 uppercase tracking-widest">Sabtu - Minggu</span>
+                                    <span class="text-slate-800 font-bold text-sm">Weekend / Libur</span>
+                                </div>
+                                <span class="text-2xl font-black text-sky-600">35K</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span class="inline-block bg-sky-50 text-sky-700 text-[10px] font-bold px-3 py-1.5 rounded-lg border border-sky-100">
+                                💳 Jaminan Smart Tag: Rp 25.000 / Booking
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Kartu Syarat & Ketentuan -->
+                    <div class="bg-amber-50/95 backdrop-blur-xl rounded-[2rem] shadow-lg border border-amber-200/60 p-6">
+                        <h3 class="text-lg font-black text-amber-900 mb-4 flex items-center gap-2">
+                            <i class="fas fa-info-circle text-amber-500"></i> Info Penting
+                        </h3>
+                        <ul class="space-y-3 text-sm text-amber-800 font-medium">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-money-bill-wave text-amber-600 mt-0.5"></i>
+                                <span>Hanya menerima <b>PEMBAYARAN TUNAI (CASH)</b> di loket.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-child text-amber-600 mt-0.5"></i>
+                                <span>Anak dengan tinggi di bawah 80 cm <b>GRATIS</b>.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-swimming-pool text-amber-600 mt-0.5"></i>
+                                <span>Tiket sudah termasuk akses Wahana Baru.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-undo-alt text-amber-600 mt-0.5"></i>
+                                <span>Uang Jaminan Smart Tag (Rp 25.000) <b>wajib</b> dan akan dikembalikan saat Anda pulang.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-calendar-alt text-amber-600 mt-0.5"></i>
+                                <span>Promo berlaku: 30 Mar - 30 Apr 2026.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- BAGIAN KANAN: FORM BOOKING (8 Kolom lg) -->
+                <div class="lg:col-span-8 bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-white/60 p-6 md:p-10 relative overflow-hidden">
+                    <h3 class="text-2xl font-black text-slate-800 mb-2 uppercase tracking-tight">Formulir Pemesanan</h3>
+                    <p class="text-slate-500 text-sm mb-8">Isi data kunjungan Anda dengan benar. Tiket (e-ticket) akan dikirimkan otomatis melalui WhatsApp.</p>
+                    
+                    <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-5">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Lengkap</label>
+                                <input type="text" id="nama" required class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all font-medium text-slate-700 backdrop-blur-sm" placeholder="Tulis nama sesuai KTP">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nomor WhatsApp</label>
+                                <input type="tel" id="nomor" required class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all font-medium text-slate-700 backdrop-blur-sm" placeholder="Contoh: 08123456789">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Tanggal Kunjungan</label>
+                                <input type="date" id="tanggal" onchange="updateTotal()" required class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all font-medium text-slate-700 backdrop-blur-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Jumlah Tiket</label>
+                                <input type="number" id="jumlah" value="1" min="1" oninput="updateTotal()" required class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all font-medium text-slate-700 backdrop-blur-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Catatan Tambahan (Opsional)</label>
+                            <textarea id="catatan" rows="2" class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all font-medium text-slate-700 backdrop-blur-sm" placeholder="Contoh: Rombongan sekolah atau keluarga"></textarea>
+                        </div>
+
+                        <!-- Ringkasan Pesanan (Summary) -->
+                        <div class="bg-gradient-to-br from-slate-50/90 to-sky-50/90 p-6 rounded-2xl border border-sky-100 mt-8 shadow-inner backdrop-blur-sm">
+                            <div class="flex justify-between items-center mb-3 text-sm">
+                                <span class="font-medium text-slate-500">Harga Tiket (<span id="ticketCountLabel">1</span>x)</span>
+                                <span id="priceUnitDisplay" class="font-black text-slate-700">-</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-4 text-sm pb-4 border-b border-sky-200 border-dashed">
+                                <span class="font-medium text-slate-500">Jaminan Smart Tag (Bisa di-refund)</span>
+                                <span id="depositDisplay" class="font-black text-slate-700">Rp 25.000</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-black text-slate-800 text-lg uppercase tracking-tight">Total Pembayaran</span>
+                                <b id="totalDisplay" class="text-3xl text-sky-600 font-black tracking-tight drop-shadow-sm">Rp 0</b>
+                            </div>
+                            <div class="mt-4 text-center">
+                                <span class="text-[10px] font-black text-red-500 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-md border border-red-100 inline-block">
+                                    <i class="fas fa-exclamation-triangle"></i> Pembayaran Hanya Tunai di Loket
+                                </span>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-black text-lg py-4 rounded-xl shadow-lg shadow-green-500/30 transition-all transform hover:-translate-y-1 uppercase tracking-widest flex items-center justify-center gap-3 mt-6">
+                            <i class="fab fa-whatsapp text-2xl"></i> Konfirmasi Via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- OMBAK PEMBATAS FOOTER -->
+        <div class="w-full leading-none pointer-events-none mt-10 -mb-1 relative z-10">
+            <svg class="block w-full h-16 md:h-32 translate-y-[2px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#172554" d="M0,160L80,170.7C160,181,320,203,480,186.7C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </svg>
+        </div>
+    </main>
+
+    <!-- FOOTER MASTER -->
+    <footer id="kontak-footer" class="bg-blue-950 text-slate-300 pt-12 pb-8 text-shadow-none relative z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left text-shadow-none">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+                <div class="space-y-5">
+                    <img src="https://labersa.github.io/rifan.png" alt="Logo Footer" class="h-16 w-auto rounded-2xl shadow-lg">
+                    <p class="text-xs leading-relaxed text-blue-200 font-medium pr-4">Destinasi wisata air dan hiburan keluarga terbaik di Pekanbaru, Riau. Ciptakan momen seru bersama keluarga tercinta di Riau Fantasi.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="w-8 h-8 rounded-full bg-white text-pink-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-instagram text-base"></i></a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-facebook-f text-base"></i></a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-tiktok text-base"></i></a>
+                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-red-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-youtube text-base"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block mb-5 tracking-wide uppercase text-[10px]">Menu Cepat</h4>
+                    <ul class="space-y-3 text-[11px] font-bold uppercase tracking-widest text-blue-200">
+                        <li><a href="index.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Beranda</a></li>
+                        <li><a href="artikel.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Artikel & Blog</a></li>
+                        <li><a href="wahana.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Daftar Wahana</a></li>
+                        <li><a href="harga-tiket.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Harga Tiket</a></li>
+                        <li><a href="promo.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Promo Spesial</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-5">
+                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block tracking-wide uppercase text-[10px]">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-xs font-medium text-blue-200">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-sky-400"></i> Jl. Labersa, Tanah Merah, Siak Hulu, Kab. Kampar, Riau 28284</li>
+                        <li><a href="https://wa.me/628117696599" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> 0811-7696-599 (Hendra)</a></li>
+                        <li><a href="https://wa.me/628117673499" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> 0811-7673-499 (Dedi)</a></li>
+                        <li><a href="mailto:riaufantasi@gmail.com" class="flex items-center hover:text-sky-400 transition-colors"><i class="fas fa-envelope mr-2 text-sky-400 text-base"></i> riaufantasi@gmail.com</a></li>
+                    </ul>
+                    <div class="group relative mt-3 rounded-2xl overflow-hidden shadow-inner border-2 border-sky-900 h-24 bg-slate-800 transition-all hover:border-sky-500">
+                        <a href="https://maps.app.goo.gl/qCHAubETn7165Uuy8" target="_blank" class="block w-full h-full relative text-shadow-none">
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=400&h=200" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" alt="Map">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors text-shadow-none">
+                                <i class="fas fa-map-marked-alt text-xl text-white mb-1 shadow-md"></i>
+                                <span class="text-[8px] font-black text-white uppercase tracking-widest bg-blue-600/80 px-2 py-0.5 rounded shadow-lg text-shadow-none">Buka Google Maps</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT BAR -->
+            <div class="border-t border-blue-900 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-blue-400 font-bold uppercase tracking-widest text-shadow-none">
+                <p>© 2026 LABERSA RIAU FANTASI - ALL RIGHTS RESERVED</p>
+                <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0 items-center">
+                    <a href="tentang-kami.html" class="hover:text-white transition-colors">TENTANG KAMI</a>
+                    <span class="text-blue-900/50">|</span>
+                    <a href="syarat-ketentuan.html" class="hover:text-white transition-colors">SYARAT & KETENTUAN</a>
+                    <span class="text-blue-900/50">|</span>
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors">KEBIJAKAN PRIVASI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notifikasi Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-800 text-white px-5 py-3 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3 font-medium text-sm pointer-events-none">
+        <i class="fas fa-info-circle text-sky-400"></i> <span id="toast-message">Memproses pesanan...</span>
+    </div>
+
+    <!-- Scripts Form Booking -->
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
+        
+        const PRICE_WEEKDAY = 30000;
+        const PRICE_WEEKEND = 35000;
+        const DEPOSIT_SMART_TAG = 25000;
+        const LIBUR_NASIONAL = ["2026-04-03"]; // Format YYYY-MM-DD
+
+        function showToast(message) {
+            var toast = document.getElementById('toast');
+            if(toast) {
+                document.getElementById('toast-message').innerText = message;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 3000);
+            }
+        }
+
+        function getPriceByDate(dateString) {
+            if (!dateString) return 0;
+            const date = new Date(dateString);
+            const day = date.getDay(); 
+            const isWeekend = (day === 0 || day === 6);
+            const isHoliday = LIBUR_NASIONAL.includes(dateString);
+            return (isWeekend || isHoliday) ? PRICE_WEEKEND : PRICE_WEEKDAY;
+        }
+
+        function formatNomor(nomor) {
+            nomor = nomor.replace(/\D/g, '');
+            if (nomor.startsWith('0')) return '62' + nomor.substring(1);
+            return nomor.startsWith('62') ? nomor : '62' + nomor;
+        }
+
+        function validateNomor(nomor) {
+            return /^62[0-9]{8,14}$/.test(nomor);
+        }
+
+        function updateTotal() {
+            const tanggalValue = document.getElementById('tanggal').value;
+            const jumlah = parseInt(document.getElementById('jumlah').value) || 0;
+            
+            if (!tanggalValue || jumlah <= 0) {
+                document.getElementById('priceUnitDisplay').innerText = "-";
+                document.getElementById('totalDisplay').innerText = "Rp 0";
+                document.getElementById('ticketCountLabel').innerText = "0";
+                return;
+            }
+
+            const pricePerTicket = getPriceByDate(tanggalValue);
+            const totalTicket = jumlah * pricePerTicket;
+            const grandTotal = totalTicket + DEPOSIT_SMART_TAG;
+
+            document.getElementById('ticketCountLabel').innerText = jumlah;
+            document.getElementById('priceUnitDisplay').innerText = "Rp " + totalTicket.toLocaleString('id-ID');
+            document.getElementById('totalDisplay').innerText = "Rp " + grandTotal.toLocaleString('id-ID');
+        }
+
+        async function handleBooking(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            
+            let nama = document.getElementById("nama").value.trim();
+            let nomorInput = document.getElementById("nomor").value.trim();
+            const tanggal = document.getElementById("tanggal").value;
+            const jumlah = parseInt(document.getElementById("jumlah").value);
+            const catatan = document.getElementById("catatan").value || "-";
+
+            const nomor = formatNomor(nomorInput);
+
+            if (!validateNomor(nomor)) {
+                alert("Nomor WhatsApp tidak valid! Gunakan format: 08xxxx atau 62xxxx");
+                return;
+            }
+
+            const pricePerTicket = getPriceByDate(tanggal);
+            const totalTicket = jumlah * pricePerTicket;
+            const grandTotalNum = totalTicket + DEPOSIT_SMART_TAG;
+            const grandTotalFormatted = grandTotalNum.toLocaleString('id-ID');
+            
+            const dateParts = tanggal.split("-");
+            const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+            const tipeHari = (pricePerTicket === PRICE_WEEKEND) ? "Weekend" : "Weekday";
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin text-2xl"></i> Memproses...';
+            showToast('Menyiapkan e-ticket Anda...');
+
+            try {
+                // 1. KIRIM KE GOOGLE SHEETS
+                const formData = new FormData();
+                formData.append("nama", nama);
+                formData.append("nomor", nomor);
+                formData.append("tanggal", formattedDate);
+                formData.append("jumlah", jumlah);
+                formData.append("catatan", catatan);
+                formData.append("total", "Rp" + grandTotalFormatted);
+
+                fetch(SCRIPT_URL, {
+                    method: "POST",
+                    body: formData,
+                    mode: "no-cors"
+                });
+
+                // 2. FORMAT PESAN WHATSAPP
+                const pesan = 
+`Halo Riau Fantasi Labersa!
+
+*BOOKING PROMO ONLINE*
+━━━━━━━━━━━━━━━━━━
+👤 Nama: *${nama.toUpperCase()}*
+📱 No HP: ${nomor}
+📅 Tanggal: *${formattedDate}* (${tipeHari})
+🎟️ Jumlah: ${jumlah} Tiket
+💵 Tiket: Rp${totalTicket.toLocaleString('id-ID')}
+💳 Jaminan Tag: Rp25.000 (Flat)
+💰 *TOTAL BAYAR: Rp${grandTotalFormatted}*
+━━━━━━━━━━━━━━━━━━
+📝 Catatan: ${catatan}
+
+Info Penting:
+- Pembayaran hanya tunai saat di loket
+- Anak dibawah 80cm Gratis Masuk
+- Jaminan tag dikembalikan saat pulang
+- Wajib tunjukkan pesan ini ke loket`;
+
+                const encodedPesan = encodeURIComponent(pesan);
+                
+                // Redirect ke WhatsApp
+                setTimeout(() => {
+                    window.location.href = `https://wa.me/628117696599?text=${encodedPesan}`;
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fab fa-whatsapp text-2xl"></i> Konfirmasi Via WhatsApp';
+                }, 1500);
+
+            } catch (error) {
+                console.error(error);
+                window.location.href = `https://wa.me/628117696599?text=Halo Riau Fantasi Labersa, saya ingin booking tiket atas nama ${nama}`;
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fab fa-whatsapp text-2xl"></i> Konfirmasi Via WhatsApp';
+            }
+        }
+
+        // Fungsi Terima Cookie (Global scope)
+        window.acceptCookies = function() {
+            var banner = document.getElementById('cookie-consent');
+            if(banner) banner.style.display = 'none';
+            try { localStorage.setItem('cookiesAccepted', 'true'); } catch(e) {}
+        };
+
+        // INIT SCRIPT
+        window.onload = function () {
+            // Setup Date Picker
+            const input = document.getElementById("tanggal");
+            if (input) {
+                const today = new Date();
+                const todayStr = today.toISOString().split('T')[0];
+
+                input.min = todayStr;
+                input.max = "2026-12-31"; // Bebas mau sampai kapan
+                input.value = todayStr;
+
+                updateTotal();
+            }
+
+            // Setup Cookie & Mobile Menu
+            try {
+                if(localStorage.getItem('cookiesAccepted') !== 'true') {
+                    var banner = document.getElementById('cookie-consent');
+                    if(banner) banner.style.display = 'flex';
+                }
+            } catch(e) {}
+
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+            }
+        };   
+    </script>
+</body>
+</html>
