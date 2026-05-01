@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pendaftaran Online Promo MEINYALA Riau Fantasi. Dapatkan tiket waterpark hanya Rp 20.000/orang. Kuota terbatas!">
+    <title>Pendaftaran Promo MEINYALA - Riau Fantasi</title>
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://labersa.github.io/daftar-meinyala.html">
+    <meta property="og:title" content="Pendaftaran Promo MEINYALA - Riau Fantasi">
+    <meta property="og:description" content="Daftar sekarang! Tiket Riau Fantasi cuma Rp 20.000/orang. Promo sangat terbatas.">
+    <meta property="og:image" content="https://labersa.github.io/promo-meinyala.jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://labersa.github.io/rifan.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Kode Verifikasi Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7937373136749693" crossorigin="anonymous"></script>
+
+    <style>
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .text-shadow-none { text-shadow: none !important; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+
+        /* Animasi Background Fire/Orange untuk MEINYALA */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob { animation: blob 7s infinite alternate; }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+        
+        /* Mencegah Zoom Otomatis di iOS/Safari saat klik input */
+        input, select, textarea { font-size: 16px !important; }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-orange-50 selection:bg-orange-200 selection:text-orange-900 relative">
+
+    <!-- Efek Latar Belakang (Tema Api/Orange) -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-red-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-96 h-96 bg-orange-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div class="absolute -bottom-32 left-[20%] w-[30rem] h-[30rem] bg-yellow-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="fixed bottom-0 left-0 w-full bg-slate-900/95 backdrop-blur-md text-slate-300 p-4 md:px-8 z-[100] hidden flex-col md:flex-row items-center justify-between gap-4 shadow-[0_-10px_20px_rgba(0,0,0,0.2)] border-t border-slate-700 text-shadow-none text-center md:text-left">
+        <div class="text-xs md:text-sm font-medium leading-relaxed">
+            Situs web ini menggunakan cookie dari Google untuk menayangkan iklan yang relevan dan menganalisis traffic.
+            <a href="privacy-policy.html" class="text-sky-400 hover:text-sky-300 underline font-bold ml-1 text-shadow-none">Pelajari Kebijakan Privasi</a>.
+        </div>
+        <button onclick="acceptCookies()" class="bg-orange-500 hover:bg-orange-400 text-white font-black py-2.5 px-8 rounded-full text-sm whitespace-nowrap transition-all hover:scale-105 shadow-lg shadow-orange-500/30 text-shadow-none">Mengerti & Setuju</button>
+    </div>
+
+    <!-- NAVBAR (HEADER) -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-orange-100 transition-all duration-300 shadow-sm text-shadow-none">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                
+                <!-- Kiri: Logo Riau Fantasi -->
+                <div class="flex items-center flex-shrink-0">
+                    <a href="index.html">
+                        <img src="https://labersa.github.io/rifan.png" alt="Logo Riau Fantasi" class="h-10 sm:h-12 md:h-16 w-auto drop-shadow-md transition-transform hover:scale-105 rounded-xl sm:rounded-2xl object-contain">
+                    </a>
+                </div>
+
+                <!-- Kanan: Menu Utama, Sosmed & Hamburger -->
+                <div class="flex items-center gap-3 sm:gap-4 lg:gap-8">
+                    <!-- Navigasi Desktop -->
+                    <div class="hidden md:flex space-x-4 lg:space-x-6 items-center text-slate-600 font-bold text-sm lg:text-base">
+                        <a href="index.html" class="hover:text-orange-600 transition-colors">Beranda</a>
+                        <a href="artikel.html" class="hover:text-orange-600 transition-colors">Artikel</a>
+                        <a href="wahana.html" class="hover:text-orange-600 transition-colors">Wahana</a>
+                        <a href="harga-tiket.html" class="hover:text-orange-600 transition-colors">Harga Tiket</a>
+                        <a href="promo.html" class="text-orange-600 font-black transition-colors border-b-2 border-orange-500">Promo</a>
+                        <a href="fasilitas.html" class="hover:text-orange-600 transition-colors">Fasilitas</a>
+                        <a href="hubungi-kami.html" class="hover:text-orange-600 transition-colors">Hubungi Kami</a>
+                    </div>
+
+                    <!-- Ikon Sosmed -->
+                    <div class="hidden sm:flex items-center space-x-2.5 sm:space-x-4 md:border-l md:border-slate-200 md:pl-4 lg:pl-6 text-shadow-none">
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 text-lg sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 text-lg sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="text-slate-900 text-lg sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="text-red-600 text-lg sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                    <!-- Tombol Menu Drop (Mobile) -->
+                    <div class="md:hidden flex items-center sm:border-l border-slate-200 pl-1 sm:pl-4">
+                        <button id="mobile-menu-btn" class="text-slate-600 hover:text-orange-500 focus:outline-none p-2 rounded-lg bg-slate-100">
+                            <i class="fas fa-bars text-xl sm:text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-orange-50 px-4 pt-2 pb-4 space-y-1 shadow-lg text-shadow-none text-sm">
+            <a href="index.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-orange-50 hover:text-orange-600 rounded-md">Beranda</a>
+            <a href="artikel.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-orange-50 hover:text-orange-600 rounded-md">Artikel</a>
+            <a href="wahana.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-orange-50 hover:text-orange-600 rounded-md">Wahana</a>
+            <a href="harga-tiket.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-orange-50 hover:text-orange-600 rounded-md">Harga Tiket</a>
+            <a href="promo.html" class="block px-3 py-2 text-orange-600 font-bold bg-orange-50 rounded-md">Promo</a>
+            <a href="fasilitas.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-orange-50 hover:text-orange-600 rounded-md">Fasilitas</a>
+            <a href="hubungi-kami.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-orange-50 hover:text-orange-600 rounded-md">Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <!-- HEADER HALAMAN BOOKING -->
+    <header class="pt-28 md:pt-32 pb-10 md:pb-12 relative z-10 text-center px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="inline-block bg-orange-200/80 backdrop-blur-sm text-orange-800 px-4 py-2 rounded-full font-black text-xs uppercase tracking-widest mb-4 shadow-sm border border-orange-300 animate-pulse">
+                <i class="fas fa-fire text-red-500"></i> Sangat Terbatas!
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-slate-900 mb-4 uppercase tracking-tight">Daftar Promo <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">MEINYALA</span></h1>
+            <p class="text-sm md:text-lg text-slate-700 max-w-3xl mx-auto font-medium leading-relaxed">Isi formulir ini untuk mendaftarkan nama Anda ke Admin kami. Dapatkan harga super gila cuma Rp 20.000!</p>
+        </div>
+    </header>
+
+    <main class="pb-0 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-shadow-none">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">
+                
+                <!-- BAGIAN KIRI: INFO HARGA & ATURAN (4 Kolom lg) -->
+                <div class="lg:col-span-4 space-y-6">
+                    
+                    <!-- Kartu Gambar Poster -->
+                    <div class="bg-white/90 backdrop-blur-xl rounded-[2rem] shadow-xl border border-white/50 p-2 relative overflow-hidden">
+                        <img src="https://labersa.github.io/promo-meinyala.jpeg" alt="Poster Promo Meinyala" class="w-full rounded-[1.5rem] object-cover">
+                    </div>
+
+                    <!-- Kartu Syarat & Ketentuan (Info Penting) -->
+                    <div class="bg-[#fffdf4] rounded-3xl shadow-sm border border-orange-200 p-5 sm:p-6">
+                        <h3 class="text-lg font-black text-red-600 mb-4 flex items-center gap-2.5">
+                            <i class="fas fa-exclamation-triangle text-red-500 text-xl"></i> Syarat & Ketentuan
+                        </h3>
+                        <ul class="space-y-3.5 text-xs sm:text-sm text-[#78350f] font-medium">
+                            <li class="flex items-start gap-2.5 border-b border-orange-100 pb-2">
+                                <i class="fas fa-calendar-plus text-orange-500 mt-0.5 text-base w-5 text-center flex-shrink-0"></i>
+                                <span class="leading-relaxed">Pendaftaran tiket HANYA dibuka tanggal <b class="font-black text-red-600">5 s/d 10 Mei 2026</b>.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5 border-b border-orange-100 pb-2">
+                                <i class="fas fa-calendar-check text-orange-500 mt-0.5 text-base w-5 text-center flex-shrink-0"></i>
+                                <span class="leading-relaxed">Tiket yang didaftarkan hanya berlaku untuk kunjungan tanggal <b class="font-black text-red-600">11 - 17 Mei 2026</b>.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5 border-b border-orange-100 pb-2">
+                                <i class="fas fa-ban text-orange-500 mt-0.5 text-base w-5 text-center flex-shrink-0"></i>
+                                <span class="leading-relaxed">TIDAK BERLAKU pembelian tiket secara langsung (tanpa daftar WA) di loket Labersa.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fas fa-undo-alt text-orange-500 mt-0.5 text-base w-5 text-center flex-shrink-0"></i>
+                                <span class="leading-relaxed">Uang Jaminan Smart Tag (Rp 25.000/rombongan) <b class="font-black">tetap berlaku</b> dan dikembalikan saat pulang.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- BAGIAN KANAN: FORM BOOKING (8 Kolom lg) -->
+                <div class="lg:col-span-8 bg-white/95 backdrop-blur-xl rounded-3xl md:rounded-[2.5rem] shadow-2xl border border-orange-100 p-5 sm:p-8 md:p-10 relative overflow-hidden mb-10">
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-800 mb-2 uppercase tracking-tight">Formulir Pendaftaran Meinyala</h3>
+                    <p class="text-slate-500 text-xs sm:text-sm mb-6 md:mb-8 leading-relaxed">Lengkapi data di bawah ini dan pilih Admin yang ingin Anda hubungi. Data akan diteruskan ke WhatsApp Admin pilihan Anda.</p>
+                    
+                    <form id="meinyalaForm" onsubmit="handleMeinyala(event)" class="space-y-4 md:space-y-5 relative z-10">
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                            <div>
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Pendaftar</label>
+                                <input type="text" id="nama" required class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-3 md:py-3.5 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all font-medium text-slate-700 backdrop-blur-sm" placeholder="Nama Lengkap">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nomor WhatsApp Aktif</label>
+                                <input type="tel" id="nomor" required class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-3 md:py-3.5 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all font-medium text-slate-700 backdrop-blur-sm" placeholder="08123456789">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
+                            <div>
+                                <label class="block text-[10px] font-black text-red-500 uppercase tracking-widest mb-1.5 ml-1">Tgl Kunjungan (11-17 Mei)</label>
+                                <input type="date" id="tanggal" required class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3 md:py-3.5 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all font-medium text-slate-700 backdrop-blur-sm">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Jumlah Orang (Tiket)</label>
+                                <input type="number" id="jumlah" value="1" min="1" oninput="updateTotal()" required class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-4 py-3 md:py-3.5 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all font-medium text-slate-700 backdrop-blur-sm">
+                            </div>
+                        </div>
+
+                        <!-- PILIH ADMIN WHATSAPP -->
+                        <div class="bg-orange-50 p-4 rounded-2xl border border-orange-200">
+                            <label class="block text-[10px] font-black text-orange-600 uppercase tracking-widest mb-2.5 ml-1">
+                                <i class="fas fa-headset mr-1"></i> Pilih Admin WhatsApp Untuk Konfirmasi
+                            </label>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <!-- Admin Hendra -->
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="adminWA" value="628117696599" class="peer sr-only" required>
+                                    <div class="rounded-xl border border-slate-200 bg-white p-3 peer-checked:bg-orange-100 peer-checked:border-orange-500 hover:bg-slate-50 transition-all flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-500 flex items-center justify-center peer-checked:bg-green-500 peer-checked:text-white"><i class="fab fa-whatsapp"></i></div>
+                                        <div>
+                                            <div class="font-bold text-slate-700 text-sm">Hendra</div>
+                                            <div class="text-[10px] text-slate-400">0811-7696-599</div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <!-- Admin Dedi -->
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="adminWA" value="628117673499" class="peer sr-only">
+                                    <div class="rounded-xl border border-slate-200 bg-white p-3 peer-checked:bg-orange-100 peer-checked:border-orange-500 hover:bg-slate-50 transition-all flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-500 flex items-center justify-center peer-checked:bg-green-500 peer-checked:text-white"><i class="fab fa-whatsapp"></i></div>
+                                        <div>
+                                            <div class="font-bold text-slate-700 text-sm">Dedi</div>
+                                            <div class="text-[10px] text-slate-400">0811-7673-499</div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <!-- Admin Leo -->
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="adminWA" value="6285271816098" class="peer sr-only">
+                                    <div class="rounded-xl border border-slate-200 bg-white p-3 peer-checked:bg-orange-100 peer-checked:border-orange-500 hover:bg-slate-50 transition-all flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-500 flex items-center justify-center peer-checked:bg-green-500 peer-checked:text-white"><i class="fab fa-whatsapp"></i></div>
+                                        <div>
+                                            <div class="font-bold text-slate-700 text-sm">Leo</div>
+                                            <div class="text-[10px] text-slate-400">0852-7181-6098</div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <!-- Admin Dika -->
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="adminWA" value="6281266817331" class="peer sr-only">
+                                    <div class="rounded-xl border border-slate-200 bg-white p-3 peer-checked:bg-orange-100 peer-checked:border-orange-500 hover:bg-slate-50 transition-all flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-500 flex items-center justify-center peer-checked:bg-green-500 peer-checked:text-white"><i class="fab fa-whatsapp"></i></div>
+                                        <div>
+                                            <div class="font-bold text-slate-700 text-sm">Dika</div>
+                                            <div class="text-[10px] text-slate-400">0812-6681-7331</div>
+                                        </div>
+                                    </div>
+                                </label>
+                                <!-- Admin Nova -->
+                                <label class="cursor-pointer sm:col-span-2 lg:col-span-1">
+                                    <input type="radio" name="adminWA" value="6282385254987" class="peer sr-only">
+                                    <div class="rounded-xl border border-slate-200 bg-white p-3 peer-checked:bg-orange-100 peer-checked:border-orange-500 hover:bg-slate-50 transition-all flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-100 text-green-500 flex items-center justify-center peer-checked:bg-green-500 peer-checked:text-white"><i class="fab fa-whatsapp"></i></div>
+                                        <div>
+                                            <div class="font-bold text-slate-700 text-sm">Nova</div>
+                                            <div class="text-[10px] text-slate-400">0823-8525-4987</div>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Ringkasan Pesanan (Summary) -->
+                        <div class="bg-red-50/50 p-5 sm:p-6 rounded-2xl border border-red-100 mt-6 shadow-sm">
+                            <div class="flex justify-between items-start mb-3 text-sm">
+                                <span class="font-medium text-slate-500 leading-tight pr-2">Harga Tiket MEINYALA (<span id="ticketCountLabel">1</span>x)</span>
+                                <span id="priceUnitDisplay" class="font-bold text-slate-700 whitespace-nowrap">Rp 20.000</span>
+                            </div>
+                            <div class="flex justify-between items-start mb-4 text-sm pb-4 border-b border-red-200 border-dashed">
+                                <span class="font-medium text-slate-500 leading-tight pr-2">Jaminan Smart Tag <br/><span class="text-[10px] text-slate-400">(Dibayar di loket & bisa di-refund)</span></span>
+                                <span id="depositDisplay" class="font-bold text-slate-700 whitespace-nowrap">Rp 25.000</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center pt-2">
+                                <div class="flex flex-col">
+                                    <span class="font-black text-slate-800 text-[13px] sm:text-sm md:text-base uppercase tracking-tight leading-none mb-1">Total Tunai</span>
+                                    <span class="font-black text-slate-800 text-[10px] sm:text-xs uppercase tracking-tight leading-none text-red-500">Bayar di Loket Nanti</span>
+                                </div>
+                                <div class="flex items-baseline gap-1 text-red-600">
+                                    <span class="text-lg sm:text-xl font-black">Rp</span>
+                                    <span id="totalDisplay" class="text-3xl sm:text-4xl font-black tracking-tight">45.000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TOMBOL WA RESPONSIVE -->
+                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white py-4 rounded-xl shadow-lg shadow-orange-500/30 transition-all transform hover:-translate-y-1 mt-4 relative flex items-center justify-center overflow-hidden group">
+                            <i class="fab fa-whatsapp text-3xl absolute left-5 group-hover:scale-110 transition-transform"></i>
+                            <div class="flex flex-col items-center justify-center font-bold text-sm tracking-wider">
+                                <span>KIRIM DATA KE ADMIN</span>
+                                <span>VIA WHATSAPP</span>
+                            </div>
+                        </button>
+                    </form>
+
+                    <!-- BAGIAN BAGIKAN (SHARE) SIMPLE -->
+                    <div class="mt-8 pt-6 border-t border-orange-100 flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest sm:mr-1">Bagikan Promo Ini</span>
+                        <div class="flex items-center gap-3">
+                            <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '&quote=' + encodeURIComponent('Promo MEINYALA Riau Fantasi! Tiket cuma Rp 20.000!'), '_blank')" class="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-facebook-f text-base sm:text-sm"></i></a>
+                            <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Promo MEINYALA Riau Fantasi! Tiket cuma Rp 20.000!') + '&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-x-twitter text-base sm:text-sm"></i></a>
+                            <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent('Wah ada Promo MEINYALA di Riau Fantasi! Tiket cuma Rp 20.000/orang. Daftar di sini: ') + encodeURIComponent(window.location.href), '_blank')" class="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-whatsapp text-lg sm:text-sm"></i></a>
+                            <button onclick="copyLink()" class="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-slate-400 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm" title="Copy Link"><i class="fas fa-link text-base sm:text-sm"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- OMBAK PEMBATAS FOOTER -->
+        <div class="w-full leading-none pointer-events-none mt-4 md:mt-10 -mb-1 relative z-10">
+            <svg class="block w-full h-12 md:h-32 translate-y-[2px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="#172554" d="M0,160L80,170.7C160,181,320,203,480,186.7C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            </svg>
+        </div>
+    </main>
+
+    <!-- FOOTER MASTER -->
+    <footer id="kontak-footer" class="bg-blue-950 text-slate-300 pt-12 pb-8 text-shadow-none relative z-40 border-t border-blue-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left text-shadow-none">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+                <!-- Info -->
+                <div class="space-y-5 text-shadow-none">
+                    <img src="https://labersa.github.io/rifan.png" alt="Logo Footer" class="h-16 w-auto rounded-2xl shadow-lg">
+                    <p class="text-xs leading-relaxed text-blue-200 font-medium pr-4">Destinasi wisata air dan hiburan keluarga terbaik di Pekanbaru, Riau. Ciptakan momen seru bersama keluarga tercinta di Riau Fantasi.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="w-8 h-8 rounded-full bg-white text-pink-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-instagram text-base"></i></a>
+                        <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-facebook-f text-base"></i></a>
+                        <a href="https://www.tiktok.com/@labersa_riaufantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-slate-900 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-tiktok text-base"></i></a>
+                        <a href="https://www.youtube.com/@RiauFantasi" target="_blank" class="w-8 h-8 rounded-full bg-white text-red-600 flex items-center justify-center hover:scale-110 transition-transform shadow-lg text-shadow-none"><i class="fab fa-youtube text-base"></i></a>
+                    </div>
+                </div>
+
+                <!-- Menu Cepat -->
+                <div>
+                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block mb-5 tracking-wide uppercase text-[10px]">Menu Cepat</h4>
+                    <ul class="space-y-3 text-[11px] font-bold uppercase tracking-widest text-blue-200">
+                        <li><a href="index.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Beranda</a></li>
+                        <li><a href="artikel.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Artikel & Blog</a></li>
+                        <li><a href="wahana.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Daftar Wahana</a></li>
+                        <li><a href="harga-tiket.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Harga Tiket</a></li>
+                        <li><a href="promo.html" class="hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-[8px] text-sky-500"></i> Promo Spesial</a></li>
+                    </ul>
+                </div>
+
+                <!-- Hubungi Kami -->
+                <div class="space-y-5">
+                    <h4 class="text-white font-black text-lg border-b-2 border-sky-500 pb-2 inline-block tracking-wide uppercase text-[10px]">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-xs font-medium text-blue-200">
+                        <li class="flex items-start"><i class="fas fa-map-marker-alt mt-1 mr-2 text-sky-400"></i> Jl. Labersa, Tanah Merah, Siak Hulu, Kab. Kampar, Riau 28284</li>
+                        <li><a href="https://wa.me/628117696599" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> 0811-7696-599 (Hendra)</a></li>
+                        <li><a href="https://wa.me/628117673499" target="_blank" class="flex items-center hover:text-green-400 transition-colors"><i class="fab fa-whatsapp mr-2 text-green-400 text-base"></i> 0811-7673-499 (Dedi)</a></li>
+                        <li><a href="mailto:riaufantasi@gmail.com" class="flex items-center hover:text-sky-400 transition-colors"><i class="fas fa-envelope mr-2 text-sky-400 text-base"></i> riaufantasi@gmail.com</a></li>
+                    </ul>
+                    <!-- Peta Miniature -->
+                    <div class="group relative mt-3 rounded-2xl overflow-hidden shadow-inner border-2 border-sky-900 h-24 bg-slate-800 transition-all hover:border-sky-500">
+                        <a href="https://maps.app.goo.gl/qCHAubETn7165Uuy8" target="_blank" class="block w-full h-full relative text-shadow-none">
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=400&h=200" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-500" alt="Map Riau Fantasi">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors">
+                                <i class="fas fa-map-marked-alt text-xl text-white mb-1 shadow-md"></i>
+                                <span class="text-[8px] font-black text-white uppercase tracking-widest bg-blue-600/80 px-2 py-0.5 rounded shadow-lg text-shadow-none">Buka Google Maps</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT BAR -->
+            <div class="border-t border-blue-900 pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-blue-400 font-bold uppercase tracking-widest text-shadow-none">
+                <p>© 2026 LABERSA RIAU FANTASI - ALL RIGHTS RESERVED</p>
+                <div class="flex flex-wrap justify-center gap-4 mt-4 md:mt-0 items-center">
+                    <a href="tentang-kami.html" class="hover:text-white transition-colors">TENTANG KAMI</a>
+                    <span class="text-blue-900/50">|</span>
+                    <a href="syarat-ketentuan.html" class="hover:text-white transition-colors">SYARAT & KETENTUAN</a>
+                    <span class="text-blue-900/50">|</span>
+                    <a href="privacy-policy.html" class="hover:text-white transition-colors text-white font-black underline">KEBIJAKAN PRIVASI</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notifikasi Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-800 text-white px-5 py-3 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3 font-medium text-sm pointer-events-none">
+        <i class="fas fa-check-circle text-green-400"></i> <span id="toast-message">Mengarahkan ke WhatsApp...</span>
+    </div>
+
+    <!-- Scripts Form Booking MEINYALA -->
+    <script>
+        const PRICE_MEINYALA = 20000;
+        const DEPOSIT_SMART_TAG = 25000;
+
+        function showToast(message) {
+            var toast = document.getElementById('toast');
+            if(toast) {
+                document.getElementById('toast-message').innerText = message;
+                toast.classList.remove('translate-y-20', 'opacity-0');
+                setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 3000);
+            }
+        }
+
+        function formatNomor(nomor) {
+            nomor = nomor.replace(/\D/g, '');
+            if (nomor.startsWith('0')) return '62' + nomor.substring(1);
+            return nomor.startsWith('62') ? nomor : '62' + nomor;
+        }
+
+        function validateNomor(nomor) {
+            return /^62[0-9]{8,14}$/.test(nomor);
+        }
+
+        function updateTotal() {
+            const jumlah = parseInt(document.getElementById('jumlah').value) || 0;
+            
+            if (jumlah <= 0) {
+                document.getElementById('priceUnitDisplay').innerHTML = "-";
+                document.getElementById('totalDisplay').innerHTML = "0";
+                document.getElementById('ticketCountLabel').innerText = "0";
+                return;
+            }
+
+            const totalTicket = jumlah * PRICE_MEINYALA;
+            const grandTotal = totalTicket + DEPOSIT_SMART_TAG;
+
+            document.getElementById('ticketCountLabel').innerText = jumlah;
+            document.getElementById('priceUnitDisplay').innerHTML = "Rp " + totalTicket.toLocaleString('id-ID');
+            document.getElementById('totalDisplay').innerHTML = grandTotal.toLocaleString('id-ID');
+        }
+
+        function handleMeinyala(e) {
+            e.preventDefault();
+            
+            let nama = document.getElementById("nama").value.trim();
+            let nomorInput = document.getElementById("nomor").value.trim();
+            const tanggal = document.getElementById("tanggal").value;
+            const jumlah = parseInt(document.getElementById("jumlah").value);
+            
+            // Ambil nomor WA admin yang dipilih dari radio button
+            const selectedAdmin = document.querySelector('input[name="adminWA"]:checked');
+            if (!selectedAdmin) {
+                alert("Silakan pilih salah satu Admin WhatsApp untuk konfirmasi!");
+                return;
+            }
+            const adminWA = selectedAdmin.value;
+            // Ambil nama admin yang dipilih untuk pesan WA
+            const adminName = selectedAdmin.nextElementSibling.querySelector('.font-bold').innerText;
+
+            const nomor = formatNomor(nomorInput);
+
+            if (!validateNomor(nomor)) {
+                alert("Nomor WhatsApp tidak valid! Gunakan format: 08xxxx atau 62xxxx");
+                return;
+            }
+
+            const totalTicket = jumlah * PRICE_MEINYALA;
+            const grandTotalNum = totalTicket + DEPOSIT_SMART_TAG;
+            const grandTotalFormatted = grandTotalNum.toLocaleString('id-ID');
+            
+            const dateParts = tanggal.split("-");
+            const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+
+            showToast('Mengarahkan ke WhatsApp Admin...');
+
+            // FORMAT PESAN WHATSAPP KHUSUS MEINYALA
+            const pesan = 
+`Halo Admin ${adminName}! 👋
+
+Saya ingin mendaftar *PROMO MEINYALA (Rp 20.000)*
+━━━━━━━━━━━━━━━━━━
+👤 Nama: *${nama.toUpperCase()}*
+📱 No HP/WA: ${nomor}
+📅 Kunjungan: *${formattedDate}*
+🎟️ Jumlah: ${jumlah} Orang
+💵 Total Tiket: Rp${totalTicket.toLocaleString('id-ID')}
+💳 Jaminan Tag: Rp25.000
+💰 *BAWA TUNAI: Rp${grandTotalFormatted}*
+━━━━━━━━━━━━━━━━━━
+Mohon konfirmasi pendaftaran saya ya kak. Terima kasih!`;
+
+            const encodedPesan = encodeURIComponent(pesan);
+            
+            // Redirect ke WhatsApp Admin yang dipilih
+            setTimeout(() => {
+                window.location.href = `https://wa.me/${adminWA}?text=${encodedPesan}`;
+            }, 1000);
+        }
+
+        // Fungsi Terima Cookie
+        window.acceptCookies = function() {
+            var banner = document.getElementById('cookie-consent');
+            if(banner) banner.style.display = 'none';
+            try { localStorage.setItem('cookiesAccepted', 'true'); } catch(e) {}
+        };
+
+        // INIT SCRIPT
+        window.onload = function () {
+            // Setup Date Picker khusus Meinyala (Kunjungan 11 - 17 Mei 2026)
+            const input = document.getElementById("tanggal");
+            if (input) {
+                input.min = "2026-05-11";
+                input.max = "2026-05-17";
+                input.value = "2026-05-11"; // Default hari pertama kunjungan
+                updateTotal();
+            }
+
+            // Setup Cookie & Mobile Menu
+            try {
+                if(localStorage.getItem('cookiesAccepted') !== 'true') {
+                    var banner = document.getElementById('cookie-consent');
+                    if(banner) banner.style.display = 'flex';
+                }
+            } catch(e) {}
+
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if(btn && menu) {
+                btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+            }
+        };   
+    </script>
+</body>
+</html>
