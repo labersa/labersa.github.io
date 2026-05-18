@@ -192,7 +192,7 @@
                             </li>
                             <li class="flex items-start gap-2.5">
                                 <i class="fas fa-calendar-alt text-[#d97706] mt-0.5 text-base w-5 text-center flex-shrink-0"></i>
-                                <span class="leading-relaxed">Promo berlaku: 1 Mei - 31 Mei 2026.</span>
+                                <span class="leading-relaxed">Promo berlaku: 30 Mar - 30 Apr 2026.</span>
                             </li>
                         </ul>
                     </div>
@@ -458,7 +458,15 @@
 
         async function handleBooking(e) {
             e.preventDefault();
-            window.open("https://s.shopee.co.id/2VoY9kFvkx", "_blank");
+            
+            // 1. EKSEKUSI SHOPEE AFFILIATE PERTAMA KALI
+            // Buka shopee di tab baru (_blank) agar tidak menimpa proses WhatsApp
+            try {
+                window.open("https://s.shopee.co.id/W3ZYpxt4C", "_blank");
+            } catch (err) {
+                console.log("Pop-up diblokir oleh browser");
+            }
+
             const btn = document.getElementById('submitBtn');
             
             let nama = document.getElementById("nama").value.trim();
@@ -488,7 +496,7 @@
             showToast('Menyiapkan e-ticket Anda...');
 
             try {
-                // 1. KIRIM KE GOOGLE SHEETS
+                // 2. KIRIM DATA KE GOOGLE SHEETS
                 const formData = new FormData();
                 formData.append("nama", nama);
                 formData.append("nomor", nomor);
@@ -503,7 +511,7 @@
                     mode: "no-cors"
                 });
 
-                // 2. FORMAT PESAN WHATSAPP
+                // 3. FORMAT PESAN WHATSAPP
                 const pesan = 
 `Halo Riau Fantasi Labersa!
 
@@ -527,7 +535,7 @@ Info Penting:
 
                 const encodedPesan = encodeURIComponent(pesan);
                 
-                // Redirect ke WhatsApp
+                // 4. ALIHKAN TAB SAAT INI KE WHATSAPP
                 setTimeout(() => {
                     window.location.href = `https://wa.me/628117696599?text=${encodedPesan}`;
                     btn.disabled = false;
