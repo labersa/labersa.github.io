@@ -249,6 +249,18 @@
                 </div>
 
             </form>
+
+            <!-- BAGIAN BAGIKAN (SHARE) SIMPLE -->
+            <div class="mt-8 pt-6 border-t border-emerald-200/60 flex flex-row items-center justify-center gap-4 bg-white/50 backdrop-blur-sm rounded-2xl py-4 shadow-sm border">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mr-1">Bagikan :</span>
+                <div class="flex items-center gap-3">
+                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '&quote=' + encodeURIComponent('Booking Lapangan Futsal & Padel di Labersa Sport Centre sekarang!'), '_blank')" class="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-facebook-f text-sm"></i></a>
+                    <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Booking Lapangan Futsal & Padel di Labersa Sport Centre sekarang!') + '&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-x-twitter text-sm"></i></a>
+                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent('Yuk main Futsal & Padel bareng di Labersa Sport Centre! Booking jadwal mainnya di sini: ') + encodeURIComponent(window.location.href), '_blank')" class="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-whatsapp text-sm"></i></a>
+                    <button onclick="copyLink()" class="w-8 h-8 rounded-full bg-slate-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm" title="Copy Link"><i class="fas fa-link text-sm"></i></button>
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -342,7 +354,7 @@
     </a>
 
     <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbweXbAfFRmYZcW5oID7si8s2CyxNtYYic44dYUA6YR8D148b8T3_FLBc8R9oUNMaMCb/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
 
         function acceptCookies() {
             var banner = document.getElementById('cookie-consent');
@@ -367,6 +379,16 @@
 
         function validateNomor(nomor) {
             return /^62[0-9]{8,14}$/.test(nomor);
+        }
+
+        // Fungsi Salin Tautan (Copy Link)
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                showToast("Tautan disalin ke clipboard!");
+            }).catch(function(err) {
+                console.error('Gagal menyalin tautan: ', err);
+                alert("Gagal menyalin tautan.");
+            });
         }
 
         function updateOlahragaTotal() {
