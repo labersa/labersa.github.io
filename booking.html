@@ -94,7 +94,7 @@
                         <a href="hubungi-kami.html" class="hover:text-sky-600 transition-colors">Hubungi Kami</a>
                     </div>
 
-                    <!-- Ikon Sosmed (Disembunyikan di HP sangat kecil agar tidak sempit) -->
+                    <!-- Ikon Sosmed -->
                     <div class="hidden sm:flex items-center space-x-2.5 sm:space-x-4 md:border-l md:border-slate-200 md:pl-4 lg:pl-6">
                         <a href="https://www.instagram.com/labersa_riaufantasi/" target="_blank" class="text-pink-600 text-lg sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.facebook.com/riau.fantasi" target="_blank" class="text-blue-600 text-lg sm:text-2xl hover:scale-110 transition-transform"><i class="fab fa-facebook-f"></i></a>
@@ -206,6 +206,27 @@
                     
                     <form id="bookingForm" onsubmit="handleBooking(event)" class="space-y-4 md:space-y-5">
                         
+                        <!-- LANGKAH SYARAT: FOLLOW INSTAGRAM -->
+                        <div class="bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 rounded-2xl p-5 text-white shadow-lg relative overflow-hidden mb-6">
+                            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+                                <div class="flex items-center gap-3 text-center sm:text-left">
+                                    <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl flex-shrink-0">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-sm sm:text-base uppercase tracking-wider">Syarat Booking Online</h4>
+                                        <p class="text-xs text-pink-100 font-medium">Wajib Follow Instagram official kami untuk melanjutkan reservasi</p>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="followInstagram()" id="igFollowBtn" class="bg-white text-pink-600 hover:bg-pink-50 font-black py-3 px-6 rounded-xl text-xs uppercase tracking-widest transition-transform hover:scale-105 shadow-md whitespace-nowrap flex items-center gap-2">
+                                    <i class="fab fa-instagram text-base"></i> <span id="igBtnText">Follow @labersa_riaufantasi</span>
+                                </button>
+                            </div>
+                            <div id="igStatusBadge" class="hidden mt-3 bg-emerald-500/90 text-white text-xs font-bold py-1.5 px-3 rounded-lg flex items-center gap-2 w-fit">
+                                <i class="fas fa-check-circle"></i> Terverifikasi! Anda telah mengikuti Instagram kami.
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                             <div>
                                 <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Lengkap</label>
@@ -361,9 +382,7 @@
         <i class="fas fa-info-circle text-sky-400"></i> <span id="toast-message">Memproses pesanan...</span>
     </div>
 
-    <!-- ========================================== -->
-    <!-- TOMBOL WHATSAPP MELAYANG (PREMIUM)         -->
-    <!-- ========================================== -->
+    <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/628117696599" target="_blank" class="fixed bottom-8 right-8 z-[90] group flex items-center justify-center">
         <!-- Tooltip Text -->
         <span class="absolute right-20 bg-white text-slate-700 text-sm font-black px-4 py-2.5 rounded-2xl shadow-xl border border-slate-100 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0 whitespace-nowrap pointer-events-none flex items-center gap-2">
@@ -384,6 +403,7 @@
         const PRICE_WEEKDAY = 30000;
         const PRICE_WEEKEND = 35000;
         const DEPOSIT_SMART_TAG = 25000;
+        let isIGFollowed = false;
         
         // TAMBAHKAN TANGGAL MERAH DI SINI (Format YYYY-MM-DD)
         const LIBUR_NASIONAL = [
@@ -404,6 +424,22 @@
             }
         }
 
+        // FUNGSI VERIFIKASI FOLLOW INSTAGRAM
+        function followInstagram() {
+            window.open('https://www.instagram.com/labersa_riaufantasi/', '_blank');
+            isIGFollowed = true;
+            try { localStorage.setItem('igFollowed', 'true'); } catch(e) {}
+            
+            const btn = document.getElementById('igFollowBtn');
+            const badge = document.getElementById('igStatusBadge');
+            const btnText = document.getElementById('igBtnText');
+            
+            if (badge) badge.classList.remove('hidden');
+            if (btnText) btnText.innerText = 'Sudah Di-follow ✓';
+            if (btn) btn.classList.replace('bg-white', 'bg-emerald-100');
+            showToast('Terima kasih telah mengikuti Instagram Riau Fantasi!');
+        }
+
         // FUNGSI COPY LINK SHARE
         function copyLink() {
             var tempInput = document.createElement('input');
@@ -417,7 +453,6 @@
 
         function getPriceByDate(dateString) {
             if (!dateString) return 0;
-            // Pecah string YYYY-MM-DD agar aman dari zona waktu HP pengunjung
             const parts = dateString.split('-');
             const date = new Date(parts[0], parts[1] - 1, parts[2]);
             const day = date.getDay(); 
@@ -458,6 +493,14 @@
 
         async function handleBooking(e) {
             e.preventDefault();
+
+            // Verifikasi Syarat Follow Instagram
+            if (!isIGFollowed) {
+                alert("Mohon klik tombol 'Follow @labersa_riaufantasi' terlebih dahulu untuk dapat melanjutkan booking!");
+                followInstagram();
+                return;
+            }
+
             const btn = document.getElementById('submitBtn');
             
             let nama = document.getElementById("nama").value.trim();
@@ -493,7 +536,7 @@
                 formData.append("nomor", nomor);
                 formData.append("tanggal", formattedDate);
                 formData.append("jumlah", jumlah);
-                formData.append("catatan", catatan);
+                formData.append("catatan", `${catatan} | IG Followed: Yes`);
                 formData.append("total", "Rp" + grandTotalFormatted);
 
                 fetch(SCRIPT_URL, {
@@ -504,25 +547,21 @@
 
                 // 2. FORMAT PESAN WHATSAPP
                 const pesan = 
-`Halo Riau Fantasi Labersa!
+`Halo Admin Labersa Riau Fantasi! 🏊‍♂️
 
-*BOOKING PROMO ONLINE*
+Saya ingin booking Tiket Waterpark Online:
 ━━━━━━━━━━━━━━━━━━
-👤 Nama: *${nama.toUpperCase()}*
-📱 No HP: ${nomor}
-📅 Tanggal: *${formattedDate}* (${tipeHari})
-🎟️ Jumlah: ${jumlah} Tiket
-💵 Tiket: Rp${totalTicket.toLocaleString('id-ID')}
-💳 Jaminan Tag: Rp25.000 (Flat)
-💰 *TOTAL BAYAR: Rp${grandTotalFormatted}*
+👤 *Nama:* ${nama.toUpperCase()}
+📱 *No WA:* ${nomor}
+📅 *Tanggal:* ${formattedDate} (${tipeHari})
+🎟️ *Jumlah:* ${jumlah} Tiket
+💵 *Total Tiket:* Rp ${totalTicket.toLocaleString('id-ID')}
+💳 *Jaminan Smart Tag:* Rp 25.000 (Refundable)
+💰 *ESTIMASI TOTAL BAYAR:* Rp ${grandTotalFormatted}
+📸 *Follow IG:* Terverifikasi
+📝 *Catatan:* ${catatan}
 ━━━━━━━━━━━━━━━━━━
-📝 Catatan: ${catatan}
-
-Info Penting:
-- Pembayaran hanya tunai saat di loket
-- Anak dibawah 80cm Gratis Masuk
-- Jaminan tag dikembalikan saat pulang
-- Wajib tunjukkan pesan ini ke loket`;
+Pembayaran tunai di loket saat datang. Mohon diproses. Terima kasih!`;
 
                 const encodedPesan = encodeURIComponent(pesan);
                 
@@ -554,7 +593,6 @@ Info Penting:
             const input = document.getElementById("tanggal");
             if (input) {
                 const today = new Date();
-                // Format tanggal YYYY-MM-DD dengan padding nol
                 const year = today.getFullYear();
                 const month = String(today.getMonth() + 1).padStart(2, '0');
                 const day = String(today.getDate()).padStart(2, '0');
@@ -567,8 +605,17 @@ Info Penting:
                 updateTotal();
             }
 
-            // Setup Cookie & Mobile Menu
+            // Cek Status Follow IG dari LocalStorage
             try {
+                if (localStorage.getItem('igFollowed') === 'true') {
+                    isIGFollowed = true;
+                    const badge = document.getElementById('igStatusBadge');
+                    const btnText = document.getElementById('igBtnText');
+                    const btn = document.getElementById('igFollowBtn');
+                    if (badge) badge.classList.remove('hidden');
+                    if (btnText) btnText.innerText = 'Sudah Di-follow ✓';
+                    if (btn) btn.classList.replace('bg-white', 'bg-emerald-100');
+                }
                 if(localStorage.getItem('cookiesAccepted') !== 'true') {
                     var banner = document.getElementById('cookie-consent');
                     if(banner) banner.style.display = 'flex';
