@@ -177,6 +177,27 @@
                     
                     <form id="merdekaForm" onsubmit="handleMerdeka(event)" class="space-y-4 md:space-y-5 relative z-10">
                         
+                        <!-- LANGKAH SYARAT: FOLLOW INSTAGRAM -->
+                        <div class="bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 rounded-2xl p-5 text-white shadow-lg relative overflow-hidden mb-6">
+                            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+                                <div class="flex items-center gap-3 text-center sm:text-left">
+                                    <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl flex-shrink-0">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-black text-sm sm:text-base uppercase tracking-wider">Syarat Pendaftaran Promo</h4>
+                                        <p class="text-xs text-pink-100 font-medium">Wajib Follow Instagram official kami untuk melanjutkan pendaftaran</p>
+                                    </div>
+                                </div>
+                                <button type="button" onclick="followInstagram()" id="igFollowBtn" class="bg-white text-pink-600 hover:bg-pink-50 font-black py-3 px-6 rounded-xl text-xs uppercase tracking-widest transition-transform hover:scale-105 shadow-md whitespace-nowrap flex items-center gap-2">
+                                    <i class="fab fa-instagram text-base"></i> <span id="igBtnText">Follow @labersa_riaufantasi</span>
+                                </button>
+                            </div>
+                            <div id="igStatusBadge" class="hidden mt-3 bg-emerald-500/90 text-white text-xs font-bold py-1.5 px-3 rounded-lg flex items-center gap-2 w-fit">
+                                <i class="fas fa-check-circle"></i> Terverifikasi! Anda telah mengikuti Instagram kami.
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5">
                             <div>
                                 <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5 ml-1">Nama Pendaftar</label>
@@ -410,6 +431,7 @@
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
         const PRICE_MERDEKA = 20000;
         const DEPOSIT_SMART_TAG = 25000;
+        let isIGFollowed = false;
 
         function showToast(message) {
             var toast = document.getElementById('toast');
@@ -418,6 +440,22 @@
                 toast.classList.remove('translate-y-20', 'opacity-0');
                 setTimeout(() => toast.classList.add('translate-y-20', 'opacity-0'), 3000);
             }
+        }
+
+        // FUNGSI VERIFIKASI FOLLOW INSTAGRAM
+        function followInstagram() {
+            window.open('https://www.instagram.com/labersa_riaufantasi/', '_blank');
+            isIGFollowed = true;
+            try { localStorage.setItem('igFollowed', 'true'); } catch(e) {}
+            
+            const btn = document.getElementById('igFollowBtn');
+            const badge = document.getElementById('igStatusBadge');
+            const btnText = document.getElementById('igBtnText');
+            
+            if (badge) badge.classList.remove('hidden');
+            if (btnText) btnText.innerText = 'Sudah Di-follow ✓';
+            if (btn) btn.classList.replace('bg-white', 'bg-emerald-100');
+            showToast('Terima kasih telah mengikuti Instagram Riau Fantasi!');
         }
 
         function formatNomor(nomor) {
@@ -450,6 +488,13 @@
 
         async function handleMerdeka(e) {
             e.preventDefault();
+
+            // Verifikasi Syarat Follow Instagram
+            if (!isIGFollowed) {
+                alert("Mohon klik tombol 'Follow @labersa_riaufantasi' terlebih dahulu untuk dapat melanjutkan pendaftaran!");
+                followInstagram();
+                return;
+            }
             
             const btn = document.getElementById('submitBtn');
             
@@ -493,7 +538,7 @@
                 formData.append("nomor", nomor);
                 formData.append("tanggal", formattedDate);
                 formData.append("jumlah", jumlah);
-                formData.append("catatan", `Promo MERDEKA - Admin ${adminName}`);
+                formData.append("catatan", `Promo MERDEKA - Admin ${adminName} | IG Followed: Yes`);
                 formData.append("total", "Rp" + grandTotalFormatted);
 
                 fetch(SCRIPT_URL, {
@@ -515,6 +560,7 @@ Saya ingin mendaftar *PROMO MERDEKA (Rp 20.000)*
 💵 Total Tiket: Rp${totalTicket.toLocaleString('id-ID')}
 💳 Jaminan Tag: Rp25.000
 💰 *BAWA TUNAI: Rp${grandTotalFormatted}*
+📸 Follow IG: Terverifikasi
 ━━━━━━━━━━━━━━━━━━
 Mohon konfirmasi pendaftaran saya ya kak. Terima kasih!`;
 
@@ -564,8 +610,17 @@ Mohon konfirmasi pendaftaran saya ya kak. Terima kasih!`;
                 updateTotal();
             }
 
-            // Setup Cookie & Mobile Menu
+            // Cek Status Follow IG dari LocalStorage & Cookie Banner
             try {
+                if (localStorage.getItem('igFollowed') === 'true') {
+                    isIGFollowed = true;
+                    const badge = document.getElementById('igStatusBadge');
+                    const btnText = document.getElementById('igBtnText');
+                    const btn = document.getElementById('igFollowBtn');
+                    if (badge) badge.classList.remove('hidden');
+                    if (btnText) btnText.innerText = 'Sudah Di-follow ✓';
+                    if (btn) btn.classList.replace('bg-white', 'bg-emerald-100');
+                }
                 if(localStorage.getItem('cookiesAccepted') !== 'true') {
                     var banner = document.getElementById('cookie-consent');
                     if(banner) banner.style.display = 'flex';
