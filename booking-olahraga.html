@@ -108,6 +108,27 @@
             
             <form id="bookingOlahragaForm" onsubmit="handleBookingOlahraga(event)" class="bg-white rounded-3xl md:rounded-[2.5rem] shadow-2xl border border-emerald-100 p-6 sm:p-8 md:p-12 space-y-8 md:space-y-10">
                 
+                <!-- LANGKAH SYARAT: FOLLOW INSTAGRAM -->
+                <div class="bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 rounded-2xl p-5 text-white shadow-lg relative overflow-hidden">
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+                        <div class="flex items-center gap-3 text-center sm:text-left">
+                            <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-2xl flex-shrink-0">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-black text-sm sm:text-base uppercase tracking-wider">Syarat Booking Online</h4>
+                                <p class="text-xs text-pink-100 font-medium">Wajib Follow Instagram official kami untuk melanjutkan reservasi</p>
+                            </div>
+                        </div>
+                        <button type="button" onclick="followInstagram()" id="igFollowBtn" class="bg-white text-pink-600 hover:bg-pink-50 font-black py-3 px-6 rounded-xl text-xs uppercase tracking-widest transition-transform hover:scale-105 shadow-md whitespace-nowrap flex items-center gap-2">
+                            <i class="fab fa-instagram text-base"></i> <span id="igBtnText">Follow @labersa_riaufantasi</span>
+                        </button>
+                    </div>
+                    <div id="igStatusBadge" class="hidden mt-3 bg-emerald-500/90 text-white text-xs font-bold py-1.5 px-3 rounded-lg flex items-center gap-2 w-fit">
+                        <i class="fas fa-check-circle"></i> Terverifikasi! Anda telah mengikuti Instagram kami.
+                    </div>
+                </div>
+
                 <!-- 1. DATA PEMESAN -->
                 <div>
                     <h3 class="text-sm font-black text-emerald-600 uppercase tracking-widest border-b border-emerald-100 pb-2 mb-4">
@@ -249,25 +270,13 @@
                 </div>
 
             </form>
-
-            <!-- BAGIAN BAGIKAN (SHARE) SIMPLE -->
-            <div class="mt-8 pt-6 border-t border-emerald-200/60 flex flex-row items-center justify-center gap-4 bg-white/50 backdrop-blur-sm rounded-2xl py-4 shadow-sm border">
-                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mr-1">Bagikan :</span>
-                <div class="flex items-center gap-3">
-                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '&quote=' + encodeURIComponent('Booking Lapangan Futsal & Padel di Labersa Sport Centre sekarang!'), '_blank')" class="w-8 h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-facebook-f text-sm"></i></a>
-                    <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Booking Lapangan Futsal & Padel di Labersa Sport Centre sekarang!') + '&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-x-twitter text-sm"></i></a>
-                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent('Yuk main Futsal & Padel bareng di Labersa Sport Centre! Booking jadwal mainnya di sini: ') + encodeURIComponent(window.location.href), '_blank')" class="w-8 h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-whatsapp text-sm"></i></a>
-                    <button onclick="copyLink()" class="w-8 h-8 rounded-full bg-slate-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm" title="Copy Link"><i class="fas fa-link text-sm"></i></button>
-                </div>
-            </div>
-
         </div>
     </main>
 
     <!-- WAVE DIVIDER FOOTER -->
     <div class="relative leading-none pointer-events-none -mt-4 z-10 w-full">
         <svg class="relative block w-full h-16 md:h-32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-            <path fill="#172554" d="M0,160L80,170.7C160,181,320,203,480,186.7C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+            <path fill="#172554" d="M0,160L80,170.7C160,181,320,203,480,186.7C640,171,800,117,960,112C1120,107,1280,149,1360,170.7L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C320,320,160,320,80,320L0,320Z"></path>
         </svg>
     </div>
 
@@ -354,7 +363,8 @@
     </a>
 
     <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbweXbAfFRmYZcW5oID7si8s2CyxNtYYic44dYUA6YR8D148b8T3_FLBc8R9oUNMaMCb/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
+        let isIGFollowed = false;
 
         function acceptCookies() {
             var banner = document.getElementById('cookie-consent');
@@ -371,6 +381,21 @@
             }
         }
 
+        function followInstagram() {
+            window.open('https://www.instagram.com/labersa_riaufantasi/', '_blank');
+            isIGFollowed = true;
+            try { localStorage.setItem('igFollowed', 'true'); } catch(e) {}
+            
+            const btn = document.getElementById('igFollowBtn');
+            const badge = document.getElementById('igStatusBadge');
+            const btnText = document.getElementById('igBtnText');
+            
+            if (badge) badge.classList.remove('hidden');
+            if (btnText) btnText.innerText = 'Sudah Di-follow ✓';
+            if (btn) btn.classList.replace('bg-white', 'bg-emerald-100');
+            showToast('Terima kasih telah mengikuti Instagram Riau Fantasi!');
+        }
+
         function formatNomor(nomor) {
             nomor = nomor.replace(/\D/g, '');
             if (nomor.startsWith('0')) return '62' + nomor.substring(1);
@@ -381,20 +406,30 @@
             return /^62[0-9]{8,14}$/.test(nomor);
         }
 
-        // Fungsi Salin Tautan (Copy Link)
         function copyLink() {
-            navigator.clipboard.writeText(window.location.href).then(function() {
-                showToast("Tautan disalin ke clipboard!");
-            }).catch(function(err) {
-                console.error('Gagal menyalin tautan: ', err);
-                alert("Gagal menyalin tautan.");
-            });
+            var tempInput = document.createElement('input');
+            tempInput.value = "Booking Lapangan Futsal & Padel Labersa - " + window.location.href;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            showToast('Tautan berhasil disalin!');
+        }
+
+        function getHolidayPrice(dateString, tipe) {
+            // Check if the date is August 15, 16, or 17 of 2026
+            const specialDates = ["2026-08-15", "2026-08-16", "2026-08-17"];
+            if (specialDates.includes(dateString)) {
+                return 81000;
+            }
+            return null; // Return null if it's not a special date
         }
 
         function updateOlahragaTotal() {
             const tipe = document.getElementById('tipeLapangan').value;
             const jamMulai = document.getElementById('jamMulai').value;
             const durasi = parseInt(document.getElementById('durasi').value) || 1;
+            const tanggal = document.getElementById('tanggal').value;
             const padelSection = document.getElementById('padelToolsSection');
 
             // Tampilkan section sewa raket jika Padel dipilih
@@ -410,13 +445,21 @@
             const isMalam = (jamAngka >= 15);
 
             let tarifPerJam = 0;
-
-            if (tipe === "Futsal Pelajar") {
-                tarifPerJam = isMalam ? 120000 : 100000;
-            } else if (tipe.includes("Futsal")) {
-                tarifPerJam = isMalam ? 150000 : 120000;
-            } else if (isPadel) {
-                tarifPerJam = isMalam ? 200000 : 150000;
+            
+            // Check for special holiday price first
+            const specialPrice = getHolidayPrice(tanggal, tipe);
+            
+            if (specialPrice !== null) {
+                 tarifPerJam = specialPrice;
+            } else {
+                // Normal pricing logic
+                if (tipe === "Futsal Pelajar") {
+                    tarifPerJam = isMalam ? 120000 : 100000;
+                } else if (tipe.includes("Futsal")) {
+                    tarifPerJam = isMalam ? 150000 : 120000;
+                } else if (isPadel) {
+                    tarifPerJam = isMalam ? 200000 : 150000;
+                }
             }
 
             let totalSewaSaja = tarifPerJam * durasi;
@@ -441,6 +484,13 @@
         async function handleBookingOlahraga(e) {
             e.preventDefault();
 
+            // Verifikasi Syarat Follow Instagram
+            if (!isIGFollowed) {
+                alert("Mohon klik tombol 'Follow @labersa_riaufantasi' terlebih dahulu untuk dapat melanjutkan booking!");
+                followInstagram();
+                return;
+            }
+
             const btn = document.getElementById('submitBtn');
             let nama = document.getElementById("nama").value.trim();
             let nomorInput = document.getElementById("noWA").value.trim();
@@ -463,9 +513,17 @@
             const isMalam = (jamAngka >= 15);
 
             let tarifPerJam = 0;
-            if (tipe === "Futsal Pelajar") tarifPerJam = isMalam ? 120000 : 100000;
-            else if (tipe.includes("Futsal")) tarifPerJam = isMalam ? 150000 : 120000;
-            else if (isPadel) tarifPerJam = isMalam ? 200000 : 150000;
+            
+            // Check for special holiday price first
+            const specialPrice = getHolidayPrice(tanggal, tipe);
+            
+            if (specialPrice !== null) {
+                 tarifPerJam = specialPrice;
+            } else {
+                 if (tipe === "Futsal Pelajar") tarifPerJam = isMalam ? 120000 : 100000;
+                 else if (tipe.includes("Futsal")) tarifPerJam = isMalam ? 150000 : 120000;
+                 else if (isPadel) tarifPerJam = isMalam ? 200000 : 150000;
+            }
 
             let totalSewaSaja = tarifPerJam * parseInt(durasi);
             let rincianAlat = "Tidak ada";
@@ -500,7 +558,7 @@
                 formData.append("nomor", noWA);
                 formData.append("tanggal", formattedDate);
                 formData.append("jumlah", `${durasi} Jam (${jamMulai} WIB)`);
-                formData.append("catatan", `Lapangan: ${tipe} | Alat: ${rincianAlat} | Note: ${catatan}`);
+                formData.append("catatan", `Lapangan: ${tipe} | Alat: ${rincianAlat} | Note: ${catatan} | IG Followed: Yes`);
                 formData.append("total", "Rp " + totalBayar.toLocaleString('id-ID'));
 
                 fetch(SCRIPT_URL, {
@@ -511,7 +569,7 @@
 
                 // 2. FORMAT PESAN WHATSAPP UNTUK OLAHRAGA
                 const pesan = 
-`Halo Labersa Sport Center! ⚽🎾
+`Halo Admin Olahraga Labersa! ⚽🎾
 
 Saya ingin konfirmasi Booking Lapangan:
 ━━━━━━━━━━━━━━━━━━
@@ -524,6 +582,7 @@ Saya ingin konfirmasi Booking Lapangan:
 🎾 *Alat Padel:* ${rincianAlat}
 💰 *ESTIMASI TOTAL:* Rp ${totalBayar.toLocaleString('id-ID')}
 💵 *Pembayaran:* Tunai / Transfer di Lokasi
+📸 *Follow IG:* Terverifikasi
 📝 *Catatan:* ${catatan}
 ━━━━━━━━━━━━━━━━━━
 Mohon diproses untuk ketersediaan jam tersebut. Terima kasih!`;
@@ -560,6 +619,15 @@ Mohon diproses untuk ketersediaan jam tersebut. Terima kasih!`;
             }
 
             try {
+                if (localStorage.getItem('igFollowed') === 'true') {
+                    isIGFollowed = true;
+                    const badge = document.getElementById('igStatusBadge');
+                    const btnText = document.getElementById('igBtnText');
+                    const btn = document.getElementById('igFollowBtn');
+                    if (badge) badge.classList.remove('hidden');
+                    if (btnText) btnText.innerText = 'Sudah Di-follow ✓';
+                    if (btn) btn.classList.replace('bg-white', 'bg-emerald-100');
+                }
                 if(localStorage.getItem('cookiesAccepted') !== 'true') {
                     var banner = document.getElementById('cookie-consent');
                     if(banner) banner.style.display = 'flex';
