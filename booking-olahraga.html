@@ -169,7 +169,7 @@
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-500 mb-1">Tanggal Main</label>
-                            <input type="date" id="tanggal" onchange="updateOlahragaTotal()" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 font-bold">
+                            <input type="date" id="tanggal" onchange="handleDateChange()" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 font-bold">
                         </div>
                     </div>
 
@@ -178,25 +178,7 @@
                         <div>
                             <label class="block text-xs font-bold text-slate-500 mb-1">Jam Mulai Main</label>
                             <select id="jamMulai" onchange="updateOlahragaTotal()" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-500 font-bold text-slate-700">
-                                <optgroup label="Sesi Pagi - Sore (Tarif Hemat)">
-                                    <option value="07:00">07:00 WIB</option>
-                                    <option value="08:00">08:00 WIB</option>
-                                    <option value="09:00">09:00 WIB</option>
-                                    <option value="10:00">10:00 WIB</option>
-                                    <option value="11:00">11:00 WIB</option>
-                                    <option value="12:00">12:00 WIB</option>
-                                    <option value="13:00">13:00 WIB</option>
-                                    <option value="14:00">14:00 WIB</option>
-                                </optgroup>
-                                <optgroup label="Sesi Sore - Malam (Prime Time)">
-                                    <option value="15:00">15:00 WIB</option>
-                                    <option value="16:00">16:00 WIB</option>
-                                    <option value="17:00">17:00 WIB</option>
-                                    <option value="18:00">18:00 WIB</option>
-                                    <option value="19:00">19:00 WIB</option>
-                                    <option value="20:00">20:00 WIB</option>
-                                    <option value="21:00">21:00 WIB</option>
-                                </optgroup>
+                                <!-- Opsi jam akan diisi otomatis melalui JavaScript -->
                             </select>
                         </div>
                         <div>
@@ -363,7 +345,7 @@
     </a>
 
     <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw1pfdhYdgyBNg33TqyOxJ-lTunfpqG3rYoxJUKCgECGNsMePyTako3Y5N5ZAtBPBXpIg/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbweXbAfFRmYZcW5oID7si8s2CyxNtYYic44dYUA6YR8D148b8T3_FLBc8R9oUNMaMCb/exec";
         let isIGFollowed = false;
 
         function acceptCookies() {
@@ -406,14 +388,14 @@
             return /^62[0-9]{8,14}$/.test(nomor);
         }
 
+        // Fungsi Salin Tautan (Copy Link)
         function copyLink() {
-            var tempInput = document.createElement('input');
-            tempInput.value = "Booking Lapangan Futsal & Padel Labersa - " + window.location.href;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            showToast('Tautan berhasil disalin!');
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                showToast("Tautan disalin ke clipboard!");
+            }).catch(function(err) {
+                console.error('Gagal menyalin tautan: ', err);
+                alert("Gagal menyalin tautan.");
+            });
         }
 
         function getHolidayPrice(dateString, tipe) {
@@ -425,12 +407,57 @@
             return null; // Return null if it's not a special date
         }
 
+        // Fungsi untuk meng-update opsi Jam Mulai berdasarkan Tanggal yang dipilih
+        function handleDateChange() {
+            const dateInput = document.getElementById("tanggal").value;
+            const jamMulaiSelect = document.getElementById("jamMulai");
+            
+            if (!dateInput) return;
+
+            const selectedDate = new Date(dateInput);
+            const dayOfWeek = selectedDate.getDay(); // 0 = Minggu, 1 = Senin, ..., 6 = Sabtu
+
+            let optionsHtml = '';
+            let isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+
+            // Sesi Pagi - Sore
+            optionsHtml += '<optgroup label="Sesi Pagi - Sore (Tarif Hemat)">';
+            if (isWeekend) {
+                optionsHtml += '<option value="07:00">07:00 WIB</option>';
+                optionsHtml += '<option value="08:00">08:00 WIB</option>';
+            }
+            optionsHtml += '<option value="09:00">09:00 WIB</option>';
+            optionsHtml += '<option value="10:00">10:00 WIB</option>';
+            optionsHtml += '<option value="11:00">11:00 WIB</option>';
+            optionsHtml += '<option value="12:00">12:00 WIB</option>';
+            optionsHtml += '<option value="13:00">13:00 WIB</option>';
+            optionsHtml += '<option value="14:00">14:00 WIB</option>';
+            optionsHtml += '</optgroup>';
+
+            // Sesi Sore - Malam
+            optionsHtml += '<optgroup label="Sesi Sore - Malam (Prime Time)">';
+            optionsHtml += '<option value="15:00">15:00 WIB</option>';
+            optionsHtml += '<option value="16:00">16:00 WIB</option>';
+            optionsHtml += '<option value="17:00">17:00 WIB</option>';
+            optionsHtml += '<option value="18:00">18:00 WIB</option>';
+            optionsHtml += '<option value="19:00">19:00 WIB</option>';
+            optionsHtml += '<option value="20:00">20:00 WIB</option>';
+            optionsHtml += '<option value="21:00">21:00 WIB</option>';
+            optionsHtml += '</optgroup>';
+
+            jamMulaiSelect.innerHTML = optionsHtml;
+            updateOlahragaTotal();
+        }
+
         function updateOlahragaTotal() {
             const tipe = document.getElementById('tipeLapangan').value;
             const jamMulai = document.getElementById('jamMulai').value;
             const durasi = parseInt(document.getElementById('durasi').value) || 1;
             const tanggal = document.getElementById('tanggal').value;
             const padelSection = document.getElementById('padelToolsSection');
+
+            // Jika jam belum tersedia (karena load awal), jangan hitung dulu
+            if (!jamMulai) return;
 
             // Tampilkan section sewa raket jika Padel dipilih
             const isPadel = tipe.includes('Padel');
@@ -452,7 +479,6 @@
             if (specialPrice !== null) {
                  tarifPerJam = specialPrice;
             } else {
-                // Normal pricing logic
                 if (tipe === "Futsal Pelajar") {
                     tarifPerJam = isMalam ? 120000 : 100000;
                 } else if (tipe.includes("Futsal")) {
@@ -520,9 +546,9 @@
             if (specialPrice !== null) {
                  tarifPerJam = specialPrice;
             } else {
-                 if (tipe === "Futsal Pelajar") tarifPerJam = isMalam ? 120000 : 100000;
-                 else if (tipe.includes("Futsal")) tarifPerJam = isMalam ? 150000 : 120000;
-                 else if (isPadel) tarifPerJam = isMalam ? 200000 : 150000;
+                if (tipe === "Futsal Pelajar") tarifPerJam = isMalam ? 120000 : 100000;
+                else if (tipe.includes("Futsal")) tarifPerJam = isMalam ? 150000 : 120000;
+                else if (isPadel) tarifPerJam = isMalam ? 200000 : 150000;
             }
 
             let totalSewaSaja = tarifPerJam * parseInt(durasi);
@@ -569,7 +595,7 @@
 
                 // 2. FORMAT PESAN WHATSAPP UNTUK OLAHRAGA
                 const pesan = 
-`Halo Labersa Sport Center! ⚽🎾
+`Halo Admin Olahraga Labersa! ⚽🎾
 
 Saya ingin konfirmasi Booking Lapangan:
 ━━━━━━━━━━━━━━━━━━
@@ -615,7 +641,9 @@ Mohon diproses untuk ketersediaan jam tersebut. Terima kasih!`;
 
                 input.min = todayStr;
                 input.value = todayStr;
-                updateOlahragaTotal();
+                
+                // Panggil handleDateChange untuk mengisi opsi Jam pertama kali
+                handleDateChange();
             }
 
             try {
