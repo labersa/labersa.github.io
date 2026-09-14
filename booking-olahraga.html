@@ -252,6 +252,18 @@
                 </div>
 
             </form>
+
+            <!-- BAGIAN BAGIKAN (SHARE) SIMPLE -->
+            <div class="mt-8 pt-6 border-t border-emerald-200/60 flex flex-col sm:flex-row items-center justify-center gap-4 bg-white/50 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-emerald-100/50">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-widest sm:mr-2">Bagikan Halaman Ini:</span>
+                <div class="flex items-center justify-center gap-3">
+                    <a href="javascript:void(0)" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '&quote=' + encodeURIComponent('Booking Lapangan Futsal & Padel di Labersa Sport Centre sekarang!'), '_blank')" class="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-facebook-f text-base sm:text-sm"></i></a>
+                    <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent('Booking Lapangan Futsal & Padel di Labersa Sport Centre sekarang!') + '&url=' + encodeURIComponent(window.location.href), '_blank')" class="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-x-twitter text-base sm:text-sm"></i></a>
+                    <a href="javascript:void(0)" onclick="window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent('Yuk main Futsal & Padel bareng di Labersa Sport Centre! Booking jadwal mainnya di sini: ') + encodeURIComponent(window.location.href), '_blank')" class="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"><i class="fab fa-whatsapp text-lg sm:text-sm"></i></a>
+                    <button onclick="copyLink()" class="w-10 h-10 sm:w-8 sm:h-8 rounded-full bg-slate-500 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm" title="Copy Link"><i class="fas fa-link text-base sm:text-sm"></i></button>
+                </div>
+            </div>
+
         </div>
     </main>
 
